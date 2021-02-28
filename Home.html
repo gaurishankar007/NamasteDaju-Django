@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+    <style>
+        /*====================Header====================*/
+        #Header
+        {
+            background-color: white;
+            position: fixed;
+            top:0;
+            box-shadow: 0px 5px 20px rgb(0, 0, 187);
+        }
+        #Header .navbar-brand 
+        {
+            font-size: 32px;
+            color:  rgb(0, 0, 187);
+            font-family: cursive;
+        }
+        #Header .navbar-brand:hover
+        {
+            color:  rgb(0, 0, 187);
+        }
+        #Header nav h1 span
+        {
+            color: black;
+        }
+        #Header .nav-link
+        {
+            color: black;
+            font-size: 16px;
+            font-family: sans-serif;
+            position: relative;
+        }
+        #Header .nav-link:after{
+        content: '';
+        position: absolute;
+        width: 0; 
+        height: 3px;
+        display: block;
+        margin-top: 5px;
+        margin-left: 10px;
+        right: 0;
+        background: rgb(0, 0, 187);
+        transition: width .3s ease;
+        -webkit-transition: width .3s ease;
+        }
+        #Header .nav-link:hover:after{
+        width: 100%;
+        left: 0;
+        background: rgb(0, 0, 187);
+        }
+        .navbar-toggler-icon { 
+            background-image: url("navbar_toggler_icon.png");
+        }
+        #Buttons a
+        {
+            color: white;
+            height: 40px;
+            background-color: blue;
+            border-radius: 25px;
+        }
+        #Buttons a:hover
+        {
+            border: 2px solid rgb(0, 0, 187);
+            background-color: white;
+            color: rgb(0, 0, 187);
+        }
+        /*====================Header====================*/
+
+        /*====================Carousel====================*/
+        #Slider
+        {
+            position: relative;
+        }
+        #Slider #nav
+        {
+            position: absolute;
+            z-index: 2000;
+        }
+        #Slider #nav #navbar
+        {
+            background-image: linear-gradient( rgba(0, 14, 209, 0.4), rgba(0, 14, 209, 0.4) );
+            border-radius: 15px;
+        }
+        #Slider .navbar-brand 
+        {
+            font-size: 25px;
+            color:  rgb(0, 0, 187);
+            font-family: cursive;
+        }
+        #Slider .navbar-brand:hover
+        {
+            color:  rgb(0, 0, 187);
+        }
+        #Slider nav h1 span
+        {
+            color: white;
+        }
+        #Slider .nav-link
+        {
+            color: white;
+            font-size: 15px;
+            font-family: sans-serif;
+            position:relative;
+        }
+        #Slider .nav-link:hover
+        {
+            color:rgb(0, 0, 187);
+        }
+        #Slider .nav-link:after{
+        content: '';
+        position: absolute;
+        width: 0; 
+        height: 3px;
+        display: block;
+        margin-top: 5px;
+        margin-left: 10px;
+        right: 0;
+        background: white;
+        transition: width .3s ease;
+        -webkit-transition: width .3s ease;
+        }
+        #Slider .nav-link:hover:after{
+        width: 100%;
+        left: 0;
+        background: white;
+        }
+        #first
+        {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ) ,url("a.jpg");
+            height: 935px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #second
+        {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ) ,url("b.jpg");
+            height: 935px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #third
+        {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ) ,url("g.jpg");
+            height: 935px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #fourth
+        {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ) ,url("c.jpg");
+            height: 935px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .carousel-control-prev-icon, .carousel-control-next-icon
+        {
+            height: 15px;
+            width: 15px;
+        }
+        .carousel-indicators li
+        {
+            height: 20px;
+            width: 20px;
+            border: 4px dotted rgb(0, 0, 187);
+            border-radius: 100%;
+        }
+        .carousel-item
+        { 
+            transition: all 2s ease 1s; 
+        }
+        #Slider #slides p
+        {
+            margin-top: 260px;
+            color: white;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            border: 2px solid white;
+        }
+        #Slider #slides h1
+        {
+            color: white;
+            font-size: 120px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #Slider #slides h4
+        {
+            color: blue;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #Slider #slides a
+        {
+            color: rgb(0, 0, 187);
+            font-size: 18px;
+            background-color: white;
+            height: 40px;
+            border-radius: 25px;
+        }
+        #Slider #slides a:hover
+        {
+            color: white;
+            background-color: transparent;
+            border: 3px solid white;
+        }
+        /*====================Carousel====================*/
+    </style>
+
+    
+    <div class="container-fluid d-flex flex-row justify-content-between p-0 m" id="Header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <h1><a class="navbar-brand mr-lg-5 font-weight-bold" href="#">Namaste<span id="navbar_brand_span">Daju</span></a></h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active mx-sm-1">
+                          <a class="nav-link font-weight-bold header_nav_link"  id="Home" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item mx-sm-1">
+                          <a class="nav-link font-weight-bold header_nav_link" href="#">Menu</a>
+                        </li>
+                        <li class="nav-item mx-sm-1">
+                            <a class="nav-link font-weight-bold header_nav_link" href="#">Gallery</a>
+                          </li>
+                        <li class="nav-item mx-sm-1">
+                          <a class="nav-link font-weight-bold header_nav_link" href="#">Stories</a>
+                        </li>
+                        <li class="nav-item mx-sm-1">
+                          <a class="nav-link font-weight-bold header_nav_link" href="#">Reservation</a>
+                        </li>                        
+                        <li class="nav-item mx-sm-1">
+                          <a class="nav-link font-weight-bold header_nav_link" href="#">Contact</a>
+                        </li>            
+                      </ul>              
+                </div>     
+            </nav>
+        </div>
+        <div class="d-sm-flex flex-row py-3 mr-sm-3" id="Buttons">
+            <a href="#" class="btn btn-style font-weight-bold px-sm-4" >Login</a>
+            
+            <div id="Moon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-moon ml-lg-3 mt-1" onclick="dark()" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
+                </svg>
+            </div>
+           
+           <div id="Sun">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-brightness-high ml-lg-3 mt-1" onclick="white()" viewBox="0 0 16 16">
+                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+            </svg>  
+           </div>       
+        </div>
+    </div>
+
+    <div id="Slider" class="carousel slide" data-ride="carousel" data-interval="5000">
+        <div class="container-fluid py-4"  id="nav">
+            <div class="container" id="navbar">
+                <nav class="navbar navbar-expand-lg">
+                    <h1><a class="navbar-brand font-weight-bold" href="#">Namaste<span id="navbar_brand_span">Daju</span></a></h1>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active mx-sm-1">
+                              <a class="nav-link font-weight-bold header_nav_link"  id="Home" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item mx-sm-1">
+                              <a class="nav-link font-weight-bold header_nav_link" href="#">Menu</a>
+                            </li>
+                            <li class="nav-item mx-sm-1">
+                                <a class="nav-link font-weight-bold header_nav_link" href="#">Gallery</a>
+                              </li>
+                            <li class="nav-item mx-sm-1">
+                              <a class="nav-link font-weight-bold header_nav_link" href="#">Stories</a>
+                            </li>
+                            <li class="nav-item mx-sm-1">
+                              <a class="nav-link font-weight-bold header_nav_link" href="#">Reservation</a>
+                            </li>                        
+                            <li class="nav-item mx-sm-1">
+                              <a class="nav-link font-weight-bold header_nav_link" href="#">Contact</a>
+                            </li>            
+                          </ul>              
+                    </div>     
+                </nav>
+            </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#Slider" data-slide-to="0" class="active"></li>
+          <li data-target="#Slider" data-slide-to="1"></li>
+          <li data-target="#Slider" data-slide-to="2"></li>
+          <li data-target="#Slider" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner" id="slides">
+          <div class="carousel-item active" id="first">
+            <div class="container d-flex justify-content-center">
+                <p class="font-weight-bold px-sm-5">NamateDaju Restaurant</p> 
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h1>Best Quality Food</h1>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h4>---------------------------------- For You ----------------------------------</h4>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <a href="#" class="btn btn-style font-weight-bold mt-sm-5 px-sm-5" >View Menu</a>
+            </div>
+          </div>
+          <div class="carousel-item" id="second">
+            <div class="container d-flex justify-content-center">
+                <p class="font-weight-bold px-sm-5">NamateDaju Restaurant</p> 
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h1>Cooking Since</h1>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h4>---------------------------------- 1990 ----------------------------------</h4>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <a href="#" class="btn btn-style font-weight-bold mt-sm-5 px-sm-5" >View Menu</a>
+            </div>
+          </div>
+          <div class="carousel-item" id="third">
+            <div class="container d-flex justify-content-center">
+                <p class="font-weight-bold px-sm-5">NamateDaju Restaurant</p> 
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h1>Discover the flavors</h1>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h4>---------------------------------- Of Your Food ----------------------------------</h4>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <a href="#" class="btn btn-style font-weight-bold mt-sm-5 px-sm-5" >View Menu</a>
+            </div>
+          </div>
+          <div class="carousel-item" id="fourth">
+            <div class="container d-flex justify-content-center">
+                <p class="font-weight-bold px-sm-5">NamateDaju Restaurant</p> 
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h1>Fresh, Healthy Food</h1>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h4>---------------------------------- For Your Health ----------------------------------</h4>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <a href="#" class="btn btn-style font-weight-bold mt-sm-5 px-sm-5" >View Menu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="py-5 mr-5">
+        <div>
+          <p class="mt-5 pr-4 mb-0" id="row1_p">About Us</p>
+          <h1 class="font-weight-bold mb-4" id="row1_h1">A New Way To Invest In </br>
+            Fruit Agriculture</h1>
+          <pre id="row1_pre">
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+Consequuntur hic odio voluptatem tenetur consequatur.
+Loremipsum dolor sit amet consectetur adipisicing elit. 
+Velit beataelaudantium voluptate rem ullam dolore 
+nisi voluptatibus esse quasi.Integer sit amet mattis quam.
+          </pre>
+          <a href="#" class="btn btn-primary font-weight-bold px-5 py-3" id="row1_btn">Read More</a>
+        </div>
+      </div>
+      <div class="ml-5 my-5 pl-4">
+        <img class="img-fluid" src='g.jpg' id="row1_img"/>
+      </div>
+    </div>
+
+    <div class="d-sm-flex justify-content-center py-5 row2">
+      <div class="py-5" id="row2_div1">
+        <img class="img-fluid" src='h.jpg' id="row2_img"/>
+      </div>
+      <div class="my-5"  id="row2_div2">
+        <div>
+          <p class="mt-5 pr-4 mb-0" id="row2_p">What We Do</p>
+          <h1 class="font-weight-bold mb-4" id="row2_h1">What We Offer For You</h1>
+          <pre id="row2_pre">
+Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </pre>
+          <ul id="row2_ul">
+            <li><span class="fa fa-check"></span> Weed Control</li>
+            <li><span class="fa fa-check"></span> Pest Control</li>
+            <li><span class="fa fa-check"></span> Grass Seeding</li>
+            <li><span class="fa fa-check"></span> Industry Oriented</li>
+            <li><span class="fa fa-check"></span> Fresh Milk products</li>            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script>   
+        var function_blue = function(){this.style.color="rgb(0, 0, 187)"};
+        var function_black = function(){this.style.color="black"};
+        var function_white = function(){this.style.color="white"};
+
+        var Header = document.getElementById("Header");     
+        
+        var header_nav_link = document.getElementsByClassName('header_nav_link');
+        for(i=0; i<=5; i++){
+            header_nav_link[i].onmouseover=function_blue;
+            header_nav_link[i].onmouseout=function_black;
+        }
+
+        document.getElementById("Sun").hidden=true;     
+
+        /*====================Theme Functions====================*/
+        function dark()
+        {
+            Header.style.backgroundColor="black";
+
+            document.getElementById("navbar_brand_span").style.color="white";
+            for(i=0; i<=5; i++)
+            {
+            header_nav_link[i].style.color="white";
+            header_nav_link[i].onmouseover=function_blue;
+            header_nav_link[i].onmouseout=function_white;
+            }
+
+            document.getElementById("Moon").hidden=true;     
+            document.getElementById("Sun").hidden=false;  
+            document.getElementById("Sun").style.color="white";     
+
+        }
+
+        function white()
+        {
+            Header.style.backgroundColor="white";
+
+            document.getElementById("navbar_brand_span").style.color="black";
+            for(i=0; i<=5; i++)
+            {
+            header_nav_link[i].style.color="black";
+            header_nav_link[i].onmouseover=function_blue;
+            header_nav_link[i].onmouseout=function_black;
+            }
+
+            document.getElementById("Moon").hidden=false;     
+            document.getElementById("Sun").hidden=true;  
+            document.getElementById("Sun").style.color="black";     
+
+        }
+        /*====================Theme Functions====================*/
+
+        /*====================Navbar Functions====================*/
+        var bool = true;
+        var myScrollFunc = function() {
+            var y=window.scrollY;
+            console.log(y);
+            if (y > 240 && bool==true) {
+                bool = false;
+                Header.style.zIndex="2000";
+            } 
+            if(y<240){
+                bool = true;
+                Header.style.zIndex="0";
+            }
+        };
+        window.addEventListener("scroll", myScrollFunc);
+        /*====================Navbar Functions====================*/
+    </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" 
+    crossorigin="anonymous">
+    </script>
+</body>
+</html>
