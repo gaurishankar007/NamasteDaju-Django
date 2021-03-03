@@ -91,7 +91,7 @@
         }
         #Slider #nav #navbar
         {
-            background-image: linear-gradient( rgba(0, 14, 209, 0.4), rgba(0, 14, 209, 0.4) );
+            background-image: linear-gradient( rgba(0, 14, 209, 0.2), rgba(0, 14, 209, 0.2) );
             border-radius: 15px;
         }
         #Slider .navbar-brand 
@@ -219,6 +219,38 @@
             border: 3px solid white;
         }
         /*====================Carousel====================*/
+
+        /*====================About====================*/
+        #About #Description p
+        {
+            color: rgb(0, 0, 187);
+            font-size: 30px;
+            font-family: cursive;
+        }
+        #About #Description h1
+        {
+            font-size: 45x;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #About #Description pre
+        {
+            color: #696969;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #About #Description a
+        {
+            color: white;
+            background-color: blue;
+            border-radius: 25px;
+        }
+        #About #Description a:hover
+        {
+            border: 3px solid rgb(0, 0, 187);
+            background-color: white;
+            color: rgb(0, 0, 187);
+        }
+        /*====================About====================*/
     </style>
 
     
@@ -371,53 +403,29 @@
         </div>
       </div>
 
-
-
-
-
-      <div class="py-5 mr-5">
-        <div>
-          <p class="mt-5 pr-4 mb-0" id="row1_p">About Us</p>
-          <h1 class="font-weight-bold mb-4" id="row1_h1">A New Way To Invest In </br>
-            Fruit Agriculture</h1>
-          <pre id="row1_pre">
-Lorem ipsum dolor sit amet consectetur adipisicing elit.
-Consequuntur hic odio voluptatem tenetur consequatur.
-Loremipsum dolor sit amet consectetur adipisicing elit. 
-Velit beataelaudantium voluptate rem ullam dolore 
-nisi voluptatibus esse quasi.Integer sit amet mattis quam.
-          </pre>
-          <a href="#" class="btn btn-primary font-weight-bold px-5 py-3" id="row1_btn">Read More</a>
+      <div class="container-fluid d-sm-flex justify-content-between px-sm-5 py-5" id="About">
+        <div class="mx-sm-5 py-4" id="image">
+            <img class="img-fluid rounded" src='restaurant.jpg'/>
         </div>
-      </div>
-      <div class="ml-5 my-5 pl-4">
-        <img class="img-fluid" src='g.jpg' id="row1_img"/>
-      </div>
-    </div>
-
-    <div class="d-sm-flex justify-content-center py-5 row2">
-      <div class="py-5" id="row2_div1">
-        <img class="img-fluid" src='h.jpg' id="row2_img"/>
-      </div>
-      <div class="my-5"  id="row2_div2">
-        <div>
-          <p class="mt-5 pr-4 mb-0" id="row2_p">What We Do</p>
-          <h1 class="font-weight-bold mb-4" id="row2_h1">What We Offer For You</h1>
-          <pre id="row2_pre">
-Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <div class="container" id="Description">
+          <p class="pr-4 mb-0">About Us</p>
+          <h1 class="font-weight-bold mb-3" id="ADh1">Best Cultural And Traditional Restaurant of Nepal</h1>
+          <pre class="mb-0" id="ADpre">
+“NamasteDaju restaurant is nepal’s no.1 traditional and cultural resataurant form 1990 to till now. Everything we do is about you.
+From chefs who create exciting new flavors, to crew members who know exactly how you want your drink – we prioritize what you need
+to get you on your way. We strive to keep you at your best, and we remain loyal to you, your tastes and your time. That’s what Nepali
+runs on. Do right and far exceed expectations daily. We do the right thing and lead by putting people first. Each and every connection
+with our team, guests and shareholders is ouropportunity to create an experience that FEEDs – Far Exceeds Expectations Daily – and
+show how much we care.”
           </pre>
-          <ul id="row2_ul">
-            <li><span class="fa fa-check"></span> Weed Control</li>
-            <li><span class="fa fa-check"></span> Pest Control</li>
-            <li><span class="fa fa-check"></span> Grass Seeding</li>
-            <li><span class="fa fa-check"></span> Industry Oriented</li>
-            <li><span class="fa fa-check"></span> Fresh Milk products</li>            
-          </ul>
+          <a href="#" class="btn font-weight-bold px-5 py-2" id="row1_btn">View Stories</a>
         </div>
       </div>
     </div>
 
+    <div class="container-fluid d-sm-flex justify-content-between px-sm-5 py-5" id="Services">
+
+    </div>    
 
 
     <script>   
@@ -425,7 +433,8 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
         var function_black = function(){this.style.color="black"};
         var function_white = function(){this.style.color="white"};
 
-        var Header = document.getElementById("Header");     
+        var Header = document.getElementById("Header"); 
+        var About = document.getElementById("About");     
         
         var header_nav_link = document.getElementsByClassName('header_nav_link');
         for(i=0; i<=5; i++){
@@ -439,6 +448,7 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
         function dark()
         {
             Header.style.backgroundColor="black";
+            About.style.backgroundColor="black";
 
             document.getElementById("navbar_brand_span").style.color="white";
             for(i=0; i<=5; i++)
@@ -447,6 +457,9 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
             header_nav_link[i].onmouseover=function_blue;
             header_nav_link[i].onmouseout=function_white;
             }
+
+            document.getElementById("ADh1").style.color="white";
+            document.getElementById("ADpre").style.color="#d3d3d3";
 
             document.getElementById("Moon").hidden=true;     
             document.getElementById("Sun").hidden=false;  
@@ -457,6 +470,7 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
         function white()
         {
             Header.style.backgroundColor="white";
+            About.style.backgroundColor="white";
 
             document.getElementById("navbar_brand_span").style.color="black";
             for(i=0; i<=5; i++)
@@ -465,6 +479,9 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
             header_nav_link[i].onmouseover=function_blue;
             header_nav_link[i].onmouseout=function_black;
             }
+
+            document.getElementById("ADh1").style.color="black";
+            document.getElementById("ADpre").style.color="#696969";
 
             document.getElementById("Moon").hidden=false;     
             document.getElementById("Sun").hidden=true;  
