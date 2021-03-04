@@ -11,6 +11,7 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
     <style>
@@ -221,6 +222,19 @@
         /*====================Carousel====================*/
 
         /*====================About====================*/
+        #About #Image
+        {
+            height: 720;
+            overflow: hidden;
+        }
+        #About #Image img
+        {
+            transition: 2s ease;
+        }
+        #About #Image img:hover
+        {
+            transform: scale(1.5);
+        }
         #About #Description p
         {
             color: rgb(0, 0, 187);
@@ -232,7 +246,7 @@
             font-size: 45x;
             font-family: 'Times New Roman', Times, serif;
         }
-        #About #Description pre
+        #About #Description #ADp
         {
             color: #696969;
             font-size: 20px;
@@ -251,6 +265,62 @@
             color: rgb(0, 0, 187);
         }
         /*====================About====================*/
+
+        /*====================AUOC====================*/
+        #AUOC .heading
+        {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+        #AUOC ul
+        {
+            list-style-type: none;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+        }
+        #AUOC ul li
+        {
+            margin-bottom: 10px;
+        }
+        #AUOC ul li a
+        {
+            color: #adadad;
+            text-decoration: none;
+        }
+        #AUOC ul li a:hover
+        {
+            color:rgb(0, 0, 187);
+        }
+        #AUOC #About p
+        {
+            color: #adadad;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+        }
+        #AUOC #About #Icons a
+        {
+            color: white;
+            font-size: 25px;
+        }
+        #AUOC #About #Icons a:hover
+        {
+            color: rgb(0, 0, 187);
+        }
+        /*====================AUOC====================*/
+
+        /*====================Copyright====================*/
+        #Copyright p
+        {
+            font-size: 18px;
+            color: #adadad;
+        }
+        #Copyright p a
+        {
+            color: white;
+            text-decoration: none;
+        }
+        /*====================Copyright====================*/
     </style>
 
     
@@ -403,22 +473,22 @@
         </div>
       </div>
 
-      <div class="container-fluid d-sm-flex justify-content-between px-sm-5 py-5" id="About">
-        <div class="mx-sm-5 py-4" id="image">
+      <div class="container-fluid d-lg-flex justify-content-between px-sm-5 py-5" id="About">
+        <div class="mx-sm-5 mt-sm-2" id="Image">
             <img class="img-fluid rounded" src='restaurant.jpg'/>
         </div>
         <div class="container" id="Description">
           <p class="pr-4 mb-0">About Us</p>
           <h1 class="font-weight-bold mb-3" id="ADh1">Best Cultural And Traditional Restaurant of Nepal</h1>
-          <pre class="mb-0" id="ADpre">
-“NamasteDaju restaurant is nepal’s no.1 traditional and cultural resataurant form 1990 to till now. Everything we do is about you.
-From chefs who create exciting new flavors, to crew members who know exactly how you want your drink – we prioritize what you need
-to get you on your way. We strive to keep you at your best, and we remain loyal to you, your tastes and your time. That’s what Nepali
-runs on. Do right and far exceed expectations daily. We do the right thing and lead by putting people first. Each and every connection
-with our team, guests and shareholders is ouropportunity to create an experience that FEEDs – Far Exceeds Expectations Daily – and
-show how much we care.”
-          </pre>
-          <a href="#" class="btn font-weight-bold px-5 py-2" id="row1_btn">View Stories</a>
+          <p class="mb-sm-4" id="ADp">
+            “NamasteDaju restaurant is nepal’s no.1 traditional and cultural resataurant form 1990 to till now. Everything we do is about you.
+            From chefs who create exciting new flavors, to crew members who know exactly how you want your drink – we prioritize what you need
+            to get you on your way. We strive to keep you at your best, and we remain loyal to you, your tastes and your time. That’s what Nepali
+            runs on. Do right and far exceed expectations daily. We do the right thing and lead by putting people first. Each and every connection
+            with our team, guests and shareholders is ouropportunity to create an experience that FEEDs – Far Exceeds Expectations Daily – and
+            show how much we care.”
+          </p>
+          <a href="#" class="btn font-weight-bold px-5 py-2" id="row1_btn">View Our Stories</a>
         </div>
       </div>
     </div>
@@ -427,6 +497,57 @@ show how much we care.”
 
     </div>    
 
+    <div class="container-fluid d-lg-flex flex-lg-row justify-content-around px-lg-5 py-5" id="AUOC">  
+        <div id="About">
+          <h3 class="font-weight-bold heading">NamasteDaju restaurant</h3>
+          <p>
+            Keep in touch with us. <br/>
+            Be updated with our menus, <br/>
+            services, taste and flavors <br/>
+            of our food. Follow us in <br/>
+            the social medias.
+          </p>
+          <div class="fa_icon mt-4" id="Icons">
+            <a href="#facebook" class="facebook mr-sm-3"><span class="fa fa-facebook"></span></a>
+            <a href="#twitter" class="twitter mr-sm-3"><span class="fa fa-twitter"></span></a>
+            <a href="#instagram" class="instagram mr-sm-3"><span class="fa fa-instagram"></span></a>
+            <a href="#linkedin" class="linkedin mr-sm-3"><span class="fa fa-linkedin"></span></a>
+            <a href="#youtube" class="youtube mr-sm-3"><span class="fa fa-youtube"></span></a>
+          </div>
+        </div>  
+        <div id="Useful Links">
+            <h3 class="font-weight-bold heading">Useful Links</h3>
+            <ul class="p-0">
+              <li><a href="index.html">Menu</a></li>
+              <li><a href="about.html">Stories</a></li>
+              <li><a href="services.html">Gallery</a></li>
+              <li><a href="blog.html">Reservations</a></li>
+              <li><a href="contact.html">Location</a></li>
+            </ul>
+          </div>
+        <div id="OpenHours">
+            <h3 class="font-weight-bold heading">Open Hours</h3>
+            <ul class="p-0">
+                <li><a href="index.html">Monday......................Closed</a></li>
+                <li><a href="about.html">Tue-Fri..............10am-12pm</a></li>
+                <li><a href="services.html">Sat-Sun...............8am-11pm</a></li>
+                <li><a href="blog.html">Holidays.............10am-12pm</a></li>
+            </ul>
+        </div>   
+        <div id="Contact Us">
+          <h3 class="font-weight-bold heading">Contact Us</h3>
+          <ul class="p-0">
+            <li><a href="" class="mx-0 my-0"><span class="fa fa-map-marker mr-2"></span>NamasteDaju 1st Floor, Chhaya Center, Kathmandu</a></li>
+            <li><a href="tel:+7-800-999-800"><span class="fa fa-phone mr-2"></span> +(21)-255-999-8888</a></li>
+            <li><a href="mailto:Agricfarm@mail.com" class="mail"><span class="fa fa-envelope mr-2"></span>NamasteDaju@mail.com</a></li>
+          </ul>
+        </div>  
+      </div> 
+  
+      <div class="container-fluid d-flex justify-content-center py-2" id="Copyright">
+        <p>Copyright ©2021 All rights reserved. Design by <a href="#">Gauri Shankar Sharma</a></p>
+      </div>
+
 
     <script>   
         var function_blue = function(){this.style.color="rgb(0, 0, 187)"};
@@ -434,13 +555,18 @@ show how much we care.”
         var function_white = function(){this.style.color="white"};
 
         var Header = document.getElementById("Header"); 
-        var About = document.getElementById("About");     
+        var About = document.getElementById("About");
+        var AUOC = document.getElementById("AUOC");
+        var Copyright = document.getElementById("Copyright"); 
         
         var header_nav_link = document.getElementsByClassName('header_nav_link');
         for(i=0; i<=5; i++){
             header_nav_link[i].onmouseover=function_blue;
             header_nav_link[i].onmouseout=function_black;
         }
+
+        AUOC.style.backgroundColor="black";
+        Copyright.style.backgroundColor="#111";
 
         document.getElementById("Sun").hidden=true;     
 
@@ -449,6 +575,8 @@ show how much we care.”
         {
             Header.style.backgroundColor="black";
             About.style.backgroundColor="black";
+            AUOC.style.backgroundColor="#111";
+            Copyright.style.backgroundColor="black";
 
             document.getElementById("navbar_brand_span").style.color="white";
             for(i=0; i<=5; i++)
@@ -459,7 +587,7 @@ show how much we care.”
             }
 
             document.getElementById("ADh1").style.color="white";
-            document.getElementById("ADpre").style.color="#d3d3d3";
+            document.getElementById("ADp").style.color="#adadad";
 
             document.getElementById("Moon").hidden=true;     
             document.getElementById("Sun").hidden=false;  
@@ -471,6 +599,8 @@ show how much we care.”
         {
             Header.style.backgroundColor="white";
             About.style.backgroundColor="white";
+            AUOC.style.backgroundColor="black";
+            Copyright.style.backgroundColor="#111";
 
             document.getElementById("navbar_brand_span").style.color="black";
             for(i=0; i<=5; i++)
@@ -481,7 +611,7 @@ show how much we care.”
             }
 
             document.getElementById("ADh1").style.color="black";
-            document.getElementById("ADpre").style.color="#696969";
+            document.getElementById("ADp").style.color="#696969";
 
             document.getElementById("Moon").hidden=false;     
             document.getElementById("Sun").hidden=true;  
