@@ -15,6 +15,22 @@
 </head>
 <body>
     <style>
+        /*====================TopScroll====================*/
+        #TopScroll
+        {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 2000;
+            font-size: 25px;
+            background-color: blue;
+            padding: 8px;
+            color: white;
+            border-radius: 10px;
+        }
+        /*====================TopScroll====================*/
+
         /*====================Header====================*/
         #Header
         {
@@ -179,7 +195,8 @@
         {
             height: 20px;
             width: 20px;
-            border: 4px dotted rgb(0, 0, 187);
+            background-color: blue;
+            border: 3px solid rgb(0, 0, 187);
             border-radius: 100%;
         }
         .carousel-item
@@ -266,6 +283,133 @@
         }
         /*====================About====================*/
 
+        /*====================Services====================*/
+        #Services h1
+        {
+            color: rgb(0, 0, 187);
+            font-family: cursive;
+        }
+        #Services .Ssp
+        {
+            font-size: 60px;
+        }
+        #Services .Sh3
+        {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #Services .Sp
+        {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            text-align: justify;
+        }
+        #Services a
+        {
+            color: white;
+            background-color: blue;
+            border-radius: 25px;
+        }
+        #Services a:hover
+        {
+            border: 3px solid rgb(0, 0, 187);
+            background-color: white;
+            color: rgb(0, 0, 187);
+        }
+        /*====================Services====================*/
+
+        /*====================Chef====================*/
+        #Chef h1
+        {
+            color: rgb(0, 0, 187);
+            font-family: cursive;
+        }
+        #Chef .Ch3
+        {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #Chef .Cp
+        {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+        #Chef .Icons
+        {
+            font-size: 20px;
+        }      
+        /*====================Chef====================*/
+
+        /*====================RNR====================*/
+        #RNR
+        {
+            background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ) ,url(a.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #RNR .Rsp
+        {
+            font-size: 35px;
+            color: White;
+            border: 2px solid white;
+            padding: 5px;
+        }  
+        #RNR .Rh1
+        {
+            color: blue;
+            font-family: cursive;
+        }
+        #RNR .Rp
+        {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }    
+        /*====================RNR====================*/
+
+        /*====================CustomerReview====================*/
+        #CustomerReview h1
+        {
+            color: rgb(0, 0, 187);
+            font-family: cursive;
+        }
+        #CustomerReview .carousel-indicators li
+        {
+            height: 5px;
+            width: 40px;
+            background-color: blue;
+            border: 2px solid blue;
+            border-radius: 20px;
+        }
+        #CustomerReview #Customers
+        {
+            border-radius: 25px;
+        }
+        #CustomerReview #Customers img
+        {
+            height: 150px;
+        }
+        #CustomerReview #Customers span
+        {
+            color: rgb(0, 0, 187);
+            background-color: white;
+            font-size: 20px;
+            height: 30px;
+            padding: 5px;
+            border-radius: 100%;
+            position: relative;
+            right: 40px;
+        }
+        #CustomerReview #Customers h3
+        {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #CustomerReview #Customers p
+        {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+        /*====================CustomerReview====================*/
+
         /*====================AUOC====================*/
         #AUOC .heading
         {
@@ -323,6 +467,9 @@
         /*====================Copyright====================*/
     </style>
 
+
+    
+    <span class="fa fa-angle-double-up font-weight-bold" id="TopScroll" onclick="ScrollUp()"></span>
     
     <div class="container-fluid d-flex flex-row justify-content-between p-0 m" id="Header">
         <div class="container">
@@ -348,7 +495,10 @@
                         </li>
                         <li class="nav-item mx-sm-1">
                           <a class="nav-link font-weight-bold header_nav_link" href="#">Reservation</a>
-                        </li>                        
+                        </li> 
+                        <li class="nav-item mx-sm-1">
+                            <a class="nav-link font-weight-bold header_nav_link" href="#">Catering</a>
+                        </li>                       
                         <li class="nav-item mx-sm-1">
                           <a class="nav-link font-weight-bold header_nav_link" href="#">Contact</a>
                         </li>            
@@ -398,7 +548,10 @@
                             </li>
                             <li class="nav-item mx-sm-1">
                               <a class="nav-link font-weight-bold header_nav_link" href="#">Reservation</a>
-                            </li>                        
+                            </li>     
+                            <li class="nav-item mx-sm-1">
+                                <a class="nav-link font-weight-bold header_nav_link" href="#">Catering</a>
+                            </li>                    
                             <li class="nav-item mx-sm-1">
                               <a class="nav-link font-weight-bold header_nav_link" href="#">Contact</a>
                             </li>            
@@ -481,11 +634,11 @@
           <p class="pr-4 mb-0">About Us</p>
           <h1 class="font-weight-bold mb-3" id="ADh1">Best Cultural And Traditional Restaurant of Nepal</h1>
           <p class="mb-sm-4" id="ADp">
-            “NamasteDaju restaurant is nepal’s no.1 traditional and cultural resataurant form 1990 to till now. Everything we do is about you.
+            “NamasteDaju restaurant is nepal’s no.1 traditional and cultural restaurant form 1990 to till now. Everything we do is about you.
             From chefs who create exciting new flavors, to crew members who know exactly how you want your drink – we prioritize what you need
             to get you on your way. We strive to keep you at your best, and we remain loyal to you, your tastes and your time. That’s what Nepali
             runs on. Do right and far exceed expectations daily. We do the right thing and lead by putting people first. Each and every connection
-            with our team, guests and shareholders is ouropportunity to create an experience that FEEDs – Far Exceeds Expectations Daily – and
+            with our team, guests and shareholders is our opportunity to create an experience that FEEDs – Far Exceeds Expectations Daily – and
             show how much we care.”
           </p>
           <a href="#" class="btn font-weight-bold px-5 py-2" id="row1_btn">View Our Stories</a>
@@ -493,9 +646,302 @@
       </div>
     </div>
 
-    <div class="container-fluid d-sm-flex justify-content-between px-sm-5 py-5" id="Services">
+    <div class="container-fluid d-sm-flex flex-column px-sm-5 py-5" id="Services">
+        <div class="container d-sm-flex justify-content-center">
+            <h1>Our Best Services</h1>
+        </div>
+        <div class="container-fluid d-lg-flex flex-row py-sm-5">
+            <div class="container">
+                <div class="container d-sm-flex justify-content-center">
+                    <span class="fa fa-user Ssp mb-sm-3"></span>                    
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <h3 class="font-weight-bold Sh3">Best Chef</h3>                    
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <p class="Sp">We provide best chefs from all around the world for our customer flavors and taste.</p>
+                </div>
+            </div>                
+            <div class="container">
+                <div class="container d-sm-flex justify-content-center">
+                    <span class="fa fa-cutlery Ssp mb-sm-3"></span>                    
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <h3 class="font-weight-bold Sh3">Healthy Food</h3>                    
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <p class="Sp">Customer's health is our first priority. So we serves best quality and healthy food</p>
+                </div>
+            </div>               
+            <div class="container">
+                <div class="container d-sm-flex justify-content-center">
+                    <span class="fa fa-motorcycle Ssp mb-sm-3"></span>                    
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <h3 class="font-weight-bold Sh3">Fastest Delivery</h3>                    
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <p class="Sp">Customers within the city can get their ordered food within 20 minutes.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container d-sm-flex justify-content-center">
+                    <span class="fa fa-cutlery Ssp mb-sm-3"></span>                    
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <h3 class="font-weight-bold Sh3">Reservation</h3>                    
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <p class="Sp">Customers can book tables for their private dinner and happy hours</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container d-sm-flex justify-content-center">
+                    <span class="fa fa-birthday-cake Ssp mb-sm-3"></span>                    
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <h3 class="font-weight-bold Sh3">Catering</h3>                    
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <p class="Sp">Customers can now deal with the restaurant for their important events.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container d-sm-flex justify-content-center">
+            <a href="#" class="btn font-weight-bold px-5 py-2" id="row1_btn">Make a Reservation</a>
+        </div>
+    </div>   
+    
+    <div class="container-fluid d-lg-flex flex-lg-column justify-content-around px-lg-5 py-5" id="Chef">
+        <div class="container d-sm-flex justify-content-center">
+            <h1 >Our Master Chef</h1>
+        </div>
+        <div class="container d-sm-flex flex-lg-row justify-content-center py-sm-5">
+            <div class="pr-sm-4">
+                <img class="img-fluid rounded" src="chef-4.jpg"/>
+                <h3 class="font-weight-bold Ch3">Santosh Shah</h3>
+                <p class="Cp">Restaurant Owner</p>
+                <div class="fa_icon mt-sm-2">
+                    <a href="#facebook" class="facebook mr-sm-3  Icons"><span class="fa fa-facebook"></span></a>
+                    <a href="#twitter" class="twitter mr-sm-3  Icons"><span class="fa fa-twitter"></span></a>
+                    <a href="#instagram" class="instagram mr-sm-3  Icons"><span class="fa fa-instagram"></span></a>
+                    <a href="#linkedin" class="linkedin mr-sm-3 Icons"><span class="fa fa-linkedin"></span></a>
+                    <a href="#youtube" class="youtube mr-sm-3 Icons"><span class="fa fa-youtube"></span></a>
+                </div>
+            </div>                
+            <div class="pr-sm-4">
+                <img class="img-fluid rounded" src="chef-2.jpg"/>
+                <h3 class="font-weight-bold Ch3">Rina Majhi</h3>
+                <p class="Cp">Head Chef</p>
+                <div class="fa_icon mt-sm-2">
+                    <a href="#facebook" class="facebook mr-sm-3  Icons"><span class="fa fa-facebook"></span></a>
+                    <a href="#twitter" class="twitter mr-sm-3 Icons"><span class="fa fa-twitter"></span></a>
+                    <a href="#instagram" class="instagram mr-sm-3 Icons"><span class="fa fa-instagram"></span></a>
+                    <a href="#linkedin" class="linkedin mr-sm-3 Icons"><span class="fa fa-linkedin"></span></a>
+                    <a href="#youtube" class="youtube mr-sm-3 Icons"><span class="fa fa-youtube"></span></a>
+                </div>
+            </div>               
+            <div class="pr-sm-4">
+                <img class="img-fluid rounded" src="chef-3.jpg"/>
+                <h3 class="font-weight-bold Ch3">Mahesh Dhakal</h3>
+                <p class="Cp">Chef Cook</p>
+                <div class="fa_icon mt-sm-2">
+                    <a href="#facebook" class="facebook mr-sm-3 Icons"><span class="fa fa-facebook"></span></a>
+                    <a href="#twitter" class="twitter mr-sm-3 Icons"><span class="fa fa-twitter"></span></a>
+                    <a href="#instagram" class="instagram mr-sm-3 Icons"><span class="fa fa-instagram"></span></a>
+                    <a href="#linkedin" class="linkedin mr-sm-3 Icons"><span class="fa fa-linkedin"></span></a>
+                    <a href="#youtube" class="youtube mr-sm-3 Icons"><span class="fa fa-youtube"></span></a>
+                </div>
+            </div>
+            <div>
+                <img class="img-fluid rounded" src="chef-1.jpg"/>
+                <h3 class="font-weight-bold Ch3">Krishna Shretha</h3>
+                <p class="Cp">Chef Cook</p>
+                <div class="fa_icon mt-sm-2">
+                    <a href="#facebook" class="facebook mr-sm-3 Icons"><span class="fa fa-facebook"></span></a>
+                    <a href="#twitter" class="twitter mr-sm-3 Icons"><span class="fa fa-twitter"></span></a>
+                    <a href="#instagram" class="instagram mr-sm-3 Icons"><span class="fa fa-instagram"></span></a>
+                    <a href="#linkedin" class="linkedin mr-sm-3 Icons"><span class="fa fa-linkedin"></span></a>
+                    <a href="#youtube" class="youtube mr-sm-3 Icons"><span class="fa fa-youtube"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </div>    
+    <div class="container-fluid py-5" id="RNR">
+        <div class="container d-lg-flex flex-row ">
+          <div class="container">
+            <div class="container d-sm-flex justify-content-center mb-sm-3">    
+                <span class="fa fa-home Rsp"></span>                 
+            </div>
+            <div class="container d-sm-flex justify-content-center">   
+                <h1 class="Rh1" id="YE">0</h1>                
+            </div>
+            <div class="container d-sm-flex justify-content-center">    
+                <p class="Rp">Years of Experience</p>               
+            </div>
+          </div>
+          <div class="container">
+            <div class="container d-sm-flex justify-content-center mb-sm-3">     
+                <span class="fa fa-cutlery Rsp"></span>                
+            </div>
+            <div class="container d-sm-flex justify-content-center">   
+                <h1 class="Rh1" id="D">0</h1>                
+            </div>
+            <div class="container d-sm-flex justify-content-center"> 
+                <p class="Rp">Dishes</p>                  
+            </div>
+          </div>
+          <div class="container">
+            <div class="container d-sm-flex justify-content-center mb-sm-3">     
+                <span class="fa fa-smile-o Rsp"></span>                
+            </div>
+            <div class="container d-sm-flex justify-content-center">   
+                <h1 class="Rh1" id="HC">0</h1>                
+            </div>
+            <div class="container d-sm-flex justify-content-center">   
+                <p class="Rp">Happy Customers</p>                
+            </div>
+          </div>
+          <div class="container">
+            <div class="container d-sm-flex justify-content-center mb-sm-3">    
+                <span class="fa fa-user Rsp"></span>                 
+            </div>
+            <div class="container d-sm-flex justify-content-center">  
+                <h1 class="Rh1" id="S">0</h1>                 
+            </div>
+            <div class="container d-sm-flex justify-content-center">  
+                <p class="Rp">Staffs</p>                 
+            </div>
+          </div>
+          <div class="container">
+            <div class="container d-sm-flex justify-content-center mb-sm-3">   
+                <span class="fa fa-trophy Rsp"></span>
+            </div>
+            <div class="container d-sm-flex justify-content-center">  
+                <h1 class="Rh1" id="NA">0</h1>                 
+            </div>
+            <div class="container d-sm-flex justify-content-center"> 
+                <p class="Rp">Number of Awards</p>                  
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="carousel slide pb-5" data-ride="carousel" data-interval="5000" id="CustomerReview">
+        <div class="contianer d-flex justify-content-center py-sm-5">
+            <h1>Happy Customers Say</h1>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#CustomerReview" data-slide-to="0" class="active"></li>
+          <li data-target="#CustomerReview" data-slide-to="1"></li>
+          <li data-target="#CustomerReview" data-slide-to="2"></li>
+        </ol>
+        <div class="container carousel-inner mb-sm-5 py-sm-4" id="Customers">
+          <div class="carousel-item active" id="">
+            <div class="container d-flex flex-lg-row justify-content-around">
+                <div>
+                    <div class="container d-flex justify-content-center">
+                        <img class="img-fluid rounded-circle" src="C1.jpg" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">a</p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">Binod Chaudhary</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="container d-flex justify-content-center">
+                        <img class="img-fluid rounded-circle" src="C2.png" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">a</p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">madan Bhandary</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item" id="">
+            <div class="container d-flex flex-lg-row justify-content-around">
+                <div>
+                    <div class="container d-flex  justify-content-center">
+                        <img class="img-fluid rounded-circle" src="C3.jpg" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">a</p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">Samjhana Shah</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="container d-flex justify-content-center">
+                        <img class="img-fluid rounded-circle" src="C4.png" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">a</p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">Keshab Bhattarai</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item" id="">
+            <div class="container d-flex flex-lg-row justify-content-around">
+                <div>
+                    <div class="container d-flex justify-content-center">
+                        <img class="img-fluid rounded-circle" src="C5.jpg" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">a</p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">Abhishek Adhikari</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="container d-flex justify-content-center">
+                        <img class="img-fluid rounded-circle" src="C6.jpg" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">a</p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">Mina Limbu</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
 
     <div class="container-fluid d-lg-flex flex-lg-row justify-content-around px-lg-5 py-5" id="AUOC">  
         <div id="About">
@@ -558,15 +1004,55 @@
         var About = document.getElementById("About");
         var AUOC = document.getElementById("AUOC");
         var Copyright = document.getElementById("Copyright"); 
+        var Services = document.getElementById("Services");
+        var Chef = document.getElementById("Chef");
+        var CustomerReview = document.getElementById("CustomerReview");
+        var Customers = document.getElementById("Customers");
         
         var header_nav_link = document.getElementsByClassName('header_nav_link');
-        for(i=0; i<=5; i++){
+        for(i=0; i<=6; i++){
             header_nav_link[i].onmouseover=function_blue;
             header_nav_link[i].onmouseout=function_black;
         }
 
+        var Ssp = document.getElementsByClassName('Ssp');
+        var Sh3 = document.getElementsByClassName('Sh3');
+        var Sp = document.getElementsByClassName('Sp');
+        for(i=0; i<=4; i++)
+        {
+            Ssp[i].style.color="black";
+            Sh3[i].style.color="black";
+            Sp[i].style.color="#696969";
+        }
+
+        var Ch3 = document.getElementsByClassName('Ch3');
+        var Cp = document.getElementsByClassName('Cp');
+        var Icons = document.getElementsByClassName('Icons');
+        for(i=0; i<=3; i++)
+        {
+            Ch3[i].style.color="black";
+            Cp[i].style.color="#696969";
+        }
+        for(i=0; i<=15; i++)
+        {
+            Icons[i].style.color="rgb(0, 0, 187)";
+        }        
+        
+        var Crp = document.getElementsByClassName('Crp');
+        var Crh3 = document.getElementsByClassName('Crh3');
+        for(i=0; i<=11; i++)
+        {
+            Crp[i].style.color="#696969";
+        }
+        for(i=0; i<=5; i++)
+        {
+            Crh3[i].style.color="black";
+        }  
+
         AUOC.style.backgroundColor="black";
         Copyright.style.backgroundColor="#111";
+        Services.style.backgroundColor="#F4F6F6";
+        Customers.style.backgroundColor="#F4F6F6";
 
         document.getElementById("Sun").hidden=true;     
 
@@ -577,14 +1063,40 @@
             About.style.backgroundColor="black";
             AUOC.style.backgroundColor="#111";
             Copyright.style.backgroundColor="black";
+            Services.style.backgroundColor="#111";
+            Chef.style.backgroundColor="black";
+            CustomerReview.style.backgroundColor="black";
+            Customers.style.backgroundColor="#111";
 
             document.getElementById("navbar_brand_span").style.color="white";
-            for(i=0; i<=5; i++)
+            for(i=0; i<=6; i++)
             {
             header_nav_link[i].style.color="white";
             header_nav_link[i].onmouseover=function_blue;
             header_nav_link[i].onmouseout=function_white;
             }
+
+            for(i=0; i<=4; i++)
+            {
+            Ssp[i].style.color="white";
+            Sh3[i].style.color="white";
+            Sp[i].style.color="#adadad";
+            }
+
+            for(i=0; i<=3; i++)
+            {
+            Ch3[i].style.color="white";
+            Cp[i].style.color="#adadad";
+            }
+
+            for(i=0; i<=11; i++)
+            {
+            Crp[i].style.color="#adadad";
+            }
+            for(i=0; i<=5; i++)
+            {
+            Crh3[i].style.color="white";
+            } 
 
             document.getElementById("ADh1").style.color="white";
             document.getElementById("ADp").style.color="#adadad";
@@ -601,14 +1113,40 @@
             About.style.backgroundColor="white";
             AUOC.style.backgroundColor="black";
             Copyright.style.backgroundColor="#111";
+            Services.style.backgroundColor="#F4F6F6";
+            Chef.style.backgroundColor="white";
+            CustomerReview.style.backgroundColor="white";
+            Customers.style.backgroundColor="#F4F6F6";
 
             document.getElementById("navbar_brand_span").style.color="black";
-            for(i=0; i<=5; i++)
+            for(i=0; i<=6; i++)
             {
             header_nav_link[i].style.color="black";
             header_nav_link[i].onmouseover=function_blue;
             header_nav_link[i].onmouseout=function_black;
             }
+
+            for(i=0; i<=4; i++)
+            {
+            Ssp[i].style.color="black";
+            Sh3[i].style.color="black";
+            Sp[i].style.color="#696969";
+            }
+
+            for(i=0; i<=3; i++)
+            {
+            Ch3[i].style.color="black";
+            Cp[i].style.color="#696969";
+            }            
+
+            for(i=0; i<=11; i++)
+            {
+            Crp[i].style.color="#696969";
+            }
+            for(i=0; i<=5; i++)
+            {
+            Crh3[i].style.color="black";
+            } 
 
             document.getElementById("ADh1").style.color="black";
             document.getElementById("ADp").style.color="#696969";
@@ -620,11 +1158,28 @@
         }
         /*====================Theme Functions====================*/
 
+        /*====================TopScroll Functions====================*/
+        function ScrollUp() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        var myScroll = function() {
+            var y=window.scrollY;
+            if (y > 150) {
+                document.getElementById("TopScroll").style.display="block";
+            } 
+            else
+            {
+                document.getElementById("TopScroll").style.display="none";
+            }
+        };
+        window.addEventListener("scroll", myScroll);
+        /*====================TopScroll Functions====================*/  
+
         /*====================Navbar Functions====================*/
         var bool = true;
         var myScrollFunc = function() {
             var y=window.scrollY;
-            console.log(y);
             if (y > 240 && bool==true) {
                 bool = false;
                 Header.style.zIndex="2000";
@@ -635,7 +1190,57 @@
             }
         };
         window.addEventListener("scroll", myScrollFunc);
-        /*====================Navbar Functions====================*/
+        /*====================Navbar Functions====================*/  
+
+        /*====================RNR Functions====================*/
+        function animateValue(id, start, end, duration) {
+            // assumes integer values for start and end
+            
+            var obj = document.getElementById(id);
+            var range = end - start;
+            // no timer shorter than 50ms (not really visible any way)
+            var minTimer = 50;
+            // calc step time to show all interediate values
+            var stepTime = Math.abs(Math.floor(duration / range));
+            
+            // never go below minTimer
+            stepTime = Math.max(stepTime, minTimer);
+            
+            // get current time and calculate desired end time
+            var startTime = new Date().getTime();
+            var endTime = startTime + duration;
+            var timer;
+        
+            function run() {
+                var now = new Date().getTime();
+                var remaining = Math.max((endTime - now) / duration, 0);
+                var value = Math.round(end - (remaining * range));
+                obj.innerHTML = value;
+                if (value == end) {
+                    clearInterval(timer);
+                    }
+                }            
+            timer = setInterval(run, stepTime);
+            run();
+        }
+
+        var bol = true;
+        var ScrollFunc = function() {
+            var y=window.scrollY;
+            if (y > 1830 && bol==true) {
+            bol = false;
+            animateValue("YE", 0, 31, 2000);
+            animateValue("D", 0, 100, 2000);
+            animateValue("HC", 0, 10885, 2000);
+            animateValue("S", 0, 105, 2000);
+            animateValue("NA", 0, 85, 2000);
+            } 
+            if(y<1830){
+            bol = true;
+            }
+        };
+        window.addEventListener("scroll", ScrollFunc);
+        /*====================RNR Functions====================*/
     </script>
 
     <script
