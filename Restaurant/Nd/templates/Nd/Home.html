@@ -1,10 +1,510 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'Main.html' %}
 
-</body>
-</html>
+{% load static %}
+
+{% block title_link %}
+    <title>NamasteDaju Restaurant Home</title>
+{% endblock %}
+
+{% block css_link %}
+    <link href="{% static 'css/Home.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    <div id="Slider" class="carousel slide" data-ride="carousel" data-interval="5000">
+        <div class="container-fluid py-4"  id="nav">
+            <div class="container" id="navbar">
+                <nav class="navbar navbar-expand-lg">
+                    <h1><a class="navbar-brand font-weight-bold" href="#">Namaste<span id="navbar_brand_span">Daju</span></a></h1>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item mx-sm-1">
+                              <a class="nav-link font-weight-bold {{home}} header_nav_link" href="/Nd/home">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item mx-sm-1">
+                              <a class="nav-link font-weight-bold {{menu}} header_nav_link" href="/Nd/menu">Menu</a>
+                            </li>
+                            <li class="nav-item mx-sm-1">
+                                <a class="nav-link font-weight-bold header_nav_link" href="#">Gallery</a>
+                              </li>
+                            <li class="nav-item mx-sm-1">
+                              <a class="nav-link font-weight-bold header_nav_link" href="#">Stories</a>
+                            </li>
+                            <li class="nav-item mx-sm-1">
+                              <a class="nav-link font-weight-bold header_nav_link" href="#">Reservation</a>
+                            </li>
+                            <li class="nav-item mx-sm-1">
+                                <a class="nav-link font-weight-bold header_nav_link" href="#">Catering</a>
+                            </li>
+                            <li class="nav-item mx-sm-1">
+                              <a class="nav-link font-weight-bold header_nav_link" href="#">Contact</a>
+                            </li>
+                          </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#Slider" data-slide-to="0" class="active"></li>
+          <li data-target="#Slider" data-slide-to="1"></li>
+          <li data-target="#Slider" data-slide-to="2"></li>
+          <li data-target="#Slider" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner" id="slides">
+          <div class="carousel-item active" id="first">
+            <div class="container d-flex justify-content-center">
+                <p class="font-weight-bold px-sm-5">NamateDaju Restaurant</p>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h1>Best Quality Food</h1>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h4>---------------------------------- For You ----------------------------------</h4>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <a href="#" class="btn btn-style font-weight-bold mt-sm-5 px-sm-5" >View Menu</a>
+            </div>
+          </div>
+          <div class="carousel-item" id="second">
+            <div class="container d-flex justify-content-center">
+                <p class="font-weight-bold px-sm-5">NamateDaju Restaurant</p>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h1>Cooking Since</h1>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h4>---------------------------------- 1990 ----------------------------------</h4>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <a href="#" class="btn btn-style font-weight-bold mt-sm-5 px-sm-5" >View Menu</a>
+            </div>
+          </div>
+          <div class="carousel-item" id="third">
+            <div class="container d-flex justify-content-center">
+                <p class="font-weight-bold px-sm-5">NamateDaju Restaurant</p>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h1>Discover the flavors</h1>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h4>---------------------------------- Of Your Food ----------------------------------</h4>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <a href="#" class="btn btn-style font-weight-bold mt-sm-5 px-sm-5" >View Menu</a>
+            </div>
+          </div>
+          <div class="carousel-item" id="fourth">
+            <div class="container d-flex justify-content-center">
+                <p class="font-weight-bold px-sm-5">NamateDaju Restaurant</p>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h1>Fresh, Healthy Food</h1>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <h4>---------------------------------- For Your Health ----------------------------------</h4>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <a href="#" class="btn btn-style font-weight-bold mt-sm-5 px-sm-5" >View Menu</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+      <div class="container-fluid d-lg-flex justify-content-between px-sm-5" id="About">
+        <div class="mx-sm-5 mt-sm-2" id="Image">
+            <img class="img-fluid rounded" src='{% static "images/home/restaurant.jpg" %}'/>
+        </div>
+        <div class="container" id="Description">
+          <p class="pr-4 mb-0">About Us</p>
+          <h1 class="font-weight-bold mb-3" id="ADh1">Best Cultural And Traditional Restaurant of Nepal</h1>
+          <p class="mb-sm-4" id="ADp">
+            “NamasteDaju restaurant is nepal’s no.1 traditional and cultural restaurant form 1990 to till now. Everything we do is about you.
+            From chefs who create exciting new flavors, to crew members who know exactly how you want your drink – we prioritize what you need
+            to get you on your way. We strive to keep you at your best, and we remain loyal to you, your tastes and your time. That’s what Nepali
+            runs on. Do right and far exceed expectations daily. We do the right thing and lead by putting people first. Each and every connection
+            with our team, guests and shareholders is our opportunity to create an experience that FEEDs – Far Exceeds Expectations Daily – and
+            show how much we care.”
+          </p>
+          <a href="#" class="btn font-weight-bold px-5 py-2">View Our Stories</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid d-sm-flex flex-column px-sm-5" id="Services">
+        <div class="container d-sm-flex justify-content-center py-sm-5">
+            <h1>Our Best Services</h1>
+        </div>
+        <div class="container-fluid d-lg-flex flex-row py-sm-5">
+            <div class="container">
+                <div class="container d-sm-flex justify-content-center">
+                    <span class="fas fa-user Ssp mb-sm-3"></span>
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <h3 class="font-weight-bold Sh3">Best Chef</h3>
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <p class="Sp">We provide best chefs from all around the world for our customer flavors and taste.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container d-sm-flex justify-content-center">
+                    <span class="fa fa-utensils Ssp mb-sm-3"></span>
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <h3 class="font-weight-bold Sh3">Healthy Food</h3>
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <p class="Sp">Customer's health is our first priority. So we serves best quality and healthy food</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container d-sm-flex justify-content-center">
+                    <span class="fas fa-truck Ssp mb-sm-3"></span>
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <h3 class="font-weight-bold Sh3">Fastest Delivery</h3>
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <p class="Sp">Customers within the city can get their ordered food within 20 minutes.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container d-sm-flex justify-content-center">
+                    <span class="fa fa-utensils Ssp mb-sm-3"></span>
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <h3 class="font-weight-bold Sh3">Reservation</h3>
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <p class="Sp">Customers can book tables for their private dinner and happy hours</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container d-sm-flex justify-content-center">
+                    <span class="fa fa-birthday-cake Ssp mb-sm-3"></span>
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <h3 class="font-weight-bold Sh3">Catering</h3>
+                </div>
+                <div class="container d-sm-flex justify-content-center">
+                    <p class="Sp">Customers can now deal with the restaurant for their important events.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container d-sm-flex justify-content-center">
+            <a href="#" class="btn font-weight-bold px-5 py-2" id="row1_btn">Make a Reservation</a>
+        </div>
+    </div>
+
+    <div class="container-fluid d-lg-flex flex-lg-column justify-content-around px-lg-5 py-5" id="Chef">
+        <div class="container d-sm-flex justify-content-center py-sm-5">
+            <h1 >Our Master Chef</h1>
+        </div>
+        <div class="container d-sm-flex flex-lg-row justify-content-center py-sm-5">
+            <div class="pr-sm-4">
+                <img class="img-fluid rounded" src="{% static 'images/home/chef-4.jpg'%}"/>
+                <h3 class="font-weight-bold Ch3">Santosh Shah</h3>
+                <p class="Cp">Restaurant Owner</p>
+                <div class="fa_icon mt-sm-2">
+                    <a href="#facebook" class="facebook mr-sm-3  Icons"><span class="fab fa-facebook-f"></span></a>
+                    <a href="#twitter" class="twitter mr-sm-3  Icons"><span class="fab fa-twitter"></span></a>
+                    <a href="#instagram" class="instagram mr-sm-3  Icons"><span class="fab fa-instagram"></span></a>
+                    <a href="#linkedin" class="linkedin mr-sm-3 Icons"><span class="fab fa-linkedin"></span></a>
+                    <a href="#youtube" class="youtube mr-sm-3 Icons"><span class="fab fa-youtube"></span></a>
+                </div>
+            </div>
+            <div class="pr-sm-4">
+                <img class="img-fluid rounded" src="{% static 'images/home/chef-2.jpg'%}"/>
+                <h3 class="font-weight-bold Ch3">Rina Majhi</h3>
+                <p class="Cp">Head Chef</p>
+                <div class="fa_icon mt-sm-2">
+                    <a href="#facebook" class="facebook mr-sm-3  Icons"><span class="fab fa-facebook-f"></span></a>
+                    <a href="#twitter" class="twitter mr-sm-3 Icons"><span class="fab fa-twitter"></span></a>
+                    <a href="#instagram" class="instagram mr-sm-3 Icons"><span class="fab fa-instagram"></span></a>
+                    <a href="#linkedin" class="linkedin mr-sm-3 Icons"><span class="fab fa-linkedin"></span></a>
+                    <a href="#youtube" class="youtube mr-sm-3 Icons"><span class="fab fa-youtube"></span></a>
+                </div>
+            </div>
+            <div class="pr-sm-4">
+                <img class="img-fluid rounded" src="{% static 'images/home/chef-3.jpg'%}"/>
+                <h3 class="font-weight-bold Ch3">Mahesh Dhakal</h3>
+                <p class="Cp">Chef Cook</p>
+                <div class="fa_icon mt-sm-2">
+                    <a href="#facebook" class="facebook mr-sm-3 Icons"><span class="fab fa-facebook-f"></span></a>
+                    <a href="#twitter" class="twitter mr-sm-3 Icons"><span class="fab fa-twitter"></span></a>
+                    <a href="#instagram" class="instagram mr-sm-3 Icons"><span class="fab fa-instagram"></span></a>
+                    <a href="#linkedin" class="linkedin mr-sm-3 Icons"><span class="fab fa-linkedin"></span></a>
+                    <a href="#youtube" class="youtube mr-sm-3 Icons"><span class="fab fa-youtube"></span></a>
+                </div>
+            </div>
+            <div>
+                <img class="img-fluid rounded" src="{% static 'images/home/chef-1.jpg'%}"/>
+                <h3 class="font-weight-bold Ch3">Krishna Shretha</h3>
+                <p class="Cp">Chef Cook</p>
+                <div class="fa_icon mt-sm-2">
+                    <a href="#facebook" class="facebook mr-sm-3 Icons"><span class="fab fa-facebook-f"></span></a>
+                    <a href="#twitter" class="twitter mr-sm-3 Icons"><span class="fab fa-twitter"></span></a>
+                    <a href="#instagram" class="instagram mr-sm-3 Icons"><span class="fab fa-instagram"></span></a>
+                    <a href="#linkedin" class="linkedin mr-sm-3 Icons"><span class="fab fa-linkedin"></span></a>
+                    <a href="#youtube" class="youtube mr-sm-3 Icons"><span class="fab fa-youtube"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5" id="RNR">
+        <div class="container d-lg-flex flex-row py-5">
+          <div class="container">
+            <div class="container d-sm-flex justify-content-center mb-sm-4">
+                <span class="fa fa-home Rsp"></span>
+            </div>
+            <div class="container d-sm-flex justify-content-center">
+                <h1 class="Rh1" id="YE">0</h1>
+            </div>
+            <div class="container d-sm-flex justify-content-center">
+                <p class="Rp">Years of Experience</p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="container d-sm-flex justify-content-center mb-sm-4">
+                <span class="fa fa-utensils Rsp"></span>
+            </div>
+            <div class="container d-sm-flex justify-content-center">
+                <h1 class="Rh1" id="D">0</h1>
+            </div>
+            <div class="container d-sm-flex justify-content-center">
+                <p class="Rp">Dishes</p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="container d-sm-flex justify-content-center mb-sm-4">
+                <span class="fas fa-smile Rsp"></span>
+            </div>
+            <div class="container d-sm-flex justify-content-center">
+                <h1 class="Rh1" id="HC">0</h1>
+            </div>
+            <div class="container d-sm-flex justify-content-center">
+                <p class="Rp">Happy Customers</p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="container d-sm-flex justify-content-center mb-sm-4">
+                <span class="fa fa-user Rsp"></span>
+            </div>
+            <div class="container d-sm-flex justify-content-center">
+                <h1 class="Rh1" id="S">0</h1>
+            </div>
+            <div class="container d-sm-flex justify-content-center">
+                <p class="Rp">Staffs</p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="container d-sm-flex justify-content-center mb-sm-4">
+                <span class="fas fa-award Rsp"></span>
+            </div>
+            <div class="container d-sm-flex justify-content-center">
+                <h1 class="Rh1" id="NA">0</h1>
+            </div>
+            <div class="container d-sm-flex justify-content-center">
+                <p class="Rp">Number of Awards</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="carousel slide" data-ride="carousel" data-interval="5000" id="CustomerReview">
+        <div class="contianer d-flex justify-content-center py-sm-5">
+            <h1>Happy Customers Say</h1>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#CustomerReview" data-slide-to="0" class="active"></li>
+          <li data-target="#CustomerReview" data-slide-to="1"></li>
+          <li data-target="#CustomerReview" data-slide-to="2"></li>
+        </ol>
+        <div class="container carousel-inner mb-sm-5 py-sm-4" id="Customers">
+          <div class="carousel-item active">
+            <div class="container d-flex flex-lg-row justify-content-around">
+                <div>
+                    <div class="container d-flex justify-content-center">
+                        <img class="img-fluid rounded-circle" src="{% static 'images/home/C1.jpg' %}" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">
+                            The most amazing food ever! And </br>
+                            also the staff is so nice to everyone. </br>
+                            I highly recommend buying food from here. </br>
+                        </p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">Binod Chaudhary</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="container d-flex justify-content-center">
+                        <img class="img-fluid rounded-circle" src="{% static 'images/home/C2.png' %}" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">
+                            The food is excellent, generous portions </br>
+                            and great prices. The service was fast and friendly. </br>
+                        </p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">madan Bhandary</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item" id="">
+            <div class="container d-flex flex-lg-row justify-content-around">
+                <div>
+                    <div class="container d-flex  justify-content-center">
+                        <img class="img-fluid rounded-circle" src="{% static 'images/home/C3.jpg' %}" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">
+                            I had breakfast there this one time. </br>
+                            All were well beyond my expectations. </br>
+                            Everything is so fresh. </br>
+                            Best clam chowder I have ever had.
+                        </p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">Samjhana Shah</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="container d-flex justify-content-center">
+                        <img class="img-fluid rounded-circle" src="{% static 'images/home/C4.jpg' %}" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">
+                            Best clam chowder I ever had. </br>
+                            Southwest Salad was great. </br>
+                            Homemade dinner rolls. The staff was so friendly!
+                        </p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">Keshab Bhattarai</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container d-flex flex-lg-row justify-content-around">
+                <div>
+                    <div class="container d-flex justify-content-center">
+                        <img class="img-fluid rounded-circle" src="{% static 'images/home/C5.png' %}" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">
+                            Huge portions. Amazing food. Superb service.
+                        </p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">Abhishek Adhikari</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="container d-flex justify-content-center">
+                        <img class="img-fluid rounded-circle" src="{% static 'images/home/C6.jpg' %}" alt="abc"/>
+                        <span class="fa fa-quote-left"></span>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">
+                            We had a delicious breakfast. </br>
+                            Great service and even got a </br>
+                            morning hello from the owner.
+                        </p>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <h3 class="Crh3">Manisha Koirala</h3>
+                    </div>
+                    <div class="container d-sm-flex justify-content-center">
+                        <p class="Crp">Customer</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="container-fluid d-lg-flex flex-lg-row justify-content-around px-lg-5" id="AUOC">
+        <div id="About1">
+          <h3 class="font-weight-bold heading">NamasteDaju restaurant</h3>
+          <p>
+            Keep in touch with us. <br/>
+            Be updated with our menus, <br/>
+            services, taste and flavors <br/>
+            of our food. Follow us in <br/>
+            the social medias.
+          </p>
+          <div class="fa_icon mt-4" id="Icons">
+            <a href="#facebook" class="facebook mr-sm-3"><span class="fab fa-facebook-f"></span></a>
+            <a href="#twitter" class="twitter mr-sm-3"><span class="fab fa-twitter"></span></a>
+            <a href="#instagram" class="instagram mr-sm-3"><span class="fab fa-instagram"></span></a>
+            <a href="#linkedin" class="linkedin mr-sm-3"><span class="fab fa-linkedin"></span></a>
+            <a href="#youtube" class="youtube mr-sm-3"><span class="fab fa-youtube"></span></a>
+          </div>
+        </div>
+        <div id="Useful Links">
+            <h3 class="font-weight-bold heading">Useful Links</h3>
+            <ul class="p-0">
+              <li><a href="index.html">Menu</a></li>
+              <li><a href="about.html">Stories</a></li>
+              <li><a href="services.html">Gallery</a></li>
+              <li><a href="blog.html">Reservations</a></li>
+              <li><a href="contact.html">Location</a></li>
+            </ul>
+          </div>
+        <div id="OpenHours">
+            <h3 class="font-weight-bold heading">Open Hours</h3>
+            <ul class="p-0">
+                <li><a href="index.html">Monday......................Closed</a></li>
+                <li><a href="about.html">Tue-Fri..............10am-12pm</a></li>
+                <li><a href="services.html">Sat-Sun...............8am-11pm</a></li>
+                <li><a href="blog.html">Holidays.............10am-12pm</a></li>
+            </ul>
+        </div>
+        <div id="Contact Us">
+          <h3 class="font-weight-bold heading">Contact Us</h3>
+          <ul class="p-0">
+            <li><a href="" class="mx-0 my-0"><span class="fas fa-map-marker-alt mr-2"></span>NamasteDaju 1st Floor, Chhaya Center, Kathmandu</a></li>
+            <li><a href="tel:+7-800-999-800"><span class="fa fa-phone mr-2"></span> +(21)-255-999-8888</a></li>
+            <li><a href="mailto:Agricfarm@mail.com" class="mail"><span class="fa fa-envelope mr-2"></span>NamasteDaju@mail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container-fluid d-flex justify-content-center py-2" id="Copyright">
+        <p>Copyright ©2021 All rights reserved. Design by <a href="#">Gauri Shankar Sharma</a></p>
+      </div>
+{% endblock %}
+
+{% block script_link%}
+        <script src="{% static 'js/Home.js' %}"></script>
+{% endblock %}

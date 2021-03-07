@@ -1,0 +1,395 @@
+/*====================Carousel====================*/
+#Slider
+{
+    position: relative;
+}
+#Slider #nav
+{
+    position: absolute;
+    z-index: 2000;
+}
+#Slider #nav #navbar
+{
+    background-image: linear-gradient( rgba(0, 14, 209, 0.2), rgba(0, 14, 209, 0.2) );
+    border-radius: 15px;
+}
+#Slider .navbar-brand
+{
+    font-size: 25px;
+    color:  rgb(0, 0, 187);
+    font-family: cursive;
+}
+#Slider .navbar-brand:hover
+{
+    color:  rgb(0, 0, 187);
+}
+#Slider nav h1 span
+{
+    color: white;
+}
+#Slider .nav-link
+{
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+    position:relative;
+}
+#Slider .nav-link:hover
+{
+    color:rgb(0, 0, 187);
+}
+#Slider #navbarSupportedContent .selected
+{
+    color: rgb(0, 0, 187);
+}
+#Slider .nav-link:after
+{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 5px;
+    margin-left: 10px;
+    right: 0;
+    background: white;
+    transition: width .3s ease;
+    -webkit-transition: width .3s ease;
+}
+#Slider .nav-link:hover:after
+{
+    width: 100%;
+    left: 0;
+    background: white;
+}
+#first
+{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ) ,url("../images/home/a.jpg");
+    height: 935px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#second
+{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ) ,url("../images/home/b.jpg");
+    height: 935px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#third
+{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ) ,url("../images/home/c.jpg");
+    height: 935px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#fourth
+{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ) ,url("../images/home/d.jpg");
+    height: 935px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#Slider .carousel-indicators li
+{
+    background-color: white;
+    height: 20px;
+    width: 20px;
+    background-color: blue;
+    border: 3px solid rgb(0, 0, 187);
+    border-radius: 100%;
+}
+#Slider .carousel-item
+{
+    transition: all 2s ease 1s;
+}
+#Slider #slides p
+{
+    margin-top: 260px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border: 2px solid white;
+}
+#Slider #slides h1
+{
+    color: white;
+    font-size: 120px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#Slider #slides h4
+{
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+}
+#Slider #slides a
+{
+    color: rgb(0, 0, 187);
+    font-size: 18px;
+    background-color: white;
+    height: 40px;
+    border-radius: 25px;
+}
+#Slider #slides a:hover
+{
+    color: white;
+    background-color: transparent;
+    border: 3px solid white;
+}
+/*====================Carousel====================*/
+
+/*====================About====================*/
+#About
+{
+    padding: 100px 0 100px 0;
+}
+#About #Image
+{
+    height: 720;
+    overflow: hidden;
+}
+#About #Image img
+{
+    transition: 2s ease;
+}
+#About #Image img:hover
+{
+    transform: scale(1.5);
+}
+#About #Description p
+{
+    color: rgb(0, 0, 187);
+    font-size: 30px;
+    font-family: cursive;
+}
+#About #Description h1
+{
+    font-size: 45x;
+    font-family: 'Times New Roman', Times, serif;
+}
+#About #Description #ADp
+{
+    color: #696969;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#About #Description a
+{
+    color: white;
+    background-color: blue;
+    border-radius: 25px;
+}
+#About #Description a:hover
+{
+    border: 3px solid rgb(0, 0, 187);
+    background-color: white;
+    color: rgb(0, 0, 187);
+}
+/*====================About====================*/
+
+/*====================Services====================*/
+#Services
+{
+    padding: 80px 0 100px 0;
+}
+#Services h1
+{
+    color: rgb(0, 0, 187);
+    font-family: cursive;
+}
+#Services .Ssp
+{
+    font-size: 60px;
+}
+#Services .Sh3
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+#Services .Sp
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: justify;
+}
+#Services a
+{
+    color: white;
+    background-color: blue;
+    border-radius: 25px;
+}
+#Services a:hover
+{
+    border: 3px solid rgb(0, 0, 187);
+    background-color: white;
+    color: rgb(0, 0, 187);
+}
+/*====================Services====================*/
+
+/*====================Chef====================*/
+#Chef
+{
+    padding: 80px 0 100px 0;
+}
+#Chef h1
+{
+    color: rgb(0, 0, 187);
+    font-family: cursive;
+}
+#Chef .Ch3
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+#Chef .Cp
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+#Chef .Icons
+{
+    font-size: 20px;
+}
+/*====================Chef====================*/
+
+/*====================RNR====================*/
+#RNR
+{
+    background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ) ,url("../images/home/1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#RNR .Rsp
+{
+    font-size: 60px;
+    color: White;
+    border: 1px solid white;
+    padding: 5px;
+}
+#RNR .Rh1
+{
+    color: blue;
+    font-family: cursive;
+}
+#RNR .Rp
+{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+/*====================RNR====================*/
+
+/*====================CustomerReview====================*/
+#CustomerReview
+{
+    padding: 80px 0 100px 0;
+}
+#CustomerReview h1
+{
+    color: rgb(0, 0, 187);
+    font-family: cursive;
+}
+#CustomerReview .carousel-indicators li
+{
+    height: 5px;
+    width: 40px;
+    background-color: blue;
+    border: 2px solid blue;
+    border-radius: 20px;
+}
+#CustomerReview .carousel-item
+{
+    transition: all 2s ease 1s;
+}
+#CustomerReview #Customers
+{
+    border-radius: 25px;
+}
+#CustomerReview #Customers img
+{
+    height: 150px;
+}
+#CustomerReview #Customers span
+{
+    color: rgb(0, 0, 187);
+    background-color: white;
+    font-size: 20px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 100%;
+    position: relative;
+    right: 40px;
+}
+#CustomerReview #Customers h3
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+#CustomerReview #Customers p
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+/*====================CustomerReview====================*/
+
+/*====================AUOC====================*/
+#AUOC
+{
+    padding: 100px 0 100px 0;
+}
+#AUOC .heading
+{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+#AUOC ul
+{
+    list-style-type: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+#AUOC ul li
+{
+    margin-bottom: 10px;
+}
+#AUOC ul li a
+{
+    color: #adadad;
+    text-decoration: none;
+}
+#AUOC ul li a:hover
+{
+    color:rgb(0, 0, 187);
+}
+#AUOC #About1 p
+{
+    color: #adadad;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+#AUOC #About1 #Icons a
+{
+    color: white;
+    font-size: 25px;
+}
+#AUOC #About1 #Icons a:hover
+{
+    color: rgb(0, 0, 187);
+}
+/*====================AUOC====================*/
+
+/*====================Copyright====================*/
+#Copyright p
+{
+    font-size: 18px;
+    color: #adadad;
+}
+#Copyright p a
+{
+    color: white;
+    text-decoration: none;
+}
+/*====================Copyright====================*/

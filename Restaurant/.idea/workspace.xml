@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b38bf17-231e-48df-9414-fec650542cd6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamasteDaju/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamasteDaju/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamasteDaju/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamasteDaju/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamasteDaju/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamasteDaju/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamasteDaju/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Restaurant/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Restaurant/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nd/templates/Nd/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/templates/Nd/Home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nd/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nd/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Restaurant/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Restaurant/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../c.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../d.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../d.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../g.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
