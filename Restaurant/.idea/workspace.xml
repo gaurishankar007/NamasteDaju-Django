@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7b38bf17-231e-48df-9414-fec650542cd6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NamasteDaju/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NamasteDaju/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NamasteDaju/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NamasteDaju/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NamasteDaju/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NamasteDaju/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NamasteDaju/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Restaurant/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Restaurant/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Restaurant/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Restaurant/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1pPxIsb95r5KVZrcJFaYqsj7CCH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b38bf17-231e-48df-9414-fec650542cd6" name="Default Changelist" comment="" />
+      <created>1615098449857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615098449857</updated>
+    </task>
+    <servers />
+  </component>
+</project>
