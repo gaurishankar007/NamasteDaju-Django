@@ -104,7 +104,7 @@ function dark()
     document.getElementById("Sun").style.color="white";
 }
 
-function white()
+function light()
 {
     Header.style.backgroundColor="white";
     Form.style.backgroundColor="white";

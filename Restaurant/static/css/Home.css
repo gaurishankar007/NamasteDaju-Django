@@ -164,7 +164,7 @@
 {
     color: rgb(0, 0, 187);
     font-size: 30px;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
 }
 #About #Description h1
 {
@@ -199,7 +199,7 @@
 #Services h1
 {
     color: rgb(0, 0, 187);
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
 }
 #Services .Ssp
 {
@@ -237,7 +237,7 @@
 #Chef h1
 {
     color: rgb(0, 0, 187);
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
 }
 #Chef .Ch3
 {
@@ -290,7 +290,7 @@
 #CustomerReview h1
 {
     color: rgb(0, 0, 187);
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
 }
 #CustomerReview .carousel-indicators li
 {

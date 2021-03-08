@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b38bf17-231e-48df-9414-fec650542cd6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nd/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Nd/templates/Nd/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/templates/Nd/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nd/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nd/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nd/templates/Nd/Menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/templates/Nd/Menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Restaurant/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Restaurant/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/Menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../c.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../c.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../d.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../d.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../g.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -51,6 +50,12 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/images/menu" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Computing Study\Semister 3\Developing the Modern Web\Assignment\Restaurant\static\images\menu" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
