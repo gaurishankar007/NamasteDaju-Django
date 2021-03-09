@@ -70,9 +70,7 @@
 }
 #HM
 {
-    position: absolute;
-    top: 550px;
-    z-index: 2000;
+    padding-top: 550px;
 }
 #HM h1
 {
@@ -101,25 +99,105 @@
     color: rgb(0, 0, 187);
     font-family: 'Times New Roman', Times, serif;
 }
-#Menu .card
+#Breakfast .card
 {
-    box-shadow: 0px 5px 20px rgb(0, 0, 187);
-
+    box-shadow: 0px 5px 20px orange;
+}
+#Breakfast .MCH span, #Breakfast .MCH h1
+{
+    color: orange;
+}
+#Breakfast #Detail:hover
+{
+    transition: .5s;
+    background-color: orange;
+}
+#Lunch .card
+{
+    box-shadow: 0px 5px 20px green;
+}
+#Lunch .MCH span, #Lunch .MCH h1
+{
+    color: green;
+}
+#Lunch #Detail:hover
+{
+    transition: .5s;
+    background-color: green;
+}
+#Dinner .card
+{
+    box-shadow: 0px 5px 20px brown;
+}
+#Dinner .MCH span, #Dinner .MCH h1
+{
+    color: brown;
+}
+#Dinner #Detail:hover
+{
+    transition: .5s;
+    background-color: brown;
+}
+#Deserts .card
+{
+    box-shadow: 0px 5px 20px purple;
+}
+#Deserts .MCH span, #Deserts .MCH h1
+{
+    color: purple;
+}
+#Deserts #Detail:hover
+{
+    transition: .5s;
+    background-color: purple;
+}
+#Wine_Card .card
+{
+    box-shadow: 0px 5px 20px red;
+}
+#Wine_Card .MCH span, #Wine_Card .MCH h1
+{
+    color: red;
+}
+#Wine_Card #Detail:hover
+{
+    transition: .5s;
+    background-color: red;
+}
+#Drinks_Tea .card
+{
+    box-shadow: 0px 5px 20px blue;
+}
+#Drinks_Tea .MCH span, #Drinks_Tea .MCH h1
+{
+    color: blue;
+}
+#Drinks_Tea #Detail:hover
+{
+    transition: .5s;
+    background-color: blue;
 }
 .MCH span
 {
-    color: rgb(0, 0, 187);
     font-size: 40px;
 }
 .MCH h1
 {
     font-family: 'Times New Roman', Times, serif;
 }
-.MCL img
+.MCL #Image
 {
-    height: 200;
-    width: 200;
-    border-radius: 20px;
+    height: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.MCL #Image img
+{
+    transition: 2s ease;
+}
+.MCL #Image img:hover
+{
+    transform: scale(1.5);
 }
 /*====================Menu====================*/
 

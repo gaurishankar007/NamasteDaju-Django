@@ -149,7 +149,7 @@
 }
 #About #Image
 {
-    height: 720;
+    border-radius: 15px;
     overflow: hidden;
 }
 #About #Image img

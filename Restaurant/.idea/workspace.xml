@@ -3,16 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7b38bf17-231e-48df-9414-fec650542cd6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nd/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nd/templates/Nd/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/templates/Nd/Home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Nd/templates/Nd/Menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Nd/templates/Nd/Menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Restaurant/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Restaurant/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/Menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Menu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
