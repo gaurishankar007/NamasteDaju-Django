@@ -1,0 +1,94 @@
+#Container
+{
+    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ) ,url("../images/admin/a.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 937px;
+    padding-top: 100px;
+}
+#Container .row div
+{
+    padding-top: 100px;
+    height: 250px;
+    border-radius: 10px;
+    transition: 1s;
+}
+#Container .row div:hover
+{
+    box-shadow: 0px 8px 20px red;
+    transform: scale(1.3);
+    z-index: 2000;
+}
+#Container .row div h1
+{
+    border: 1px solid white;
+    visibility: hidden;
+    color: white;
+    transition: 1s;
+}
+#Container .row div h1 a
+{
+    color: white;
+    text-decoration: none;
+}
+#Container .row div:hover h1
+{
+    visibility: visible;
+}
+#C1R1
+{
+    background:linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/menu.jfif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#C1R2
+{
+    background:linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/gallery.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#C1R3
+{
+    background:linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/stories.jfif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#C1R4
+{
+    background:linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/order.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#C2R1
+{
+    background:linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/reservation.jfif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#C2R2
+{
+    background:linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/catering.jfif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#C2R3
+{
+    background:linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/message.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#C2R4
+{
+    background:linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/user.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,52 @@
+{% extends 'Ad_Main.html' %}
+
+{% load static %}
+
+{% block title_link %}
+    <title>NamasteDaju Restaurant Stories</title>
+{% endblock %}
+
+{% block css_link %}
+    <link href="{% static 'css/Admin.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid d-lg-flex flex-column" id="Container">
+    <div class="container py-5" id="C1">
+        <div class="row">
+            <div class="col-sm mr-4 mb-4" id="C1R1">
+                <h1 class="text-center"><a href="">Menu</a></h1>
+            </div>
+            <div class="col-sm mr-4 mb-4" id="C1R2">
+                <h1 class="text-center"><a href="">Gallery</a></h1>
+            </div>
+            <div class="col-sm mr-4 mb-4" id="C1R3">
+                <h1 class="text-center"><a href="">Stories</a></h1>
+            </div>
+            <div class="col-sm mr-4 mb-4" id="C1R4">
+                <h1 class="text-center"><a href="">Order</a></h1>
+            </div>
+        </div>
+    </div>
+    <div class="container py-5" id="C2">
+        <div class="row">
+            <div class="col-sm mr-4 mb-4" id="C2R1">
+                <h1 class="text-center"><a href="">Reservation</a></h1>
+            </div>
+            <div class="col-sm mr-4 mb-4" id="C2R2">
+                <h1 class="text-center"><a href="">Catering</a></h1>
+            </div>
+            <div class="col-sm mr-4 mb-4" id="C2R3">
+                <h1 class="text-center"><a href="">Message</a></h1>
+            </div>
+            <div class="col-sm mr-4 mb-4" id="C2R4">
+                <h1 class="text-center"><a href="">User</a></h1>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script_link %}
+        <script src="{% static 'js/Admon.js' %}"></script>
+{% endblock %}

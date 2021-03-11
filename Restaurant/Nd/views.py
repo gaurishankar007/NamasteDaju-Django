@@ -3,6 +3,10 @@ from . models import Reservation
 from django.contrib import messages
 
 
+def admin(request):
+    return render(request, 'Nd/Admin.html')
+
+
 def home(request):
     dictionary = {'home': 'selected'}
     return render(request, 'Nd/Home.html', dictionary)
