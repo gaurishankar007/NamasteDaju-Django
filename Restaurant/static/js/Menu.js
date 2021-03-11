@@ -3,12 +3,16 @@ var Card = document.getElementsByClassName('card');
 var Dh3 = document.getElementsByClassName('Dh3');
 var Dp = document.getElementsByClassName('Dp');
 var Dh4 = document.getElementsByClassName('Dh4');
+var Da = document.getElementsByClassName('Da');
 var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
 
+for(i=0; i<Da.length; i++){
+    Da[i].style.color="black";
+    Da[i].style.border="3px solid black";
+}
+
 Menu.style.backgroundColor="white";
-AUOC.style.backgroundColor="black";
-Copyright.style.backgroundColor="#111";
 /*====================Theme Functions====================*/
 function dark()
 {
@@ -37,6 +41,10 @@ function dark()
     }
     for(i=0; i<Dh4.length; i++){
         Dh4[i].style.color="white";
+    }
+    for(i=0; i<Da.length; i++){
+        Da[i].style.color="white";
+        Da[i].style.border="3px solid white";
     }
     
 
@@ -72,6 +80,10 @@ function light()
     }
     for(i=0; i<Dh4.length; i++){
         Dh4[i].style.color="black";
+    }
+    for(i=0; i<Da.length; i++){
+        Da[i].style.color="black";
+        Da[i].style.border="3px solid black";
     }
 
     document.getElementById("Moon").hidden=false;

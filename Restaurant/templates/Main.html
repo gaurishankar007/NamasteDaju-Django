@@ -24,6 +24,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet">
 
     <link href="{% static 'css/Navbar.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/Bottom.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
     {% include 'Navbar.html' %}
@@ -31,11 +32,14 @@
     {% block content %}
     {% endblock %}
 
+    {% include 'Bottom.html' %}
+
     {% block script_link%}
         {{ section.script }}
     {% endblock %}
 
     <script src="{% static 'js/Navbar.js' %}"></script>
+    <script src="{% static 'js/Bottom.js' %}"></script>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

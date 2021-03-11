@@ -166,16 +166,16 @@
 }
 #Drinks_Tea .card
 {
-    box-shadow: 0px 5px 20px blue;
+    box-shadow: 0px 5px 20px olive;
 }
 #Drinks_Tea .MCH span, #Drinks_Tea .MCH h1
 {
-    color: blue;
+    color: olive;
 }
 #Drinks_Tea #Detail:hover
 {
     transition: .5s;
-    background-color: blue;
+    background-color: olive;
 }
 .MCH span
 {
@@ -199,64 +199,14 @@
 {
     transform: scale(1.5);
 }
+#Detail a
+{
+    display: none;
+}
+#Detail:hover a
+{
+    display: block;
+    width: 120px;
+    border-radius: 20px;
+}
 /*====================Menu====================*/
-
-/*====================AUOC====================*/
-#AUOC
-{
-    padding: 100px 0 100px 0;
-}
-#AUOC .heading
-{
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-
-}
-#AUOC ul
-{
-    list-style-type: none;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
-}
-#AUOC ul li
-{
-    margin-bottom: 10px;
-}
-#AUOC ul li a
-{
-    color: #adadad;
-    text-decoration: none;
-}
-#AUOC ul li a:hover
-{
-    color:rgb(0, 0, 187);
-}
-#AUOC #About1 p
-{
-    color: #adadad;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
-}
-#AUOC #About1 #Icons a
-{
-    color: white;
-    font-size: 25px;
-}
-#AUOC #About1 #Icons a:hover
-{
-    color: rgb(0, 0, 187);
-}
-/*====================AUOC====================*/
-
-/*====================Copyright====================*/
-#Copyright p
-{
-    font-size: 18px;
-    color: #adadad;
-}
-#Copyright p a
-{
-    color: white;
-    text-decoration: none;
-}
-/*====================Copyright====================*/

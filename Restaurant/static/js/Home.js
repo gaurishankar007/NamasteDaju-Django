@@ -1,7 +1,3 @@
-var function_blue = function(){this.style.color="rgb(0, 0, 187)"};
-var function_black = function(){this.style.color="black"};
-var function_white = function(){this.style.color="white"};
-
 var About = document.getElementById("About");
 var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
@@ -46,8 +42,6 @@ for(i=0; i<=5; i++)
 
 var flb = document.getElementsByClassName('flb');
 
-AUOC.style.backgroundColor="black";
-Copyright.style.backgroundColor="#111";
 Services.style.backgroundColor="#F4F6F6";
 Customers.style.backgroundColor="#F4F6F6";
 

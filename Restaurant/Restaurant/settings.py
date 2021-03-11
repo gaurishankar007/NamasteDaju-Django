@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Nd.apps.NdConfig',
     'bootstrapform',
+    'Ad.apps.AdConfig',
 ]
 
 MIDDLEWARE = [

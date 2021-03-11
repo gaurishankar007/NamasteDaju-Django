@@ -1,8 +1,7 @@
-var function_blue = function(){this.style.color="rgb(0, 0, 187)"};
-var function_black = function(){this.style.color="black"};
-
 var Header = document.getElementById("Header");
 var Form = document.getElementById("Form");
+
+window.onscroll=function(){Form.style.visibility="hidden";}
 
 var header_nav_link = document.getElementsByClassName('header_nav_link');
 
