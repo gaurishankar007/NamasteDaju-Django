@@ -1,0 +1,80 @@
+/*====================AdGallery====================*/
+#Cs
+{
+    color: rgb(0, 187, 40);
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+#AGH h1
+{
+    color: rgb(0, 187, 40);
+    font-family: 'Times New Roman', Times, serif;
+}
+#Card h4, .help-block
+{
+    color: rgb(0, 187, 40);
+    font-family: cursive;
+}
+#Card
+{
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px green;
+} 
+#Card label
+{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#Card input
+{
+    background-image: linear-gradient( rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1) );
+    border-radius: 15px;
+}
+#Card input:hover
+{
+    border: 2px solid rgb(0, 187, 40);
+}
+#Card button, #AGB
+{
+    color: white;
+    font-weight: bold;
+    background-color:green;
+    border-radius: 10px;
+}
+#Card button:hover, #AGB:hover
+{
+    color: rgb(0, 187, 40);
+    background-color: transparent;
+    border: 2px solid rgb(0, 187, 40);
+}
+#Table
+{
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(0, 0, 187);
+}
+#Table h1, th, td
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+#Table th
+{
+    font-size: 22px;
+}
+#Table td
+{
+    font-size: 18px;
+}
+#Table td a
+{
+    color: black;
+    font-size: 18px;
+}
+#Table img
+{
+    height: 100px;
+    border-radius: 10px;
+}
+/*====================AdGallery====================*/

@@ -69,20 +69,21 @@
                         <span class="fas fa-hamburger mr-4"></span>
                         <h1>Breakfast</h1>
                     </div>
-                    <div class="container-fluid d-flex flex-lg-row justify-content-between mb-4 MCL">
-                        <div class="container d-xl-flex flex-row justify-content-between">
-                            <div class="mr-lg-2 mb-4" id="Image">
-                                <img class="img-fluid" src="{% static 'images/uploads/menu/3.png' %}" alt="pic"/>
+                    <div class="container-fluid d-flex flex-column justify-content-between mb-4 MCL">
+                        {% for i in key %}
+                        {% if i.category == "Breakfast" %}
+                        <div class="container d-xl-flex flex-row justify-content-between mb-4">
+                            <div class="mr-lg-2" id="Image">
+                                <img class="img-fluid mb-2" src="/{{i.image}}" alt="pic"/>
                             </div>
-                            <div class="container d-flex flex-column justify-content-between" id="Detail">
-                                <h3 class="Dh3">Beef Roast Source</h3>
-                                <p  class="Dp">Meat, Potatoes, Rice, Tomatoe</p>
-                                <h4 class="Dh4">Rs. 290</h4>
-                                <div class="d-flex justify-content-center">
-                                    <a class="btn btn-style font-weight-bold Da">Order Now</a>
-                                </div>
+                            <div class="container d-flex flex-column" id="Detail">
+                                <h3 class="Dh3">{{i.name}}</h3>
+                                <p  class="Dp">{{i.description}}</p>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
                             </div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -92,20 +93,21 @@
                         <span class="fas fa-hotdog mr-4"></span>
                         <h1>Lunch</h1>
                     </div>
-                    <div class="container-fluid d-flex flex-lg-row justify-content-between mb-4 MCL">
-                        <div class="container d-xl-flex flex-sm-row justify-content-between">
-                            <div class="mr-lg-2 mb-4" id="Image">
-                                <img class="img-fluid" src="{% static 'images/uploads/menu/3.png' %}" alt="pic"/>
+                    <div class="container-fluid d-flex flex-column justify-content-between mb-4 MCL">
+                        {% for i in key %}
+                        {% if i.category == "Lunch" %}
+                        <div class="container d-xl-flex flex-row justify-content-between mb-4">
+                            <div class="mr-lg-2" id="Image">
+                                <img class="img-fluid mb-2" src="/{{i.image}}" alt="pic"/>
                             </div>
-                            <div class="container d-flex flex-column justify-content-between"  id="Detail">
-                                <h3 class="Dh3">Beef Roast Source</h3>
-                                <p class="Dp">Meat, Potatoes, Rice, Tomatoe</p>
-                                <h4 class="Dh4">Rs. 290</h4>
-                                <div class="d-flex justify-content-center">
-                                    <a class="btn btn-style font-weight-bold Da">Order Now</a>
-                                </div>
+                            <div class="container d-flex flex-column" id="Detail">
+                                <h3 class="Dh3">{{i.name}}</h3>
+                                <p  class="Dp">{{i.description}}</p>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
                             </div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -115,20 +117,21 @@
                         <span class="fas fa-fish mr-4"></span>
                         <h1>Dinner</h1>
                     </div>
-                    <div class="container-fluid d-flex flex-lg-row justify-content-between mb-4 MCL">
-                        <div class="container d-xl-flex flex-sm-row justify-content-between">
-                            <div class="mr-lg-2 mb-4" id="Image">
-                                <img class="img-fluid" src="{% static 'images/uploads/menu/3.png' %}" alt="pic"/>
+                    <div class="container-fluid d-flex flex-column justify-content-between mb-4 MCL">
+                        {% for i in key %}
+                        {% if i.category == "Dinner" %}
+                        <div class="container d-xl-flex flex-row justify-content-between mb-4">
+                            <div class="mr-lg-2" id="Image">
+                                <img class="img-fluid mb-2" src="/{{i.image}}" alt="pic"/>
                             </div>
-                            <div class="container d-flex flex-column justify-content-between" id="Detail">
-                                <h3 class="Dh3">Beef Roast Source</h3>
-                                <p  class="Dp">Meat, Potatoes, Rice, Tomatoe</p>
-                                <h4 class="Dh4">Rs. 290</h4>
-                                <div class="d-flex justify-content-center">
-                                    <a class="btn btn-style font-weight-bold Da">Order Now</a>
-                                </div>
+                            <div class="container d-flex flex-column" id="Detail">
+                                <h3 class="Dh3">{{i.name}}</h3>
+                                <p  class="Dp">{{i.description}}</p>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
                             </div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>        
@@ -140,20 +143,21 @@
                         <span class="fas fa-ice-cream mr-4"></span>
                         <h1>Deserts</h1>
                     </div>
-                    <div class="container-fluid d-flex flex-lg-row justify-content-between mb-4 MCL">
-                        <div class="container d-xl-flex flex-sm-row justify-content-between">
-                            <div class="mr-lg-2 mb-4" id="Image">
-                                <img class="img-fluid" src="{% static 'images/uploads/menu/3.png' %}" alt="pic"/>
+                    <div class="container-fluid d-flex flex-column justify-content-between mb-4 MCL">
+                        {% for i in key %}
+                        {% if i.category == "Deserts" %}
+                        <div class="container d-xl-flex flex-row justify-content-between mb-4">
+                            <div class="mr-lg-2" id="Image">
+                                <img class="img-fluid mb-2" src="/{{i.image}}" alt="pic"/>
                             </div>
-                            <div class="container d-flex flex-column justify-content-between"  id="Detail">
-                                <h3 class="Dh3">Beef Roast Source</h3>
-                                <p  class="Dp">Meat, Potatoes, Rice, Tomatoe</p>
-                                <h4 class="Dh4">Rs. 290</h4>
-                                <div class="d-flex justify-content-center">
-                                    <a class="btn btn-style font-weight-bold Da">Order Now</a>
-                                </div>
+                            <div class="container d-flex flex-column" id="Detail">
+                                <h3 class="Dh3">{{i.name}}</h3>
+                                <p  class="Dp">{{i.description}}</p>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
                             </div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -163,20 +167,21 @@
                         <span class="fas fa-wine-glass mr-4"></span>
                         <h1>Wine Card</h1>
                     </div>
-                    <div class="container-fluid d-flex flex-lg-row justify-content-between mb-4 MCL">
-                        <div class="container d-xl-flex flex-sm-row justify-content-between">
-                            <div class="mr-lg-2 mb-4" id="Image">
-                                <img class="img-fluid" src="{% static 'images/uploads/menu/3.png' %}" alt="pic"/>
+                    <div class="container-fluid d-flex flex-column justify-content-between mb-4 MCL">
+                        {% for i in key %}
+                        {% if i.category == "Wine Card" %}
+                        <div class="container d-xl-flex flex-row justify-content-between mb-4">
+                            <div class="mr-lg-2" id="Image">
+                                <img class="img-fluid mb-2" src="/{{i.image}}" alt="pic"/>
                             </div>
-                            <div class="container d-flex flex-column justify-content-between" id="Detail">
-                                <h3 class="Dh3">Beef Roast Source</h3>
-                                <p class="Dp">Meat, Potatoes, Rice, Tomatoe</p>
-                                <h4 class="Dh4">Rs. 290</h4>
-                                <div class="d-flex justify-content-center">
-                                    <a class="btn btn-style font-weight-bold Da">Order Now</a>
-                                </div>
+                            <div class="container d-flex flex-column" id="Detail">
+                                <h3 class="Dh3">{{i.name}}</h3>
+                                <p  class="Dp">{{i.description}}</p>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
                             </div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -186,20 +191,21 @@
                         <span class="fas fa-cocktail mr-4"></span>
                         <h1>Drinks & Tea</h1>
                     </div>
-                    <div class="container-fluid d-flex flex-lg-row justify-content-between mb-4 MCL">
-                        <div class="container d-xl-flex flex-sm-row justify-content-between">
-                            <div class="mr-lg-2 mb-4" id="Image">
-                                <img class="img-fluid" src="{% static 'images/uploads/menu/3.png' %}" alt="pic"/>
+                    <div class="container-fluid d-flex flex-column justify-content-between mb-4 MCL">
+                        {% for i in key %}
+                        {% if i.category == "Drinks & Tea" %}
+                        <div class="container d-xl-flex flex-row justify-content-between mb-4">
+                            <div class="mr-lg-2" id="Image">
+                                <img class="img-fluid mb-2" src="/{{i.image}}" alt="pic"/>
                             </div>
-                            <div class="container d-flex flex-column justify-content-between" id="Detail">
-                                <h3 class="Dh3">Beef Roast Source</h3>
-                                <p class="Dp">Meat, Potatoes, Rice, Tomatoe</p>
-                                <h4 class="Dh4">Rs. 290</h4>
-                                <div class="d-flex justify-content-center">
-                                    <a class="btn btn-style font-weight-bold Da">Order Now</a>
-                                </div>
+                            <div class="container d-flex flex-column" id="Detail">
+                                <h3 class="Dh3">{{i.name}}</h3>
+                                <p  class="Dp">{{i.description}}</p>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
                             </div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>

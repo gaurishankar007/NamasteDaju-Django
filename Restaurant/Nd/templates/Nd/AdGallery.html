@@ -1,0 +1,78 @@
+{% extends 'AdMain.html' %}
+
+{% load bootstrap %}
+
+{% load static %}
+
+{% block title_link %}
+    <title>NamasteDaju Restaurant Gallery</title>
+{% endblock %}
+
+{% block css_link %}
+    <link href="{% static 'css/AdNavbar.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/AdGallery.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    {% include 'AdNavbar.html' %}
+    <div class="container-fluid d-flex flex-column pt-5" id="AdGallery">
+        <div class="container d-flex justify-content-center pb-sm-5" id="AGH">
+          <h1>NamasteDaju Restaurant Gallery</h1>
+        </div>   
+        <div class="container d-flex justify-content-end pb-4">
+            <button class="btn px-4" onclick="show()" id="AGB">Open Picture Form</button>
+        </div>        
+        <div class="container mb-5" id="Form">
+            <div class="card p-4" id="Card">
+                <span class="fa fa-times" onclick="hide()" id="Cs"></span>
+                {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <h4 class="error_message mb-4 text-center">{{message}}</h4>
+                    {% endif %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <h4 class="error_message mb-4 text-center">{{message}}</h4>
+                    {% endif %}
+                {% endfor %}
+                <form class="form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | bootstrap_horizontal }}
+                    <div class="d-flex justify-content-center py-2">
+                        <button type="submit" class="btn px-4">{{action}} Picture</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="table-responsive" id="Table">
+            <table class="table table-striped mb-5" id="Images">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Uploaded Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for i in key %}
+                        <tr>
+                            <td>{{i.name}}</td>
+                            <td><img src="/{{i.image}}"/></td>
+                            <td>{{i.uploaded_date}}</td>
+                            <td>
+                                <a href="/Nd/updatepicture/{{i.id}}" class="btn btn-warning mr-4">Edit</a>
+                                <a href="/Nd/deletepicture/{{i.id}}" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this picture?')">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+{% endblock %}
+
+{% block script_link %}
+        <script src="{% static 'js/AdNavbar.js' %}"></script>
+        <script src="{% static 'js/AdGallery.js' %}"></script>
+{% endblock %}

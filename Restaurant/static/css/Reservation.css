@@ -101,6 +101,7 @@
 }
 #Card
 {
+    border-radius: 15px;
     box-shadow: 0px 5px 20px blue;
 } 
 #Card label

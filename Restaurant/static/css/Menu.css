@@ -107,9 +107,13 @@
 {
     color: orange;
 }
+#Detail
+{
+    border-radius: 10px;
+}
 #Breakfast #Detail:hover
 {
-    transition: .5s;
+    transition: 1s;
     background-color: orange;
 }
 #Lunch .card
@@ -122,7 +126,7 @@
 }
 #Lunch #Detail:hover
 {
-    transition: .5s;
+    transition: 1s;
     background-color: green;
 }
 #Dinner .card
@@ -135,7 +139,7 @@
 }
 #Dinner #Detail:hover
 {
-    transition: .5s;
+    transition: 1s;
     background-color: brown;
 }
 #Deserts .card
@@ -148,7 +152,7 @@
 }
 #Deserts #Detail:hover
 {
-    transition: .5s;
+    transition: 1s;
     background-color: purple;
 }
 #Wine_Card .card
@@ -161,7 +165,7 @@
 }
 #Wine_Card #Detail:hover
 {
-    transition: .5s;
+    transition: 1s;
     background-color: red;
 }
 #Drinks_Tea .card
@@ -174,7 +178,7 @@
 }
 #Drinks_Tea #Detail:hover
 {
-    transition: .5s;
+    transition: 1s;
     background-color: olive;
 }
 .MCH span
@@ -187,17 +191,16 @@
 }
 .MCL #Image
 {
-    height: 150px;
-    border-radius: 15px;
     overflow: hidden;
 }
 .MCL #Image img
 {
+    width: 300px;
     transition: 2s ease;
 }
 .MCL #Image img:hover
 {
-    transform: scale(1.5);
+    transform: scale(1.4);
 }
 #Detail a
 {

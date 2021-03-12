@@ -63,24 +63,11 @@
         <h1>Our Photo Gallery</h1>
       </div>
       <div class="row mb-5" id="GI">
+        {% for i in key %}
         <div class="col-sm mb-4">
-          <img class="img" src="{% static 'images/uploads/gallery/1.png' %}"/>
+          <img class="img" src="/{{i.image}}"/>
         </div>
-        <div class="col-sm mb-4">
-          <img class="img" src="{% static 'images/uploads/gallery/2.png' %}"/>
-        </div>
-        <div class="col-sm mb-4">
-          <img class="img" src="{% static 'images/uploads/gallery/3.png' %}"/>
-        </div>
-        <div class="col-sm mb-4">
-          <img class="img" src="{% static 'images/uploads/gallery/4.png' %}"/>
-        </div>
-        <div class="col-sm mb-4">
-          <img class="img" src="{% static 'images/uploads/gallery/5.png' %}"/>
-        </div>
-        <div class="col-sm mb-4">
-          <img class="img" src="{% static 'images/uploads/gallery/6.png' %}"/>
-        </div>
+        {% endfor %}
       </div>
     </div>
 {% endblock %}
