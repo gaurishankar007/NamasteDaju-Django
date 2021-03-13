@@ -131,4 +131,9 @@
     background-color: transparent;
     border: 2px solid rgb(0, 0, 187);
 }
+#Card h4
+{
+    color: rgb(0, 40, 187);
+    font-family: cursive;
+}
 /*====================Reservation====================*/

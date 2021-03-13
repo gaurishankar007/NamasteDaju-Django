@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
-from . models import Menu, Gallery, Reservation
-from . forms import MenuForm, GalleryForm
+from . models import Menu, Gallery, Stories, Reservation, Catering
+from . forms import MenuForm, GalleryForm, StoriesForm, ReservationForm, CateringForm
 
 from django.contrib import messages
 import os
@@ -21,7 +21,7 @@ def ad_menu(request):
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Add Food')
             return render(request, 'Nd/AdMenu.html', {'form': form})
-    dictionary = {'key': Menu.objects.all(), 'form': MenuForm, 'menu': 'selected', 'action': "Add"}
+    dictionary = {'key': Menu.objects.all(), 'form': MenuForm, 'action': "Add"}
     return render(request, 'Nd/AdMenu.html', dictionary)
 
 def ad_menu_update(request, food_id):
@@ -38,9 +38,9 @@ def ad_menu_update(request, food_id):
             return redirect('/Nd/ad_menu')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Update Food')
-            dictionary = {'key': Menu.objects.all(), 'form': form, 'menu': 'selected', 'action': 'Update'}
+            dictionary = {'key': Menu.objects.all(), 'form': form, 'action': 'Update'}
             return render(request, 'Nd/AdMenu.html', dictionary)
-    dictionary = {'key': Menu.objects.all(), 'form': MenuForm(instance=food), 'menu': 'selected', 'action': 'Update'}
+    dictionary = {'key': Menu.objects.all(), 'form': MenuForm(instance=food), 'action': 'Update'}
     return render(request, 'Nd/AdMenu.html', dictionary)
 
 
@@ -62,7 +62,7 @@ def ad_gallery(request):
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Add Picture')
             return render(request, 'Nd/AdGallery.html', {'form': form})
-    dictionary = {'key': Gallery.objects.all(), 'form': GalleryForm, 'gallery': 'selected', 'action': 'Add'}
+    dictionary = {'key': Gallery.objects.all(), 'form': GalleryForm, 'action': 'Add'}
     return render(request, 'Nd/AdGallery.html', dictionary)
 
 def ad_gallery_update(request, picture_id):
@@ -79,9 +79,9 @@ def ad_gallery_update(request, picture_id):
             return redirect('/Nd/ad_gallery')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Update Picture')
-            dictionary = {'key': Gallery.objects.all(), 'form': form, 'gallery': 'selected', 'action': 'Update'}
+            dictionary = {'key': Gallery.objects.all(), 'form': form, 'action': 'Update'}
             return render(request, 'Nd/AdGallery.html', dictionary)
-    dictionary = {'key': Gallery.objects.all(), 'form': GalleryForm(instance=picture), 'menu': 'selected', 'action': 'Update'}
+    dictionary = {'key': Gallery.objects.all(), 'form': GalleryForm(instance=picture), 'action': 'Update'}
     return render(request, 'Nd/AdGallery.html', dictionary)
 
 
@@ -92,10 +92,46 @@ def ad_gallery_delete(request, picture_id):
     return redirect("/Nd/ad_gallery")
 # =========================Gallery=========================
 
-
-def ad_stories(request):
-    dictionary = {'stories': 'selected'}
+# =========================Stories=========================
+def ad_stories(request):    
+    if request.method == "POST":
+        form = StoriesForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'Story Added Successfully')
+            return redirect('/Nd/ad_stories')
+        else: 
+            messages.add_message(request, messages.ERROR, 'Failed to Add Story')
+            return render(request, 'Nd/AdStories.html', {'form': form})
+    dictionary = {'key':Stories.objects.all(), 'form':StoriesForm, 'action':'Add'}
     return render(request, 'Nd/AdStories.html', dictionary)
+
+def ad_stories_update(request, story_id):
+    story = Stories.objects.get(id=story_id)
+    prev_image = story.image.path
+    if request.method == "POST":
+        form = StoriesForm(request.POST, request.FILES, instance=story)
+        if form.is_valid():
+            form.save()
+            new_image = story.image.path
+            if prev_image != new_image:
+                os.remove(prev_image)
+            messages.add_message(request, messages.SUCCESS, 'Story Updated Successfully')
+            return redirect('/Nd/ad_stories')
+        else: 
+            messages.add_message(request, messages.ERROR, 'Failed to Update Story')
+            dictionary = {'key': Stories.objects.all(), 'form': form, 'action': 'Update'}
+            return render(request, 'Nd/AdStories.html', dictionary)
+    dictionary = {'key': Stories.objects.all(), 'form': StoriesForm(instance=story), 'action': 'Update'}
+    return render(request, 'Nd/AdStories.html', dictionary)
+
+
+def ad_stories_delete(request, story_id):
+    story = Stories.objects.get(id=story_id)
+    os.remove(story.image.path)
+    story.delete()
+    return redirect("/Nd/ad_stories")
+# =========================Stories=========================
 
 
 def ad_order(request):
@@ -134,31 +170,44 @@ def menu(request):
     dictionary = {'key': Menu.objects.all(), 'menu': 'selected'}
     return render(request, 'Nd/Menu.html', dictionary)
 
+
 def gallery(request):
     dictionary = {'key': Gallery.objects.all(), 'gallery': 'selected'}
     return render(request, 'Nd/Gallery.html', dictionary)
 
+
 def stories(request):
-    dictionary = {'stories': 'selected'}
+    dictionary = {'key': Stories.objects.all(), 'stories': 'selected'}
     return render(request, 'Nd/Stories.html', dictionary)
+
 
 def reservation(request):
     if request.method == 'POST':
-        form = request.POST
-        reserve = Reservation.objects.create(name=form['name'], email=form['email'], phone=form['phone'], date=form['date'], time=form['time'], person=form['person'])
-        if reserve:
-            messages.add_message(request, messages.SUCCESS, 'You have booked a table successfully')
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'You have booked table successfully')
             return redirect('/Nd/reservation')
         else:
-            messages.add_message(request, messages.ERROR, 'Failed to book a table')
+            messages.add_message(request, messages.ERROR, 'Failed to book table')
             return render(request, 'Nd/Reservation.html', {'form': form})
-
-    dictionary = {'form':Reservation, 'reservation': 'selected'}
+    dictionary = {'form':ReservationForm, 'reservation': 'selected'}
     return render(request, 'Nd/Reservation.html', dictionary)
 
+
 def catering(request):
-    dictionary = {'catering': 'selected'}
+    if request.method == 'POST':
+        form = CateringForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'You have ordered catering successfully')
+            return redirect('/Nd/reservation')
+        else:
+            messages.add_message(request, messages.ERROR, 'Failed to order catering')
+            return render(request, 'Nd/Reservation.html', {'form': form})
+    dictionary = {'form':CateringForm ,'catering': 'selected'}
     return render(request, 'Nd/Catering.html', dictionary)
+
 
 def contact(request):
     dictionary = {'contact': 'selected'}

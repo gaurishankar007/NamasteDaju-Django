@@ -78,3 +78,20 @@
     border-radius: 10px;
 }
 /*====================AdGallery====================*/
+
+/*====================Copyright====================*/
+#Copyright 
+{
+    background-color: black;
+}
+#Copyright p
+{
+    font-size: 18px;
+    color: #c9c9c9;
+}
+#Copyright p a
+{
+    color: white;
+    text-decoration: none;
+}
+/*====================Copyright====================*/

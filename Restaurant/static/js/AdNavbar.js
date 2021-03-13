@@ -20,13 +20,13 @@ window.addEventListener("scroll", myScroll);
 var bool = true;
 var myScrollFunc = function() {
     var y=window.scrollY;
-    if (y > 120 && bool==true) {
+    if (y > 150 && bool==true) {
         bool = false;
         Header.style.position="fixed";
         Header.style.top="0";
         Header.style.zIndex="2000";
     }
-    if(y<120){
+    if(y<150){
         bool = true;
         Header.style.position="relative";
     }

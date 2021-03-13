@@ -16,7 +16,11 @@ urlpatterns = [
     path('updatepicture/<int:picture_id>', views.ad_gallery_update),
     path('deletepicture/<int:picture_id>', views.ad_gallery_delete),
 # =========================Gallery=========================
+# =========================Stories=========================
     path('ad_stories', views.ad_stories),
+    path('updatestory/<int:story_id>', views.ad_stories_update),
+    path('deletestory/<int:story_id>', views.ad_stories_delete),
+# =========================Stories=========================
     path('ad_order', views.ad_order),
     path('ad_reservation', views.ad_reservation),
     path('ad_catering', views.ad_catering),

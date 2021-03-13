@@ -1,5 +1,7 @@
 {% extends 'Main.html' %}
 
+{% load bootstrap %}
+
 {% load static %}
 
 {% block title_link %}
@@ -54,6 +56,70 @@
             </div>
             <div class="container d-flex justify-content-center">
                 <h5><a href="/Nd/home">Home <span class="fa fa-chevron-right"></span> </a> Catering <span class="fa fa-chevron-right"></span></h5>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-flex flex-column py-5" id="Catering">
+        <div class="container d-flex justify-content-center py-sm-5" id="CH">
+            <h1>Our Catering Services</h1>
+        </div> 
+        <div class="container-fluid d-lg-flex flex-row justify-content-around mb-5" id="CT">
+            <div class="container mx-lg-3 py-3 CD">
+                <div class="container d-flex justify-content-center">
+                    <span class="fas fa-hotel Csp mb-sm-3"></span>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <h3 class="font-weight-bold Ch3">On Premise Catering</h3>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <p class="Cp">Customers come to the restaurant for a special party or meal</p>
+                </div>
+            </div>
+            <div class="container mx-lg-3 py-3 CD">
+                <div class="container d-flex justify-content-center">
+                    <span class="fas fa-truck Csp mb-sm-3"></span>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <h3 class="font-weight-bold Ch3">Off Premise Catering</h3>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <p class="Cp">The restaurant brings the food to the customer, either in their home or at another location that doesn’t serve food.</p>
+                </div>
+            </div>
+        </div> 
+        <div class="container d-flex flex-column justify-content-around mb-4">
+            <div class="container d-flex justify-content-center" id="CH">
+                <h1>Our Restaurant Catering Includes</h1>
+            </div> 
+            <div class="container d-flex justify-content-center">
+                <ul>
+                    <li class="Uli"><span class="fa fa-check"></span> Weddings</li>
+                    <li class="Uli"><span class="fa fa-check"></span> Birthday Parties</li>
+                    <li class="Uli"><span class="fa fa-check"></span> Anniversary Parties</li>
+                    <li class="Uli"><span class="fa fa-check"></span> Business Meetings</li>
+                    <li class="Uli"><span class="fa fa-check"></span> Conferences</li> 
+                    <li class="Uli"><span class="fa fa-check"></span> Luncheons</li>            
+                    <li class="Uli"><span class="fa fa-check"></span> Holiday Gatherings</li>            
+                </ul>
+            </div> 
+        </div>
+        <div class="container" id="Form">
+            <div class="card p-4" id="Card">
+                {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <h4 class="error_message py-3 px-1 my-2 text-center">{{message}}</h4>
+                    {% endif %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <h4 class="error_message py-3 px-1 my-2 text-center">{{message}}</h4>
+                    {% endif %}
+                {% endfor %}
+                <form class="form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | bootstrap_horizontal }}
+                    <div class="d-flex justify-content-center py-2">
+                        <button type="submit" class="btn px-4 py-1">Order Catering</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

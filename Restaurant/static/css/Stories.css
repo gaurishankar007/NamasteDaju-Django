@@ -92,3 +92,43 @@
     color: rgb(0, 0, 187);
 }
 /*====================Front====================*/
+
+/*====================Stories====================*/
+#SH h1
+{
+    color: rgb(0, 0, 187);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#Sc h2, h4
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+#Sc button
+{
+    color: white;
+    border-radius: 10px;
+    background-color: blue;
+    width: 110px;
+} 
+#Sc button:hover
+{
+    color: rgb(0, 0, 187);
+    background-color: transparent;
+    border: 2px solid rgb(0, 0, 187);
+}
+#Sc .detail
+{
+    border-radius: 10px;
+    padding-inline-start: 8px;
+    background-image: linear-gradient( rgba(0, 17, 255, 0.2), rgba(0, 17, 255, 0.2) );
+}
+#Sc img
+{
+    height: 500px;
+}
+
+/*====================Stories====================*/
+
+
+

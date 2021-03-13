@@ -1,4 +1,4 @@
-/*====================AdMenu====================*/
+/*====================AdStories====================*/
 #Cs
 {
     color: rgb(0, 187, 40);
@@ -8,7 +8,7 @@
     right: 10px;
     z-index: 1000;
 }
-#AMH h1
+#ASH h1
 {
     color: rgb(0, 187, 40);
     font-family: 'Times New Roman', Times, serif;
@@ -28,30 +28,34 @@
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
-#Card input, select
+#Card input, #Card textarea
 {
     background-image: linear-gradient( rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1) );
     border-radius: 15px;
 }
-#Card input:hover, select:hover
+#Card input:hover, #Card textarea:hover
 {
     border: 2px solid rgb(0, 187, 40);
 }
-#Card button, #AMB
+#Card button, #ASB
 {
     color: white;
     font-weight: bold;
     background-color:green;
-    text-decoration: none;
     border-radius: 10px;
 }
-#Card button:hover, #AMB:hover
+#Card button:hover, #ASB:hover
 {
     color: rgb(0, 187, 40);
     background-color: transparent;
     border: 2px solid rgb(0, 187, 40);
 }
-#Table h1, th, td
+#Table
+{
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(0, 0, 187);
+}
+#Table th, td
 {
     font-family: 'Times New Roman', Times, serif;
 }
@@ -63,6 +67,10 @@
 {
     font-size: 18px;
 }
+.tdd
+{
+    width: 1200px;
+}
 #Table td a
 {
     color: black;
@@ -73,55 +81,7 @@
     height: 100px;
     border-radius: 10px;
 }
-#Breakfast
-{
-    box-shadow: 0px 5px 20px orange;
-}
-#Bh1
-{
-    color: orange;
-}
-#Lunch
-{
-    box-shadow: 0px 5px 20px green;
-}
-#Lh1
-{
-    color: green;
-}
-#Dinner
-{
-    box-shadow: 0px 5px 20px brown;
-}
-#Dnh1
-{
-    color: brown;
-}
-#Deserts
-{
-    box-shadow: 0px 5px 20px purple;
-}
-#Dsh1
-{
-    color: purple;
-}
-#Wine_Card
-{
-    box-shadow: 0px 5px 20px red;
-}
-#Wh1
-{
-    color: red;
-}
-#Drinks_Tea
-{
-    box-shadow: 0px 5px 20px olive;
-}
-#Dth1
-{
-    color: olive;
-}
-/*====================AdMenu====================*/
+/*====================AdStories====================*/
 
 /*====================Copyright====================*/
 #Copyright 

@@ -76,39 +76,7 @@
                 {% endfor %}
                 <form class="form" method="POST">
                     {% csrf_token %}
-                    <div class="form-group">
-                        <label for="name">Name: </label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" pattern=".{5,}" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="email">Email: </label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="phone">Phone: </label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" pattern=".{10,}" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="date">Date: </label>
-                        <input type="date" class="form-control" id="date" name="date" placeholder="Enter Date" required> 
-                      </div>
-                      <div class="form-group">
-                        <label for="time">Time: </label>
-                        <select class="form-control" id="time" name="time" required>
-                            <option disabled selected hidden>Enter Time</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="person">Person: </label>
-                        <select class="form-control" id="person" name="person" required>
-                            <option disabled selected hidden>Enter Total Person</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                      </div>
+                    {{form | bootstrap_horizontal}}
                     <div class="d-flex justify-content-center py-2">
                         <button type="submit" class="btn px-4 py-1">Book Table</button>
                     </div>
