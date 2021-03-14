@@ -23,6 +23,26 @@ Input[4].placeholder = 'Enter Email';
 Input[5].placeholder = 'Enter Phone Number';
 Input[8].placeholder = 'Enter Address only if Catering is Off-promise';
 
+/*====================Phone Number Functions====================*/
+function validate(evt) {
+    var theEvent = evt || window.event;
+  
+    // Handle paste
+    if (theEvent.type === 'paste') {
+        key = event.clipboardData.getData('text/plain');
+    } else {
+    // Handle key press
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+    }
+    var regex = /[0-9]|\./;
+    if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+}
+/*====================Phone Number Functions====================*/
+
 /*====================Theme Functions====================*/
 function dark()
 {
@@ -64,8 +84,8 @@ function dark()
 function light()
 {
     Header.style.backgroundColor="white";
-    Catering.style.backgroundColor="black";
-    Card.style.backgroundColor="black";
+    Catering.style.backgroundColor="white";
+    Card.style.backgroundColor="white";
     Form.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";
     Copyright.style.backgroundColor="#111";

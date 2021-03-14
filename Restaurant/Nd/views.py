@@ -20,7 +20,8 @@ def ad_menu(request):
             return redirect('/Nd/ad_menu')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Add Food')
-            return render(request, 'Nd/AdMenu.html', {'form': form})
+            dictionary = {'key': Menu.objects.all(), 'form': form, 'action': "Add"}
+            return render(request, 'Nd/AdMenu.html', dictionary)
     dictionary = {'key': Menu.objects.all(), 'form': MenuForm, 'action': "Add"}
     return render(request, 'Nd/AdMenu.html', dictionary)
 
@@ -61,7 +62,8 @@ def ad_gallery(request):
             return redirect('/Nd/ad_gallery')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Add Picture')
-            return render(request, 'Nd/AdGallery.html', {'form': form})
+            dictionary = {'key': Gallery.objects.all(), 'form': form, 'action': 'Update'}
+            return render(request, 'Nd/AdGallery.html', dictionary)
     dictionary = {'key': Gallery.objects.all(), 'form': GalleryForm, 'action': 'Add'}
     return render(request, 'Nd/AdGallery.html', dictionary)
 
@@ -102,7 +104,8 @@ def ad_stories(request):
             return redirect('/Nd/ad_stories')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Add Story')
-            return render(request, 'Nd/AdStories.html', {'form': form})
+            dictionary = {'key': Stories.objects.all(), 'form': form, 'action': 'Update'}
+            return render(request, 'Nd/AdStories.html', dictionary)
     dictionary = {'key':Stories.objects.all(), 'form':StoriesForm, 'action':'Add'}
     return render(request, 'Nd/AdStories.html', dictionary)
 
@@ -138,16 +141,43 @@ def ad_order(request):
     dictionary = {'order': 'selected'}
     return render(request, 'Nd/AdOrder.html', dictionary)
 
-
+# =========================Reservation=========================
 def ad_reservation(request):
-    dictionary = {'reservation': 'selected'}
+    dictionary = {'key': Reservation.objects.all()}
     return render(request, 'Nd/AdReservation.html', dictionary)
 
+def ad_reservation_complete(request, reservation_id):
+    reservation = Reservation.objects.get(id=reservation_id)
+    reservation.completion = True
+    reservation.save()
+    dictionary = {'key': Reservation.objects.all()}
+    return render(request, 'Nd/AdReservation.html', dictionary)
 
+def ad_reservation_delete(request, reservation_id):
+    reservation = Reservation.objects.get(id=reservation_id)
+    reservation.delete()
+    dictionary = {'key': Reservation.objects.all()}
+    return render(request, 'Nd/AdReservation.html', dictionary)
+# =========================Reservation=========================
+
+# =========================Catering=========================
 def ad_catering(request):
-    dictionary = {'catering': 'selected'}
+    dictionary = {'key':Catering.objects.all()}
     return render(request, 'Nd/AdCatering.html', dictionary)
 
+def ad_catering_complete(request, catering_id):
+    catering = Catering.objects.get(id=catering_id)
+    catering.completion = True
+    catering.save()
+    dictionary = {'key':Catering.objects.all()}
+    return render(request, 'Nd/AdCatering.html', dictionary)
+
+def ad_catering_delete(request, catering_id):
+    catering = Catering.objects.get(id=catering_id)
+    catering.delete()
+    dictionary = {'key':Catering.objects.all()}
+    return render(request, 'Nd/AdCatering.html', dictionary)
+# =========================Catering=========================
 
 def message(request):
     dictionary = {'message': 'selected'}
@@ -201,10 +231,10 @@ def catering(request):
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, 'You have ordered catering successfully')
-            return redirect('/Nd/reservation')
+            return redirect('/Nd/catering')
         else:
             messages.add_message(request, messages.ERROR, 'Failed to order catering')
-            return render(request, 'Nd/Reservation.html', {'form': form})
+            return render(request, 'Nd/catering.html', {'form': form})
     dictionary = {'form':CateringForm ,'catering': 'selected'}
     return render(request, 'Nd/Catering.html', dictionary)
 

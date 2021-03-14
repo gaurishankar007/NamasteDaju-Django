@@ -42,6 +42,7 @@ class Reservation(models.Model):
     date = models.DateField(max_length=20)
     time = models.TimeField(max_length=10)
     person = models.CharField(max_length=2, choices=options)
+    completion = models.BooleanField(default=False)
     reserved_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -60,6 +61,7 @@ class Catering(models.Model):
     event_type = models.CharField(max_length=50, choices=options1)
     catering_type = models.CharField(max_length=50, choices=options2)
     address = models.CharField(blank=True, max_length=50, validators=[validators.MinLengthValidator(10)])
+    completion = models.BooleanField(default=False)
     catering_order_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

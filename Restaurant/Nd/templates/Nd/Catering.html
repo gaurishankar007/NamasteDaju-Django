@@ -92,7 +92,7 @@
                 <h1>Our Restaurant Catering Includes</h1>
             </div> 
             <div class="container d-flex justify-content-center">
-                <ul>
+                <ul id="UL">
                     <li class="Uli"><span class="fa fa-check"></span> Weddings</li>
                     <li class="Uli"><span class="fa fa-check"></span> Birthday Parties</li>
                     <li class="Uli"><span class="fa fa-check"></span> Anniversary Parties</li>
@@ -107,7 +107,7 @@
             <div class="card p-4" id="Card">
                 {% for message in messages %}
                     {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-                    <h4 class="error_message py-3 px-1 my-2 text-center">{{message}}</h4>
+                    <h4 class="success_message py-3 px-1 my-2 text-center">{{message}}</h4>
                     {% endif %}
                     {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
                     <h4 class="error_message py-3 px-1 my-2 text-center">{{message}}</h4>

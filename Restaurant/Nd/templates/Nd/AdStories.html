@@ -27,7 +27,7 @@
                 <span class="fa fa-times" onclick="hide()" id="Cs"></span>
                 {% for message in messages %}
                     {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-                    <h4 class="error_message mb-4 text-center">{{message}}</h4>
+                    <h4 class="success_message mb-4 text-center">{{message}}</h4>
                     {% endif %}
                     {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
                     <h4 class="error_message mb-4 text-center">{{message}}</h4>

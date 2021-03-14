@@ -15,8 +15,15 @@
 }
 #Card h4, .help-block
 {
-    color: rgb(0, 187, 40);
     font-family: cursive;
+}
+.help-block, .success_message
+{
+    color: rgb(0, 187, 40);
+}
+.error_message, .help-block
+{
+    color: red;
 }
 #Card
 {

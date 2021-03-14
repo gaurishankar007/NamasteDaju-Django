@@ -118,19 +118,19 @@
     font-size: 20px;
     text-align: justify;
 }
-ul
+#UL
 {
     list-style-type: none;
     padding-inline-start: 0px;
     font-family: 'Times New Roman', Times, serif;
 }
-ul li
+#UL li
 {
     font-size: 25px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-ul li span
+#UL li span
 {
     color: blue;
     font-size: 20px;
@@ -144,8 +144,15 @@ ul li span
 /*====================Card====================*/
 #Card h4, .help-block
 {
-    color: rgb(0, 187, 40);
     font-family: cursive;
+}
+.help-block, .success_message
+{
+    color: rgb(0, 187, 40);
+}
+.error_message, .help-block
+{
+    color: red;
 }
 #Card
 {

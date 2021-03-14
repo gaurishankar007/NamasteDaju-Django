@@ -22,8 +22,16 @@ urlpatterns = [
     path('deletestory/<int:story_id>', views.ad_stories_delete),
 # =========================Stories=========================
     path('ad_order', views.ad_order),
+# =========================Reservation=========================
     path('ad_reservation', views.ad_reservation),
+    path('completereservation/<int:reservation_id>', views.ad_reservation_complete),
+    path('deletereservation/<int:reservation_id>', views.ad_reservation_delete),
+# =========================Reservation=========================
+# =========================Catering=========================
     path('ad_catering', views.ad_catering),
+    path('completecatering/<int:catering_id>', views.ad_catering_complete),
+    path('deletecatering/<int:catering_id>', views.ad_catering_delete),
+# =========================Catering=========================
     path('message', views.message),
     path('user', views.user),
 # =========================Back End=========================

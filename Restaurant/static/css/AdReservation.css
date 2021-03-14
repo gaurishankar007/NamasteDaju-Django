@@ -1,0 +1,61 @@
+/*====================AdReservation====================*/
+
+#ARH h1
+{
+    color: rgb(0, 187, 40);
+    font-family: 'Times New Roman', Times, serif;
+}
+#Uch1
+{
+    color: rgb(187, 69, 40);
+    font-family: 'Times New Roman', Times, serif;
+}#Ch1
+{
+    color: rgb(0, 187, 40);
+    font-family: 'Times New Roman', Times, serif;
+}
+#UcTable
+{
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(187, 69, 0);
+}
+#CTable
+{
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(0, 187, 40);
+}
+#UcTable h1, th, td, #CTable h1, th, td
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+#UcTable th, #CTable th
+{
+    font-size: 22px;
+}
+#UcTable td, #CTable td
+{
+    font-size: 18px;
+}
+#UcTable td a, #CTable td a
+{
+    color: black;
+    font-size: 18px;
+}
+/*====================AdReservation====================*/
+
+/*====================Copyright====================*/
+#Copyright 
+{
+    background-color: black;
+}
+#Copyright p
+{
+    font-size: 18px;
+    color: #c9c9c9;
+}
+#Copyright p a
+{
+    color: white;
+    text-decoration: none;
+}
+/*====================Copyright====================*/

@@ -68,7 +68,7 @@
             <div class="card p-4" id="Card">
                 {% for message in messages %}
                     {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-                    <h4 class="error_message py-3 px-1 my-2 text-center">{{message}}</h4>
+                    <h4 class="success_message py-3 px-1 my-2 text-center">{{message}}</h4>
                     {% endif %}
                     {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
                     <h4 class="error_message py-3 px-1 my-2 text-center">{{message}}</h4>
