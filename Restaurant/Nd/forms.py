@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Menu, Gallery, Stories, Reservation, Catering
+from .models import Menu, Gallery, Stories, Reservation, Catering, Message
 from datetime import date
 
 
@@ -38,3 +38,7 @@ class CateringForm(ModelForm):
                   'phone':  forms.widgets.TextInput(attrs={'onkeypress': 'validate(event)'})}
 
 
+class MessageForm(ModelForm):
+   class Meta:
+      model = Message
+      fields = ['subject', 'messages']

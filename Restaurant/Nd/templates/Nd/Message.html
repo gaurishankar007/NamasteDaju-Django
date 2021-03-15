@@ -1,0 +1,60 @@
+{% extends 'AdMain.html' %}
+
+{% load bootstrap %}
+
+{% load static %}
+
+{% block title_link %}
+    <title>NamasteDaju Restaurant Gallery</title>
+{% endblock %}
+
+{% block css_link %}
+    <link href="{% static 'css/AdNavbar.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/Message.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    {% include 'AdNavbar.html' %}
+    <div class="container-fluid d-flex flex-column px-0" id="AdCatering">
+        <div class="container-fluid d-flex justify-content-center pb-sm-5" id="AMH">
+          <h1>Messages From Users</h1>
+        </div>     
+        <div class="table-responsive" id="Table">
+            <table class="table table-striped" id="Images">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>messages</th>
+                        <th>Messaged Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in key %}
+                    {% if i.completion == False %}
+                    <tr>                        
+                        <td>{{i.name}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.subject}}</td>
+                        <td>{{i.messages}}</td>
+                        <td>{{i.messaged_date}}</td>
+                        <td>
+                            <a href="/Nd/deletemessage/{{i.id}}" class="btn btn-danger mr-4">Delete</a>
+                        </td>                        
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center py-2 mt-3" id="Copyright">
+        <p>Copyright ©2021 All rights reserved. Design by <a href="#">Gauri Shankar Sharma</a></p>
+    </div>
+{% endblock %}
+
+{% block script_link %}
+        <script src="{% static 'js/AdNavbar.js' %}"></script>
+{% endblock %}

@@ -1,6 +1,5 @@
-/*====================AdReservation====================*/
-
-#ARH
+/*====================AdCatering====================*/
+#AMH
 {
     height: 400px;
     background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/b.jpg");
@@ -8,50 +7,43 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-#ARH h1
+#AMH h1
 {
     margin-top: 200px;
     font-size: 40px;
     color: rgb(0, 187, 40);
     font-family: 'Times New Roman', Times, serif;
 }
-#Uch1
+#ACH h1
 {
-    color: rgb(187, 69, 40);
-    font-family: 'Times New Roman', Times, serif;
-}#Ch1
-{
+    margin-top: 200px;
+    font-size: 40px;
     color: rgb(0, 187, 40);
     font-family: 'Times New Roman', Times, serif;
 }
-#UcTable
-{
-    border-radius: 10px;
-    box-shadow: 0px 5px 20px rgb(187, 69, 0);
-}
-#CTable
+Table
 {
     border-radius: 10px;
     box-shadow: 0px 5px 20px rgb(0, 187, 40);
 }
-#UcTable h1, th, td, #CTable h1, th, td
+#Table th, td
 {
     font-family: 'Times New Roman', Times, serif;
 }
-#UcTable th, #CTable th
+#Table th
 {
     font-size: 22px;
 }
-#UcTable td, #CTable td
+#Table td
 {
     font-size: 18px;
 }
-#UcTable td a, #CTable td a
+#Table td a
 {
     color: black;
     font-size: 18px;
 }
-/*====================AdReservation====================*/
+/*====================AdCatering====================*/
 
 /*====================Copyright====================*/
 #Copyright 

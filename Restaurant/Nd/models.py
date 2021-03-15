@@ -66,3 +66,13 @@ class Catering(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class Message(models.Model):
+    subject = models.CharField(max_length=50, validators=[validators.MinLengthValidator(2)])
+    messages = models.TextField(max_length=2000, validators=[validators.MinLengthValidator(50)])
+    messaged_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
