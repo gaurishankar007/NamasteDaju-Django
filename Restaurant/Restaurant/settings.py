@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Nd.apps.NdConfig',
+    'Ac.apps.AcConfig',
     'Ad.apps.AdConfig',
     'bootstrapform',
 ]

@@ -25,7 +25,7 @@ class StoriesForm(ModelForm):
 class ReservationForm(ModelForm):
    class Meta:
       model = Reservation
-      fields = ['name','email', 'phone', 'date', 'time', 'person']
+      fields = ['firstname', 'lastname', 'email', 'phone', 'date', 'time', 'person']
       widgets = {'date': forms.widgets.DateInput(attrs={'type': 'date', 'min': date.today()}), 'time':  forms.widgets.TimeInput(attrs={'type': 'time'}),  
                   'phone':  forms.widgets.TextInput(attrs={'onkeypress': 'validate(event)'})}
 
@@ -33,7 +33,7 @@ class ReservationForm(ModelForm):
 class CateringForm(ModelForm):
    class Meta:
       model = Catering
-      fields = ['name','email', 'phone', 'date', 'time', 'event_type', 'catering_type', 'address']
+      fields = ['firstname', 'lastname', 'email', 'phone', 'date', 'time', 'event_type', 'catering_type', 'address']
       widgets = {'date': forms.widgets.DateInput(attrs={'type': 'date', 'min': date.today()}), 'time':  forms.widgets.TimeInput(attrs={'type': 'time'}), 
                   'phone':  forms.widgets.TextInput(attrs={'onkeypress': 'validate(event)'})}
 

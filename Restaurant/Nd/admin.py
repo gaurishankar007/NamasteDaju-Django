@@ -17,13 +17,13 @@ class StoriesAdmin(admin.ModelAdmin):
 admin.site.register(Stories, StoriesAdmin)
 
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'phone', 'date', 'time', 'person', 'completion', 'reserved_date')
+    list_display = ('firstname', 'lastname', 'email', 'phone', 'date', 'time', 'person', 'completion', 'reserved_date')
 
 admin.site.register(Reservation, ReservationAdmin)
 
 
 class CateringAdmin(admin.ModelAdmin):
-    list_display = ('name','email', 'phone', 'date', 'time', 'event_type', 'catering_type', 'address','completion', 'catering_order_date')
+    list_display = ('firstname', 'lastname', 'email', 'phone', 'date', 'time', 'event_type', 'catering_type', 'address','completion', 'catering_order_date')
 
 admin.site.register(Catering, CateringAdmin)
 

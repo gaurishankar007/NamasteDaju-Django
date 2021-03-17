@@ -16,6 +16,7 @@ Label[6].innerHTML+=":";
 Label[7].innerHTML+=":";
 Label[8].innerHTML+=":";
 Label[9].innerHTML+=":";
+Label[10].innerHTML+=":";
 
 var Input = document.getElementsByTagName('input')
 Input[3].placeholder = 'Enter Name';
