@@ -10,14 +10,14 @@
 
 {% block css_link %}
     <link href="{% static 'css/AdNavbar.css' %}" rel="stylesheet" type="text/css"/>
-    <link href="{% static 'css/AdCatering.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/AdReservation.css' %}" rel="stylesheet" type="text/css"/>
 {% endblock %}
 
 {% block content %}
     {% include 'AdNavbar.html' %}
-    <div class="container-fluid d-flex flex-column px-0" id="AdCatering">
-        <div class="container-fluid d-flex justify-content-center pb-sm-5" id="ACH">
-          <h1>NamasteDaju Restaurant Catering</h1>
+    <div class="container-fluid d-flex flex-column px-0" id="AdReservation">
+        <div class="container-fluid d-flex justify-content-center pb-sm-5" id="ARH">
+          <h1>NamasteDaju Restaurant Reservation</h1>
         </div>      
         <h1 class="text-center" id="Uch1">Uncompleted</h1>
         <div class="table-responsive" id="UcTable">
@@ -30,10 +30,8 @@
                         <th>Phone</th>
                         <th>Date</th>
                         <th>Time</th>
-                        <th>Event Type</th>
-                        <th>Catering Type</th>
-                        <th>Address</th>
-                        <th>Catering Order Date</th>
+                        <th>Person</th>
+                        <th>Reserved Date</th>
                         <th>Mark as Completed</th>
                     </tr>
                 </thead>
@@ -47,12 +45,10 @@
                         <td>{{i.phone}}</td>
                         <td>{{i.date}}</td>
                         <td>{{i.time}}</td>
-                        <td>{{i.event_type}}</td>
-                        <td>{{i.catering_type}}</td>
-                        <td>{{i.address}}</td>
-                        <td>{{i.catering_order_date}}</td>
+                        <td>{{i.person}}</td>
+                        <td>{{i.reserved_date}}</td>
                         <td>
-                            <a href="/Nd/completecatering/{{i.id}}" class="btn btn-success mr-4">Completed</a>
+                            <a href="/Ad/completereservation/{{i.id}}" class="btn btn-success mr-4">Completed</a>
                         </td>                        
                     </tr>
                     {% endif %}
@@ -60,7 +56,7 @@
                 </tbody>
             </table>
         </div>
-        <h1 class="text-center mt-5" id="Ch1">Completed</h1>
+        <h1 class="text-center  mt-5" id="Ch1">Completed</h1>
         <div class="table-responsive" id="CTable">
             <table class="table table-striped" id="Images">
                 <thead class="thead-dark">
@@ -71,10 +67,8 @@
                         <th>Phone</th>
                         <th>Date</th>
                         <th>Time</th>
-                        <th>Event Type</th>
-                        <th>Catering Type</th>
-                        <th>Address</th>
-                        <th>Catering Order Date</th>
+                        <th>Person</th>
+                        <th>Reserved Date</th>
                         <th>Remove</th>
                     </tr>
                 </thead>
@@ -88,12 +82,10 @@
                         <td>{{i.phone}}</td>
                         <td>{{i.date}}</td>
                         <td>{{i.time}}</td>
-                        <td>{{i.event_type}}</td>
-                        <td>{{i.catering_type}}</td>
-                        <td>{{i.address}}</td>
-                        <td>{{i.catering_order_date}}</td>
+                        <td>{{i.person}}</td>
+                        <td>{{i.reserved_date}}</td>
                         <td>
-                            <a href="/Nd/deletecatering/{{i.id}}" class="btn btn-danger mr-4">Delete</a>
+                            <a href="/Ad/deletereservation/{{i.id}}" class="btn btn-danger mr-4">Delete</a>
                         </td>
                     </tr>
                     {% endif %}

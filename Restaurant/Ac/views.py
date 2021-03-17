@@ -32,7 +32,7 @@ def login_user(request):
                     return redirect('/Nd/home')
                 elif user.is_staff:
                     login(request, user)
-                    return redirect('/Ad')
+                    return redirect('/Ad/admin')
             else:
                 messages.add_message(request, messages.ERROR, 'Username or Password Invalid')
                 return render(request, 'Ac/Login.html', {'form': form})
@@ -41,4 +41,4 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('/Ac')
+    return redirect('/Nd/home')
