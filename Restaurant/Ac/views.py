@@ -21,9 +21,23 @@ def register_user(request):
 
 
 def login_user(request):
-    form = LoginForm
-    dictionary = {'form': form}
-    return render(request, 'Nd/Home.html', dictionary)
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            user = authenticate(request, username=data['username'], password=data['password'])
+            if user is not None:
+                if not user.is_staff:
+                    login(request, user)
+                    return redirect('/Nd/home')
+                elif user.is_staff:
+                    login(request, user)
+                    return redirect('/Ad')
+            else:
+                messages.add_message(request, messages.ERROR, 'Username or Password Invalid')
+                return render(request, 'Ac/Login.html', {'form': form})
+    dictionary = {'form': LoginForm}
+    return render(request, 'Ac/Login.html', dictionary)
 
 def logout_user(request):
     logout(request)

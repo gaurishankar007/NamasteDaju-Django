@@ -17,7 +17,6 @@ Menu.style.backgroundColor="white";
 function dark()
 {
     Header.style.backgroundColor="black";
-    Form.style.backgroundColor="#111";
     Menu.style.backgroundColor="black";
     AUOC.style.backgroundColor="#111";
     Copyright.style.backgroundColor="black";
@@ -56,7 +55,6 @@ function dark()
 function light()
 {
     Header.style.backgroundColor="white";
-    Form.style.backgroundColor="white";
     Menu.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";
     Copyright.style.backgroundColor="#111";

@@ -21,7 +21,6 @@ function dark()
 {
     Header.style.backgroundColor="black";
     Stories.style.backgroundColor="black";
-    Form.style.backgroundColor="#111";
     AUOC.style.backgroundColor="#111";
     Copyright.style.backgroundColor="black";
 
@@ -54,7 +53,6 @@ function light()
 {
     Header.style.backgroundColor="white";
     Stories.style.backgroundColor="white";
-    Form.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";
     Copyright.style.backgroundColor="#111";
 

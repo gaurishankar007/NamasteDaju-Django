@@ -1,12 +1,23 @@
-var Gallery =  document.getElementById("Gallery");
+var Login =  document.getElementById("Login");
+var Card =  document.getElementById("Card");
 var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
+
+var Label = document.getElementsByTagName('label');
+console.log(Label.length)
+Label[0].innerHTML+=":";
+Label[1].innerHTML+=":";
+
+var Input = document.getElementsByTagName('input')
+Input[1].placeholder = 'Enter Username';
+Input[2].placeholder = 'Enter Password';
 
 /*====================Theme Functions====================*/
 function dark()
 {
     Header.style.backgroundColor="black";
-    Gallery.style.backgroundColor="black";
+    Login.style.backgroundColor="black";
+    Card.style.backgroundColor="black";
     AUOC.style.backgroundColor="#111";
     Copyright.style.backgroundColor="black";
 
@@ -15,7 +26,11 @@ function dark()
     {
     header_nav_link[i].style.color="white";
     }
-    document.getElementsByClassName("selected")[0].style.color="rgb(0, 0, 187)";
+
+    for(i=0; i<Label.length; i++)
+    {
+        Label[i].style.color="white";
+    }
 
     document.getElementById("Moon").hidden=true;
     document.getElementById("Sun").hidden=false;
@@ -25,7 +40,8 @@ function dark()
 function light()
 {
     Header.style.backgroundColor="white";
-    Gallery.style.backgroundColor="white";
+    Login.style.backgroundColor="white";
+    Card.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";
     Copyright.style.backgroundColor="#111";
 
@@ -34,7 +50,11 @@ function light()
     {
     header_nav_link[i].style.color="black";
     }
-    document.getElementsByClassName("selected")[0].style.color="rgb(0, 0, 187)";
+
+    for(i=0; i<Label.length; i++)
+    {
+        Label[i].style.color="black";
+    }
 
     document.getElementById("Moon").hidden=false;
     document.getElementById("Sun").hidden=true;

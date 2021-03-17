@@ -40,8 +40,6 @@ for(i=0; i<=5; i++)
     Crh3[i].style.color="black";
 }
 
-var flb = document.getElementsByClassName('flb');
-
 Services.style.backgroundColor="#F4F6F6";
 Customers.style.backgroundColor="#F4F6F6";
 
@@ -49,7 +47,6 @@ Customers.style.backgroundColor="#F4F6F6";
 function dark()
 {
     Header.style.backgroundColor="black";
-    Form.style.backgroundColor="#111";
     About.style.backgroundColor="black";
     AUOC.style.backgroundColor="#111";
     Copyright.style.backgroundColor="black";
@@ -87,9 +84,6 @@ function dark()
     Crh3[i].style.color="white";
     }
 
-    flb[0].style.color="white";
-    flb[1].style.color="white";
-
     document.getElementById("ADh1").style.color="white";
     document.getElementById("ADp").style.color="#adadad";
 
@@ -101,7 +95,6 @@ function dark()
 function light()
 {
     Header.style.backgroundColor="white";
-    Form.style.backgroundColor="white";
     About.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";
     Copyright.style.backgroundColor="#111";
@@ -138,9 +131,6 @@ function light()
     {
     Crh3[i].style.color="black";
     }
-
-    flb[0].style.color="black";
-    flb[1].style.color="black";
 
     document.getElementById("ADh1").style.color="black";
     document.getElementById("ADp").style.color="#696969";

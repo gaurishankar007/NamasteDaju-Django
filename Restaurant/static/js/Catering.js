@@ -8,6 +8,8 @@ var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
 
 var Label = document.getElementsByTagName('label');
+Label[0].innerHTML+=":";
+Label[1].innerHTML+=":";
 Label[2].innerHTML+=":";
 Label[3].innerHTML+=":";
 Label[4].innerHTML+=":";
@@ -15,14 +17,13 @@ Label[5].innerHTML+=":";
 Label[6].innerHTML+=":";
 Label[7].innerHTML+=":";
 Label[8].innerHTML+=":";
-Label[9].innerHTML+=":";
-Label[10].innerHTML+=":";
 
 var Input = document.getElementsByTagName('input')
-Input[3].placeholder = 'Enter Name';
-Input[4].placeholder = 'Enter Email';
-Input[5].placeholder = 'Enter Phone Number';
-Input[8].placeholder = 'Enter Address only if Catering is Off-promise';
+Input[1].placeholder = 'Enter First Name';
+Input[2].placeholder = 'Enter Last Name';
+Input[3].placeholder = 'Enter Email';
+Input[4].placeholder = 'Enter Phone Number';
+Input[7].placeholder = 'Enter Address only if Catering is Off-promise';
 
 /*====================Phone Number Functions====================*/
 function validate(evt) {

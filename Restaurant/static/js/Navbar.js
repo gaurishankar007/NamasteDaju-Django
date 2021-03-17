@@ -1,22 +1,7 @@
 var Header = document.getElementById("Header");
-var Form = document.getElementById("Form");
-
-window.onscroll=function(){Form.style.visibility="hidden";}
-
 var header_nav_link = document.getElementsByClassName('header_nav_link');
 
-Form.style.backgroundColor="white";
-Form.style.visibility="hidden";
 document.getElementById("Sun").hidden=true;
-
-/*====================Login Functions====================*/
-function show(){
-    Form.style.visibility="visible";
-}
-function hide(){
-    Form.style.visibility="hidden";
-}
-/*====================Login Functions====================*/
 
 /*====================TopScroll Functions====================*/
 function ScrollUp() {

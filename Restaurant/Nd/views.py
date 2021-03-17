@@ -6,6 +6,8 @@ from . forms import MenuForm, GalleryForm, StoriesForm, ReservationForm, Caterin
 from django.contrib import messages
 import os
 
+from django.contrib.auth.decorators import login_required
+
 # =========================Back End=========================
 def admin(request):
     return render(request, 'Nd/Admin.html')
@@ -211,6 +213,7 @@ def stories(request):
     return render(request, 'Nd/Stories.html', dictionary)
 
 
+@login_required
 def reservation(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
@@ -225,6 +228,7 @@ def reservation(request):
     return render(request, 'Nd/Reservation.html', dictionary)
 
 
+@login_required
 def catering(request):
     if request.method == 'POST':
         form = CateringForm(request.POST)
@@ -238,7 +242,7 @@ def catering(request):
     dictionary = {'form':CateringForm ,'catering': 'selected'}
     return render(request, 'Nd/Catering.html', dictionary)
 
-
+@login_required
 def contact(request):
     dictionary = {'contact': 'selected'}
     return render(request, 'Nd/Contact.html', dictionary)

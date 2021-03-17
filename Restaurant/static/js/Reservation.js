@@ -5,18 +5,19 @@ var Copyright = document.getElementById("Copyright");
 
 var Label = document.getElementsByTagName('label');
 console.log(Label.length)
+Label[0].innerHTML+=":";
+Label[1].innerHTML+=":";
 Label[2].innerHTML+=":";
 Label[3].innerHTML+=":";
 Label[4].innerHTML+=":";
 Label[5].innerHTML+=":";
 Label[6].innerHTML+=":";
-Label[7].innerHTML+=":";
-Label[8].innerHTML+=":";
 
 var Input = document.getElementsByTagName('input')
-Input[3].placeholder = 'Enter Name';
-Input[4].placeholder = 'Enter Email';
-Input[5].placeholder = 'Enter Phone Number';
+Input[1].placeholder = 'Enter First Name';
+Input[2].placeholder = 'Enter Last Name';
+Input[3].placeholder = 'Enter Email';
+Input[4].placeholder = 'Enter Phone Number';
 
 /*====================Phone Number Functions====================*/
 function validate(evt) {
@@ -42,7 +43,6 @@ function validate(evt) {
 function dark()
 {
     Header.style.backgroundColor="black";
-    Form.style.backgroundColor="#111";
     Reservation.style.backgroundColor="black";
     Card.style.backgroundColor="black";
     AUOC.style.backgroundColor="#111";
@@ -68,7 +68,6 @@ function dark()
 function light()
 {
     Header.style.backgroundColor="white";
-    Form.style.backgroundColor="white";
     Reservation.style.backgroundColor="white";
     Card.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";

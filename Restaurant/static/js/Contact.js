@@ -5,7 +5,6 @@ var Copyright = document.getElementById("Copyright");
 function dark()
 {
     Header.style.backgroundColor="black";
-    Form.style.backgroundColor="#111";
     AUOC.style.backgroundColor="#111";
     Copyright.style.backgroundColor="black";
 
@@ -24,7 +23,6 @@ function dark()
 function light()
 {
     Header.style.backgroundColor="white";
-    Form.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";
     Copyright.style.backgroundColor="#111";
 

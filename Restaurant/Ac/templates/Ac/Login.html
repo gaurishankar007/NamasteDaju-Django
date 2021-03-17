@@ -5,11 +5,11 @@
 {% load bootstrap %}
 
 {% block title_link %}
-    <title>NamasteDaju Restaurant Register</title>
+    <title>NamasteDaju Restaurant Login</title>
 {% endblock %}
 
 {% block css_link %}
-    <link href="{% static 'css/Register.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/Login.css' %}" rel="stylesheet" type="text/css"/>
 {% endblock %}
 
 {% block content %}
@@ -52,17 +52,17 @@
         </div>
         <div class="container-fluid d-flex flex-column justify-content-center" id="HM">
             <div class="container d-flex justify-content-center">
-                <h1>Register</h1>
+                <h1>Login</h1>
             </div>
             <div class="container d-flex justify-content-center">
-                <h5><a href="/Nd/home">Home <span class="fa fa-chevron-right"></span> </a> Register <span class="fa fa-chevron-right"></span></h5>
+                <h5><a href="/Nd/home">Home <span class="fa fa-chevron-right"></span> </a> Login <span class="fa fa-chevron-right"></span></h5>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid d-flex flex-column py-5" id="Register">
-        <div class="container d-flex justify-content-center pt-sm-5" id="RH">
-          <h1>Register into NamasteDaju Restaurant</h1>
+    <div class="container-fluid d-flex flex-column py-5" id="Login">
+        <div class="container d-flex justify-content-center pt-sm-5" id="LH">
+          <h1>Login into NamasteDaju Restaurant</h1>
         </div>        
         <div class="container" id="Form">
             <div class="card p-4" id="Card">
@@ -78,7 +78,13 @@
                     {% csrf_token %}
                     {{form | bootstrap_horizontal}}
                     <div class="d-flex justify-content-center py-2 mb-3">
-                        <button type="submit" class="btn px-4 py-1">Register</button>
+                        <button type="submit" class="btn px-4 py-1">Login</button>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <small id="emailHelp" class="form-text font-weight-bold m-0">Don't Have An Account!</small>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="/Ac/register" class="btn btn-style font-weight-bold px-sm-3 m-0" >SignUp</a>
                     </div>
                 </form>
             </div>
@@ -87,5 +93,5 @@
 {% endblock %}
 
 {% block script_link %}
-        <script src="{% static 'js/Register.js' %}"></script>
+        <script src="{% static 'js/Login.js' %}"></script>
 {% endblock %}

@@ -83,7 +83,7 @@
 }
 #Buttons .lb:hover
 {
-    border: 2px solid rgb(0, 0, 187);
+    border: 3px solid rgb(0, 0, 187);
     background-color: white;
     color: rgb(0, 0, 187);
 }
@@ -132,3 +132,11 @@
     background-color: black;
 }
 /*====================Header====================*/
+
+@media screen and (max-width: 650px)
+{
+#Buttons .lb
+{
+    display: none;
+}
+}
