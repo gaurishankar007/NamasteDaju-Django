@@ -19,7 +19,7 @@
         <div class="container-fluid d-flex justify-content-center pb-sm-5" id="ASH">
           <h1>NamasteDaju Restaurant Stories</h1>
         </div>   
-        <div class="container d-flex justify-content-end pb-4">
+        <div class="container d-flex justify-content-center py-4">
             <button class="btn px-4" onclick="show()" id="ASB">Open Story Form</button>
         </div>        
         <div class="container mb-5" id="Form">
@@ -38,6 +38,17 @@
                     {{ form | bootstrap_horizontal }}
                     <div class="d-flex justify-content-center py-2">
                         <button type="submit" class="btn px-4">{{action}} Story</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container d-flex justify-content-center pb-5" id="Search">
+            <div class="card p-4" id="Card">
+                <form class="form" method="GET">
+                    {{stories_filter.form}}
+                    <div class="d-flex justify-content-center py-2">
+                        <button type="submit" class="btn px-4 py-1 mr-2">Search</button>
+                        <a href="/Ad/ad_stories" type="button"  class="btn px-4 py-1" id="ASB">Show All</a>
                     </div>
                 </form>
             </div>

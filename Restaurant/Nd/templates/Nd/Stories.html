@@ -58,9 +58,19 @@
         </div>
     </div>
     <div class="container-fluid d-flex flex-column py-5" id="Stories">
-        <div class="container d-flex justify-content-center py-sm-5" id="SH">
+        <div class="container d-flex justify-content-center pt-5" id="SH">
           <h1>Read Our Daily Stories</h1>
-        </div>        
+        </div>    
+        <div class="container d-flex justify-content-center pb-5" id="Search">
+            <div class="card p-4" id="Card">
+                <form class="form" method="GET">
+                    {{stories_filter.form}}
+                    <div class="d-flex justify-content-center py-2">
+                        <button type="submit" class="btn px-4 py-1">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>    
         <div class="container-fluid" id="Sc">
             <div class="row d-flex justify-content-center mb-5">
                 {% for i in key %}

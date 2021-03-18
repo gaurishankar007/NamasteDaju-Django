@@ -1,4 +1,5 @@
 var Stories = document.getElementById("Stories");
+var Card = document.getElementsByClassName('card');
 var Sp = document.getElementsByClassName("Sp");
 var Sh2 = document.getElementsByClassName("Sh2");
 var Sh4 = document.getElementsByClassName("Sh4");
@@ -6,6 +7,7 @@ var Sb1 = document.getElementsByClassName("Sb1");
 var Sb2 = document.getElementsByClassName("Sb2");
 var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
+var Label = document.getElementsByTagName('label');
 
 for(i=0; i<Sp.length; i++)
 {
@@ -23,6 +25,7 @@ function dark()
     Stories.style.backgroundColor="black";
     AUOC.style.backgroundColor="#111";
     Copyright.style.backgroundColor="black";
+    Card[0].style.backgroundColor="black";
 
     document.getElementById("navbar_brand_span").style.color="white";
     for(i=0; i<=6; i++)
@@ -44,6 +47,11 @@ function dark()
         Sp[i].style.color="white";
     }
 
+    for(i=0; i<Label.length; i++)
+    {
+        Label[i].style.color="white";
+    }
+
     document.getElementById("Moon").hidden=true;
     document.getElementById("Sun").hidden=false;
     document.getElementById("Sun").style.color="white";
@@ -55,6 +63,7 @@ function light()
     Stories.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";
     Copyright.style.backgroundColor="#111";
+    Card[0].style.backgroundColor="white";
 
     document.getElementById("navbar_brand_span").style.color="black";
     for(i=0; i<=6; i++)
@@ -74,6 +83,11 @@ function light()
     for(i=0; i<Sp.length; i++)
     {
         Sp[i].style.color="black";
+    }
+
+    for(i=0; i<Label.length; i++)
+    {
+        Label[i].style.color="black";
     }
 
     document.getElementById("Moon").hidden=false;

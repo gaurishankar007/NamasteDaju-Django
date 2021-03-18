@@ -99,6 +99,40 @@
     color: rgb(0, 0, 187);
     font-family: 'Times New Roman', Times, serif;
 }
+#Card
+{
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px blue;
+} 
+#Card label
+{
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#Card input
+{
+    background-image: linear-gradient( rgb(0, 0, 255, 0.1), rgb(0, 0, 255, 0.1) );
+    border-radius: 15px;
+    margin-right: 10px;
+    height: 35px;
+}
+#Card input:hover
+{
+    border: 2px solid rgb(0, 0, 187);
+}
+#Card button
+{
+    color: white;
+    font-weight: bold;
+    background-color:blue;
+    border-radius: 10px;
+}
+#Card button:hover
+{
+    color: rgb(0, 0, 187);
+    background-color: transparent;
+    border: 2px solid rgb(0, 0, 187);
+}
 #Breakfast .card
 {
     box-shadow: 0px 5px 20px orange;

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 
 from . models import *
 from . forms import *
+from . filters import MenuFilter, StoriesFilter
 
 from django.contrib import messages
 import os
@@ -14,7 +15,10 @@ def home(request):
 
 
 def menu(request):
-    dictionary = {'key': Menu.objects.all(), 'menu': 'selected'}
+    menu = Menu.objects.all()
+    menu_filter = MenuFilter(request.GET, queryset=menu)
+    menu_final = menu_filter.qs
+    dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'menu': 'selected'}
     return render(request, 'Nd/Menu.html', dictionary)
 
 
@@ -24,7 +28,10 @@ def gallery(request):
 
 
 def stories(request):
-    dictionary = {'key': Stories.objects.all(), 'stories': 'selected'}
+    stories = Stories.objects.all()
+    stories_filter = StoriesFilter(request.GET, queryset=stories)
+    stories_final = stories_filter.qs
+    dictionary = {'key': stories_final, 'stories_filter':stories_filter, 'stories': 'selected'}
     return render(request, 'Nd/Stories.html', dictionary)
 
 

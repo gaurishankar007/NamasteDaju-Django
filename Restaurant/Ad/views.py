@@ -4,6 +4,7 @@ import os
 
 from Nd.models import *
 from Nd.forms import *
+from .filters import *
 
 # =========================Admin=========================
 def admin(request):
@@ -12,6 +13,10 @@ def admin(request):
 
 # =========================Menu=========================
 def ad_menu(request):
+    menu = Menu.objects.all()
+    menu_filter = MenuFilter(request.GET, queryset=menu)
+    menu_final = menu_filter.qs
+
     if request.method == "POST":
         form = MenuForm(request.POST, request.FILES)
         if form.is_valid():
@@ -20,12 +25,16 @@ def ad_menu(request):
             return redirect('/Ad/ad_menu')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Add Food')
-            dictionary = {'key': Menu.objects.all(), 'form': form, 'action': "Add"}
+            dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'form': form, 'action': "Add"}
             return render(request, 'Ad/AdMenu.html', dictionary)
-    dictionary = {'key': Menu.objects.all(), 'form': MenuForm, 'action': "Add"}
+    dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'form': MenuForm, 'action': "Add"}
     return render(request, 'Ad/AdMenu.html', dictionary)
 
 def ad_menu_update(request, food_id):
+    menu = Menu.objects.all()
+    menu_filter = MenuFilter(request.GET, queryset=menu)
+    menu_final = menu_filter.qs
+
     food = Menu.objects.get(id=food_id)
     prev_image = food.image.path
     if request.method == "POST":
@@ -39,9 +48,9 @@ def ad_menu_update(request, food_id):
             return redirect('/Ad/ad_menu')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Update Food')
-            dictionary = {'key': Menu.objects.all(), 'form': form, 'action': 'Update'}
+            dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'form': form, 'action': 'Update'}
             return render(request, 'Ad/AdMenu.html', dictionary)
-    dictionary = {'key': Menu.objects.all(), 'form': MenuForm(instance=food), 'action': 'Update'}
+    dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'form': MenuForm(instance=food), 'action': 'Update'}
     return render(request, 'Ad/AdMenu.html', dictionary)
 
 
@@ -54,6 +63,10 @@ def ad_menu_delete(request, food_id):
 
 # =========================Gallery=========================
 def ad_gallery(request):
+    gallery = Gallery.objects.all()
+    gallery_filter = GalleryFilter(request.GET, queryset=gallery)
+    gallery_final = gallery_filter.qs
+
     if request.method == "POST":
         form = GalleryForm(request.POST, request.FILES)
         if form.is_valid():
@@ -62,12 +75,16 @@ def ad_gallery(request):
             return redirect('/Ad/ad_gallery')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Add Picture')
-            dictionary = {'key': Gallery.objects.all(), 'form': form, 'action': 'Update'}
+            dictionary = {'key': gallery_final, 'gallery_filter':gallery_filter, 'form': form, 'action': 'Update'}
             return render(request, 'Ad/AdGallery.html', dictionary)
-    dictionary = {'key': Gallery.objects.all(), 'form': GalleryForm, 'action': 'Add'}
+    dictionary = {'key': gallery_final, 'gallery_filter':gallery_filter, 'form': GalleryForm, 'action': 'Add'}
     return render(request, 'Ad/AdGallery.html', dictionary)
 
 def ad_gallery_update(request, picture_id):
+    gallery = Gallery.objects.all()
+    gallery_filter = GalleryFilter(request.GET, queryset=gallery)
+    gallery_final = gallery_filter.qs
+
     picture = Gallery.objects.get(id=picture_id)
     prev_image = picture.image.path
     if request.method == "POST":
@@ -81,9 +98,9 @@ def ad_gallery_update(request, picture_id):
             return redirect('/Ad/ad_gallery')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Update Picture')
-            dictionary = {'key': Gallery.objects.all(), 'form': form, 'action': 'Update'}
+            dictionary = {'key': gallery_final, 'gallery_filter':gallery_filter, 'form': form, 'action': 'Update'}
             return render(request, 'Ad/AdGallery.html', dictionary)
-    dictionary = {'key': Gallery.objects.all(), 'form': GalleryForm(instance=picture), 'action': 'Update'}
+    dictionary = {'key': gallery_final, 'gallery_filter':gallery_filter, 'form': GalleryForm(instance=picture), 'action': 'Update'}
     return render(request, 'Ad/AdGallery.html', dictionary)
 
 
@@ -95,7 +112,11 @@ def ad_gallery_delete(request, picture_id):
 # =========================Gallery=========================
 
 # =========================Stories=========================
-def ad_stories(request):    
+def ad_stories(request):   
+    stories = Stories.objects.all()
+    stories_filter = StoriesFilter(request.GET, queryset=stories)
+    stories_final = stories_filter.qs 
+
     if request.method == "POST":
         form = StoriesForm(request.POST, request.FILES)
         if form.is_valid():
@@ -104,12 +125,16 @@ def ad_stories(request):
             return redirect('/Ad/ad_stories')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Add Story')
-            dictionary = {'key': Stories.objects.all(), 'form': form, 'action': 'Update'}
+            dictionary = {'key': stories_final, 'stories_filter':stories_filter, 'form': form, 'action': 'Update'}
             return render(request, 'Ad/AdStories.html', dictionary)
-    dictionary = {'key':Stories.objects.all(), 'form':StoriesForm, 'action':'Add'}
+    dictionary = {'key': stories_final, 'stories_filter':stories_filter, 'form':StoriesForm, 'action':'Add'}
     return render(request, 'Ad/AdStories.html', dictionary)
 
 def ad_stories_update(request, story_id):
+    stories = Stories.objects.all()
+    stories_filter = StoriesFilter(request.GET, queryset=stories)
+    stories_final = stories_filter.qs 
+
     story = Stories.objects.get(id=story_id)
     prev_image = story.image.path
     if request.method == "POST":
@@ -123,9 +148,9 @@ def ad_stories_update(request, story_id):
             return redirect('/Ad/ad_stories')
         else: 
             messages.add_message(request, messages.ERROR, 'Failed to Update Story')
-            dictionary = {'key': Stories.objects.all(), 'form': form, 'action': 'Update'}
+            dictionary = {'key': stories_final, 'stories_filter':stories_filter, 'form': form, 'action': 'Update'}
             return render(request, 'Ad/AdStories.html', dictionary)
-    dictionary = {'key': Stories.objects.all(), 'form': StoriesForm(instance=story), 'action': 'Update'}
+    dictionary = {'key': stories_final, 'stories_filter':stories_filter, 'form': StoriesForm(instance=story), 'action': 'Update'}
     return render(request, 'Ad/AdStories.html', dictionary)
 
 

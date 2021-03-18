@@ -59,8 +59,18 @@
     </div>
 
     <div class="container-fluid d-flex flex-column py-5" id="Menu">
-        <div class="container d-flex justify-content-center py-sm-5" id="MH">
+        <div class="container d-flex justify-content-center pt-5" id="MH">
             <h1>Delicious Food For You</h1>
+        </div>
+        <div class="container d-flex justify-content-center pb-5" id="Search">
+            <div class="card p-4" id="Card">
+                <form class="form" method="GET">
+                    {{menu_filter.form}}
+                    <div class="d-flex justify-content-center py-2">
+                        <button type="submit" class="btn px-4 py-1">Search</button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="container-fluid d-lg-flex flex-row justify-content-between mb-5">
             <div class="container mb-5" id="Breakfast">

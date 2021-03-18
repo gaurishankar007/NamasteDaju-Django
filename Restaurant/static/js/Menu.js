@@ -6,6 +6,8 @@ var Dh4 = document.getElementsByClassName('Dh4');
 var Da = document.getElementsByClassName('Da');
 var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
+var Label = document.getElementsByTagName('label');
+
 
 for(i=0; i<Da.length; i++){
     Da[i].style.color="black";
@@ -28,7 +30,7 @@ function dark()
     }
     document.getElementsByClassName("selected")[0].style.color="rgb(0, 0, 187)";
 
-    for(i=0; i<=5; i++){
+    for(i=0; i<=6; i++){
         Card[i].style.backgroundColor="black";
     }
 
@@ -46,6 +48,10 @@ function dark()
         Da[i].style.border="3px solid white";
     }
     
+    for(i=0; i<Label.length; i++)
+    {
+        Label[i].style.color="white";
+    }
 
     document.getElementById("Moon").hidden=true;
     document.getElementById("Sun").hidden=false;
@@ -66,7 +72,7 @@ function light()
     }
     document.getElementsByClassName("selected")[0].style.color="rgb(0, 0, 187)";
 
-    for(i=0; i<=5; i++){
+    for(i=0; i<=6; i++){
         Card[i].style.backgroundColor="white";
     }
 
@@ -82,6 +88,11 @@ function light()
     for(i=0; i<Da.length; i++){
         Da[i].style.color="black";
         Da[i].style.border="3px solid black";
+    }
+
+    for(i=0; i<Label.length; i++)
+    {
+        Label[i].style.color="black";
     }
 
     document.getElementById("Moon").hidden=false;
