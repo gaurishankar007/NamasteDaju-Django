@@ -6,12 +6,48 @@ from Nd.models import *
 from Nd.forms import *
 from .filters import *
 
+from Ac.auth import *
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+
 # =========================Admin=========================
+@login_required
+@admin_only
 def admin(request):
-    return render(request, 'Ad/Admin.html')
+    menu=Menu.objects.all()
+    menu_count = menu.count()
+
+    gallery=Gallery.objects.all()
+    gallery_count = gallery.count()
+
+    stories=Stories.objects.all()
+    stories_count = stories.count()
+
+    reservation=Reservation.objects.all()
+    reservation_count = reservation.count()
+
+    catering=Catering.objects.all()
+    catering_count = catering.count()
+
+    users=User.objects.all()
+    user_count = users.filter(is_staff=0).count()
+    admin_count = users.filter(is_staff=1).count()
+
+    dictionary={
+        "menu":menu_count, 
+        "gallery":gallery_count, 
+        "stories":stories_count, 
+        "reservation":reservation_count,
+        "catering":catering_count,
+        "user":user_count,
+        "admin":admin_count
+        }
+    return render(request, 'Ad/Admin.html', dictionary)
 # =========================Admin=========================
 
 # =========================Menu=========================
+@login_required
+@admin_only
 def ad_menu(request):
     menu = Menu.objects.all()
     menu_filter = MenuFilter(request.GET, queryset=menu)
@@ -30,6 +66,9 @@ def ad_menu(request):
     dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'form': MenuForm, 'action': "Add"}
     return render(request, 'Ad/AdMenu.html', dictionary)
 
+
+@login_required
+@admin_only
 def ad_menu_update(request, food_id):
     menu = Menu.objects.all()
     menu_filter = MenuFilter(request.GET, queryset=menu)
@@ -54,6 +93,8 @@ def ad_menu_update(request, food_id):
     return render(request, 'Ad/AdMenu.html', dictionary)
 
 
+@login_required
+@admin_only
 def ad_menu_delete(request, food_id):
     food = Menu.objects.get(id=food_id)
     os.remove(food.image.path)
@@ -62,6 +103,8 @@ def ad_menu_delete(request, food_id):
 # =========================Menu=========================
 
 # =========================Gallery=========================
+@login_required
+@admin_only
 def ad_gallery(request):
     gallery = Gallery.objects.all()
     gallery_filter = GalleryFilter(request.GET, queryset=gallery)
@@ -80,6 +123,9 @@ def ad_gallery(request):
     dictionary = {'key': gallery_final, 'gallery_filter':gallery_filter, 'form': GalleryForm, 'action': 'Add'}
     return render(request, 'Ad/AdGallery.html', dictionary)
 
+
+@login_required
+@admin_only
 def ad_gallery_update(request, picture_id):
     gallery = Gallery.objects.all()
     gallery_filter = GalleryFilter(request.GET, queryset=gallery)
@@ -104,6 +150,8 @@ def ad_gallery_update(request, picture_id):
     return render(request, 'Ad/AdGallery.html', dictionary)
 
 
+@login_required
+@admin_only
 def ad_gallery_delete(request, picture_id):
     picture = Gallery.objects.get(id=picture_id)
     os.remove(picture.image.path)
@@ -112,6 +160,8 @@ def ad_gallery_delete(request, picture_id):
 # =========================Gallery=========================
 
 # =========================Stories=========================
+@login_required
+@admin_only
 def ad_stories(request):   
     stories = Stories.objects.all()
     stories_filter = StoriesFilter(request.GET, queryset=stories)
@@ -129,7 +179,10 @@ def ad_stories(request):
             return render(request, 'Ad/AdStories.html', dictionary)
     dictionary = {'key': stories_final, 'stories_filter':stories_filter, 'form':StoriesForm, 'action':'Add'}
     return render(request, 'Ad/AdStories.html', dictionary)
+    
 
+@login_required
+@admin_only    
 def ad_stories_update(request, story_id):
     stories = Stories.objects.all()
     stories_filter = StoriesFilter(request.GET, queryset=stories)
@@ -154,6 +207,8 @@ def ad_stories_update(request, story_id):
     return render(request, 'Ad/AdStories.html', dictionary)
 
 
+@login_required
+@admin_only
 def ad_stories_delete(request, story_id):
     story = Stories.objects.get(id=story_id)
     os.remove(story.image.path)
@@ -162,15 +217,23 @@ def ad_stories_delete(request, story_id):
 # =========================Stories=========================
 
 
+@login_required
+@admin_only
 def ad_order(request):
     dictionary = {'order': 'selected'}
     return render(request, 'Ad/AdOrder.html', dictionary)
 
 # =========================Reservation=========================
+
+@login_required
+@admin_only
 def ad_reservation(request):
     dictionary = {'key': Reservation.objects.all()}
     return render(request, 'Ad/AdReservation.html', dictionary)
 
+
+@login_required
+@admin_only
 def ad_reservation_complete(request, reservation_id):
     reservation = Reservation.objects.get(id=reservation_id)
     reservation.completion = True
@@ -178,6 +241,9 @@ def ad_reservation_complete(request, reservation_id):
     dictionary = {'key': Reservation.objects.all()}
     return render(request, 'Ad/AdReservation.html', dictionary)
 
+
+@login_required
+@admin_only
 def ad_reservation_delete(request, reservation_id):
     reservation = Reservation.objects.get(id=reservation_id)
     reservation.delete()
@@ -186,10 +252,15 @@ def ad_reservation_delete(request, reservation_id):
 # =========================Reservation=========================
 
 # =========================Catering=========================
+@login_required
+@admin_only
 def ad_catering(request):
     dictionary = {'key':Catering.objects.all()}
     return render(request, 'Ad/AdCatering.html', dictionary)
 
+
+@login_required
+@admin_only
 def ad_catering_complete(request, catering_id):
     catering = Catering.objects.get(id=catering_id)
     catering.completion = True
@@ -197,6 +268,9 @@ def ad_catering_complete(request, catering_id):
     dictionary = {'key':Catering.objects.all()}
     return render(request, 'Ad/AdCatering.html', dictionary)
 
+
+@login_required
+@admin_only
 def ad_catering_delete(request, catering_id):
     catering = Catering.objects.get(id=catering_id)
     catering.delete()
@@ -204,12 +278,32 @@ def ad_catering_delete(request, catering_id):
     return render(request, 'Ad/AdCatering.html', dictionary)
 # =========================Catering=========================
 
+
+@login_required
+@admin_only
 def message(request):
     dictionary = {'message': 'selected'}
     return render(request, 'Ad/Message.html', dictionary)
 
-
+# =========================User=========================
+@login_required
+@admin_only
 def user(request):
-    dictionary = {'user': 'selected'}
+    users_all = User.objects.all()
+    users = users_all.filter(is_staff=0)
+    user_filter = UserFilter(request.GET, queryset=users)
+    user_final = user_filter.qs
+
+    dictionary = {'key': user_final, 'user_filter': user_filter}
     return render(request, 'Ad/User.html', dictionary)
-# =========================Back End=========================
+
+@login_required
+@admin_only
+def update_user(request, user_id):
+    user = User.objects.get(id=user_id)
+    print(user)
+    user.is_staff = True
+    user.save()
+    messages.add_message(request, messages.SUCCESS, 'User has been updated to Admin')
+    return redirect('/Ad/user')
+# =========================User=========================

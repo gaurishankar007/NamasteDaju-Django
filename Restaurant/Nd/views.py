@@ -8,12 +8,15 @@ from django.contrib import messages
 import os
 
 from django.contrib.auth.decorators import login_required
+from Ac.auth import user_only
 
+@user_only
 def home(request):
     dictionary = {'home': 'selected'}
     return render(request, 'Nd/Home.html', dictionary)
 
 
+@user_only
 def menu(request):
     menu = Menu.objects.all()
     menu_filter = MenuFilter(request.GET, queryset=menu)
@@ -22,11 +25,13 @@ def menu(request):
     return render(request, 'Nd/Menu.html', dictionary)
 
 
+@user_only
 def gallery(request):
     dictionary = {'key': Gallery.objects.all(), 'gallery': 'selected'}
     return render(request, 'Nd/Gallery.html', dictionary)
 
 
+@user_only
 def stories(request):
     stories = Stories.objects.all()
     stories_filter = StoriesFilter(request.GET, queryset=stories)
@@ -36,6 +41,7 @@ def stories(request):
 
 
 @login_required
+@user_only
 def reservation(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
@@ -51,6 +57,7 @@ def reservation(request):
 
 
 @login_required
+@user_only
 def catering(request):
     if request.method == 'POST':
         form = CateringForm(request.POST)
@@ -66,6 +73,7 @@ def catering(request):
 
 
 @login_required
+@user_only
 def contact(request):
     dictionary = {'contact': 'selected'}
     return render(request, 'Nd/Contact.html', dictionary)

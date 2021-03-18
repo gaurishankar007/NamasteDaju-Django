@@ -12,16 +12,25 @@
 
 {% block content %}
 <div class="container-fluid d-lg-flex flex-column" id="Container">
+    <div class="container-fluid d-flex justify-content-end">
+        <a class="btn px-3 py-2" href="/Ac/logout" id="Logout">Logout</a>
+    </div>
+    <div class="container d-flex justify-content-center" id="CH">
+        <h1 class="px-5 py-2">NamasteDaju Restaurant Dashboard</h1>
+    </div>
     <div class="container py-5" id="C1">
         <div class="row">
             <div class="col-sm mr-4 mb-4" id="C1R1">
                 <h1 class="text-center"><a href="/Ad/ad_menu">Menu</a></h1>
+                <h2 class=text-center>{{menu}}</h2>
             </div>
             <div class="col-sm mr-4 mb-4" id="C1R2">
                 <h1 class="text-center"><a href="/Ad/ad_gallery">Gallery</a></h1>
+                <h2 class=text-center>{{gallery}}</h2>
             </div>
             <div class="col-sm mr-4 mb-4" id="C1R3">
                 <h1 class="text-center"><a href="/Ad/ad_stories">Stories</a></h1>
+                <h2 class=text-center>{{stories}}</h2>
             </div>
             <div class="col-sm mr-4 mb-4" id="C1R4">
                 <h1 class="text-center"><a href="/Ad/ad_order">Order</a></h1>
@@ -32,15 +41,18 @@
         <div class="row">
             <div class="col-sm mr-4 mb-4" id="C2R1">
                 <h1 class="text-center"><a href="/Ad/ad_reservation">Reservation</a></h1>
+                <h2 class=text-center>{{reservation}}</h2>
             </div>
             <div class="col-sm mr-4 mb-4" id="C2R2">
-                <h1 class="text-center"><a href="/Ad/ad_catering">Catering</a></h1>
+                <h1 class="text-center"><a href="/Ad/ad_catering">Catering</a></h1>                
+                <h2 class=text-center>{{catering}}</h2>
             </div>
             <div class="col-sm mr-4 mb-4" id="C2R3">
                 <h1 class="text-center"><a href="/Ad/message">Message</a></h1>
             </div>
             <div class="col-sm mr-4 mb-4" id="C2R4">
                 <h1 class="text-center"><a href="/Ad/user">User</a></h1>
+                <h2 class=text-center>User:{{user}} | Admin:{{admin}}</h2>
             </div>
         </div>
     </div>

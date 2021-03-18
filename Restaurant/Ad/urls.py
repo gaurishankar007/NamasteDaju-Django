@@ -32,7 +32,11 @@ urlpatterns = [
     path('deletecatering/<int:catering_id>', views.ad_catering_delete),
 # =========================Catering=========================
     path('message', views.message),
-    path('user', views.user),
+# =========================User=========================
+    path('user', views.user),    
+    path('update_user/<int:user_id>', views.update_user),
+# =========================User=========================
+
 ]
 
 if settings.DEBUG:

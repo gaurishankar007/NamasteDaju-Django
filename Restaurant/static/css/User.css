@@ -1,6 +1,6 @@
 /*====================AdReservation====================*/
 
-#ARH
+#UH
 {
     height: 400px;
     background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/b.jpg");
@@ -8,46 +8,67 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-#ARH h1
+#UH h1
 {
     margin-top: 200px;
     font-size: 40px;
     color: rgb(0, 187, 40);
     font-family: 'Times New Roman', Times, serif;
 }
-#Uch1
-{
-    color: rgb(187, 69, 40);
-    font-family: 'Times New Roman', Times, serif;
-}
-#Ch1
+.success_message
 {
     color: rgb(0, 187, 40);
+}
+#Card
+{
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px green;
+} 
+#Card label
+{
+    font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
-#UcTable
+#Card input
+{
+    background-image: linear-gradient( rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1) );
+    border-radius: 15px;
+}
+#Card input:hover
+{
+    border: 2px solid rgb(0, 187, 40);
+}
+#Card button, #UB
+{
+    color: white;
+    font-weight: bold;
+    background-color:green;
+    border-radius: 10px;
+}
+#Card button:hover, #UB:hover
+{
+    color: rgb(0, 187, 40);
+    background-color: transparent;
+    border: 2px solid rgb(0, 187, 40);
+}
+#Table
 {
     border-radius: 10px;
-    box-shadow: 0px 5px 20px rgb(187, 69, 0);
+    box-shadow: 0px 5px 20px rgb(0, 0, 187);
 }
-#CTable
-{
-    border-radius: 10px;
-    box-shadow: 0px 5px 20px rgb(0, 187, 40);
-}
-#UcTable h1, th, td, #CTable h1, th, td
+#Table h1, th, td
 {
     font-family: 'Times New Roman', Times, serif;
 }
-#UcTable th, #CTable th
+#Table th
 {
     font-size: 22px;
 }
-#UcTable td, #CTable td
+#Table td
 {
     font-size: 18px;
 }
-#UcTable td a, #CTable td a
+#Table td a
 {
     color: black;
     font-size: 18px;

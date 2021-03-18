@@ -4,8 +4,10 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm
+from .auth import *
 
 
+@unauthenticated_user
 def register_user(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
@@ -20,6 +22,7 @@ def register_user(request):
     return render(request, 'Ac/Register.html', dictionary)
 
 
+@unauthenticated_user
 def login_user(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
@@ -29,7 +32,7 @@ def login_user(request):
             if user is not None:
                 if not user.is_staff:
                     login(request, user)
-                    return redirect('/Nd/home')
+                    return redirect('/')
                 elif user.is_staff:
                     login(request, user)
                     return redirect('/Ad/admin')
@@ -41,4 +44,4 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('/Nd/home')
+    return redirect('/')

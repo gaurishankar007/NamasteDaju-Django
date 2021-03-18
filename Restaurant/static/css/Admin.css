@@ -5,7 +5,31 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 937px;
-    padding-top: 100px;
+    padding-top: 10px;
+}
+#Logout
+{
+    color: white;
+    font-weight: bold;
+    background-color:red;
+    border-radius: 10px;
+}
+#Logout:hover
+{
+    color: rgb(187, 0, 0);
+    background-color: transparent;
+    border: 3px solid rgb(187, 0, 0);
+}
+#CH h1
+{
+    font-size: 50px;
+    color: white;
+    border: 3px solid white;
+}
+#Container .row div h2
+{
+    visibility: hidden;
+    color: white;
 }
 #Container .row div
 {
@@ -25,14 +49,13 @@
     border: 3px solid white;
     visibility: hidden;
     color: white;
-    transition: 1s;
 }
 #Container .row div h1 a
 {
     color: white;
     text-decoration: none;
 }
-#Container .row div:hover h1
+#Container .row div:hover h1, #Container .row div:hover h2
 {
     visibility: visible;
 }
