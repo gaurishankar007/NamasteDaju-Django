@@ -10,12 +10,15 @@ import os
 from django.contrib.auth.decorators import login_required
 from Ac.auth import user_only
 
+
+@login_required
 @user_only
 def home(request):
     dictionary = {'home': 'selected'}
     return render(request, 'Nd/Home.html', dictionary)
 
 
+@login_required
 @user_only
 def menu(request):
     menu = Menu.objects.all()
@@ -25,12 +28,14 @@ def menu(request):
     return render(request, 'Nd/Menu.html', dictionary)
 
 
+@login_required
 @user_only
 def gallery(request):
     dictionary = {'key': Gallery.objects.all(), 'gallery': 'selected'}
     return render(request, 'Nd/Gallery.html', dictionary)
 
 
+@login_required
 @user_only
 def stories(request):
     stories = Stories.objects.all()

@@ -3,8 +3,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .forms import LoginForm
 from .auth import *
+from .models import Profile
+from .forms import ProfileForm
 
 
 @unauthenticated_user
@@ -12,7 +15,8 @@ def register_user(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            Profile.objects.create(user=user, username=user.username)
             messages.add_message(request, messages.SUCCESS, 'You have been registered Successfully')
             return redirect('/Ac')
         else:
@@ -41,6 +45,24 @@ def login_user(request):
                 return render(request, 'Ac/Login.html', {'form': form})
     dictionary = {'form': LoginForm}
     return render(request, 'Ac/Login.html', dictionary)
+
+
+@login_required
+def user_account(request):
+    profile = request.user.profile
+    form = ProfileForm(instance=profile)
+    if request.method == "POST":
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, "Account Updated Successfully for "+str(request.user.profile.username))
+            return redirect('/Ac/profile')
+        else:
+            messages.add_message(request, messages.ERROR, "Failed Updated Account for "+str(request.user.profile.username))
+            return render(request, 'Ac/Profile.html', {'form': form})
+    dictionary = {'form': form}
+    return render(request, 'Ac/Profile.html', dictionary)
+
 
 def logout_user(request):
     logout(request)

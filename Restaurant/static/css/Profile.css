@@ -1,0 +1,160 @@
+/*====================Front====================*/
+#Front
+{
+    position: relative;
+    padding:0;
+    height: 650px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ) ,url("../images/home/a.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#Front #nav
+{
+    position: absolute;
+    z-index: 2000;
+}
+#Front #nav #navbar
+{
+    background-image: linear-gradient( rgba(0, 14, 209, 0.2), rgba(0, 14, 209, 0.2) );
+    border-radius: 15px;
+}
+#Front .navbar-brand
+{
+    font-size: 25px;
+    color:  rgb(0, 0, 187);
+    font-family: cursive;
+}
+#Front .navbar-brand:hover
+{
+    color:  rgb(0, 0, 187);
+}
+#Front nav h1 span
+{
+    color: white;
+}
+#Front .nav-link
+{
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+    position:relative;
+}
+#Front .nav-link:hover
+{
+    color:rgb(0, 0, 187);
+}
+#Front #navbarSupportedContent .selected
+{
+    color: rgb(0, 0, 187);
+}
+#Front .nav-link:after
+{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 5px;
+    margin-left: 10px;
+    right: 0;
+    background: white;
+    transition: width .3s ease;
+    -webkit-transition: width .3s ease;
+}
+#Front .nav-link:hover:after
+{
+    width: 100%;
+    left: 0;
+    background: white;
+}
+#HM
+{
+    padding-top: 550px;
+}
+#HM h1
+{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+#HM h5
+{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+#HM h5 a
+{
+    color: white;
+    text-decoration: none;
+}
+#HM h5 a:hover
+{
+    color: rgb(0, 0, 187);
+}
+/*====================Front====================*/
+
+/*====================Login====================*/
+#PH h1
+{
+    color: rgb(0, 0, 187);
+    font-family: 'Times New Roman', Times, serif;
+}
+#H h1
+{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+.profile_pic
+{
+    width: 400px;
+}
+#CCard
+{
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px blue;
+}
+#Card
+{
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px blue;
+} 
+#Card label
+{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#Card input
+{
+    background-image: linear-gradient( rgb(0, 0, 255, 0.1), rgb(0, 0, 255, 0.1) );
+    border-radius: 15px;
+}
+#Card input:hover
+{
+    border: 2px solid rgb(0, 0, 187);
+}
+#Card button
+{
+    color: white;
+    font-weight: bold;
+    background-color:blue;
+    border-radius: 10px;
+}
+#Card button:hover
+{
+    color: rgb(0, 0, 187);
+    background-color: transparent;
+    border: 2px solid rgb(0, 0, 187);
+}
+#Card h4, .help-block
+{
+    font-family: cursive;
+}
+.help-block, .success_message
+{
+    color: rgb(0, 187, 40);
+}
+.error_message, .help-block
+{
+    color: red;
+}
+/*====================Login====================*/
