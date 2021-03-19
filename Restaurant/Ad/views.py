@@ -7,6 +7,8 @@ from Nd.forms import *
 from .filters import *
 
 from Ac.auth import *
+from Ac.models import *
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
@@ -289,8 +291,7 @@ def message(request):
 @login_required
 @admin_only
 def user(request):
-    users_all = User.objects.all()
-    users = users_all.filter(is_staff=0)
+    users = Profile.objects.all()
     user_filter = UserFilter(request.GET, queryset=users)
     user_final = user_filter.qs
 
@@ -300,10 +301,14 @@ def user(request):
 @login_required
 @admin_only
 def update_user(request, user_id):
-    user = User.objects.get(id=user_id)
-    print(user)
+    userprofile = Profile.objects.get(id=user_id)
+    userprofile.staff = True
+    userprofile.save()
+
+    user = User.objects.get(username=userprofile.username)
     user.is_staff = True
     user.save()
+    
     messages.add_message(request, messages.SUCCESS, 'User has been updated to Admin')
     return redirect('/Ad/user')
 # =========================User=========================

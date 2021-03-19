@@ -5,7 +5,7 @@
 {% load bootstrap %}
 
 {% block title_link %}
-    <title>NamasteDaju Restaurant Login</title>
+    <title>NamasteDaju Restaurant User Profile</title>
 {% endblock %}
 
 {% block css_link %}
@@ -100,6 +100,12 @@
                         {{form | bootstrap_horizontal}}
                         <div class="d-flex justify-content-center py-2 mb-3">
                             <button type="submit" class="btn px-4 py-1">Update Profile</button>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <small id="emailHelp" class="form-text font-weight-bold m-0">Want to change password!</small>
+                        </div>
+                        <div class="d-flex justify-content-center py-2 mb-3">
+                            <a href="/Ac/password_change" class="btn px-4">Change Password</a>
                         </div>
                     </form>
                 </div>

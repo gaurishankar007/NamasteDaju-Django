@@ -12,5 +12,5 @@ class ProfileForm(ModelForm):
     class Meta:
         model = Profile
         fields = '__all__'
-        exclude = ['user', 'username']
+        exclude = ['user', 'username', 'staff']
         widgets = {'phone':  forms.widgets.TextInput(attrs={'onkeypress': 'validate(event)'})}

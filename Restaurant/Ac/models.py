@@ -12,4 +12,5 @@ class Profile(models.Model):
     phone = models.CharField(max_length=10, validators=[validators.MinLengthValidator(10)], null=True)
     gender = models.CharField(max_length=10, choices=(('Male', 'Male'), ('Female', 'Female'), ('Others', 'Others')))
     profile_pic = models.FileField(upload_to='static/images/uploads/profiles', default='static/images/uploads/profiles/default_profile.jpg')
+    staff = models.BooleanField(default=False, null=True)
     created_date = models.DateTimeField(auto_now_add=True, null=True)

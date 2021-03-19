@@ -73,6 +73,12 @@
     color: black;
     font-size: 18px;
 }
+#Table td img
+{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
 /*====================AdReservation====================*/
 
 /*====================Copyright====================*/
