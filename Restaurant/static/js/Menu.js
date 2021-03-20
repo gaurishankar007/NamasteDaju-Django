@@ -1,5 +1,6 @@
 var Menu = document.getElementById("Menu");
 var Card = document.getElementsByClassName('card');
+var Form = document.getElementById("Form");
 var Dh3 = document.getElementsByClassName('Dh3');
 var Dp = document.getElementsByClassName('Dp');
 var Dh4 = document.getElementsByClassName('Dh4');
@@ -8,11 +9,26 @@ var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
 var Label = document.getElementsByTagName('label');
 
-
 for(i=0; i<Da.length; i++){
     Da[i].style.color="black";
     Da[i].style.border="3px solid black";
 }
+
+var Label = document.getElementsByTagName('label');
+console.log(Label.length)
+Label[2].innerHTML+=":";
+Label[3].innerHTML+=":";
+Label[4].innerHTML+=":";
+Label[5].innerHTML+=":";
+Label[6].innerHTML+=":";
+Label[7].innerHTML+=":";
+
+var Input = document.getElementsByTagName('input')
+Input[3].placeholder = 'Enter First Name';
+Input[4].placeholder = 'Enter Last Name';
+Input[5].placeholder = 'Enter Phone';
+Input[7].placeholder = 'Enter Quantity';
+Input[8].placeholder = 'Enter Address';
 
 Menu.style.backgroundColor="white";
 /*====================Theme Functions====================*/
@@ -100,3 +116,39 @@ function light()
     document.getElementById("Sun").style.color="black";
 }
 /*====================Theme Functions====================*/
+
+/*====================Order Form Functions====================*/
+Form.style.display="none";
+window.onscroll = function(){Form.style.display="none"}
+function show(foodName)
+{
+    Input[6].value=foodName;
+    Input[6].readOnly=true;
+    Form.style.display="block";
+}
+
+function hide()
+{
+    Form.style.display="none";
+}
+/*====================Order Form Functions====================*/
+
+/*====================Phone Number Functions====================*/
+function validate(evt) {
+    var theEvent = evt || window.event;
+  
+    // Handle paste
+    if (theEvent.type === 'paste') {
+        key = event.clipboardData.getData('text/plain');
+    } else {
+    // Handle key press
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+    }
+    var regex = /[0-9]|\./;
+    if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+}
+/*====================Phone Number Functions====================*/

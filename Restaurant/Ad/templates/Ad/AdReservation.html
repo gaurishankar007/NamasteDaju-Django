@@ -18,7 +18,18 @@
     <div class="container-fluid d-flex flex-column px-0" id="AdReservation">
         <div class="container-fluid d-flex justify-content-center mb-4" id="ARH">
           <h1>NamasteDaju Restaurant Reservation</h1>
-        </div>      
+        </div>              
+        <div class="container d-flex justify-content-center pb-5" id="Search">
+            <div class="card p-4" id="Card">
+                <form class="form" method="GET">
+                    {{reservation_filter.form}}
+                    <div class="d-flex justify-content-center py-2">
+                        <button type="submit" class="btn px-4 py-1 mr-2">Search</button>
+                        <a href="/Ad/ad_reservation" type="button"  class="btn px-4 py-1" id="UB">Show All</a>
+                    </div>
+                </form>
+            </div>
+        </div>
         <h1 class="text-center" id="Uch1">Uncompleted</h1>
         <div class="table-responsive" id="UcTable">
             <table class="table table-striped" id="Images">

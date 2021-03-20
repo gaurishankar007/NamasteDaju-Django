@@ -11,6 +11,15 @@ class Menu(models.Model):
     category = models.CharField(max_length=200, choices=options ,validators=[validators.MinLengthValidator(4)], null=True)
     uploaded_date = models.DateTimeField(auto_now_add=True, null=True)
 
+class Order(models.Model):
+    firstname = models.CharField(max_length=100, validators=[validators.MinLengthValidator(2)], null=True)
+    lastname = models.CharField(max_length=100, validators=[validators.MinLengthValidator(2)], null=True)
+    phone = models.CharField(max_length=10, validators=[validators.MinLengthValidator(10)], null=True)
+    foodname = models.CharField(max_length=50, null=True)
+    quantity = models.IntegerField(null=True)
+    address = models.CharField(max_length=50, validators=[validators.MinLengthValidator(10)], null=True)
+    completion = models.BooleanField(default=False, null=True)
+
 
 class Gallery(models.Model):
     name = models.CharField(max_length=50, validators=[validators.MinLengthValidator(2)], null=True)
@@ -57,6 +66,8 @@ class Catering(models.Model):
 
 
 class Message(models.Model):
+    firstname = models.CharField(max_length=100, validators=[validators.MinLengthValidator(2)], null=True)
+    lastname = models.CharField(max_length=100, validators=[validators.MinLengthValidator(2)], null=True)
     subject = models.CharField(max_length=50, validators=[validators.MinLengthValidator(2)], null=True)
     messages = models.TextField(max_length=2000, validators=[validators.MinLengthValidator(50)], null=True)
     messaged_date = models.DateTimeField(auto_now_add=True, null=True)

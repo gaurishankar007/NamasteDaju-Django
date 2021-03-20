@@ -15,6 +15,38 @@
     color: rgb(0, 187, 40);
     font-family: 'Times New Roman', Times, serif;
 }
+#Card
+{
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px green;
+} 
+#Card label
+{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#Card input
+{
+    background-image: linear-gradient( rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1) );
+    border-radius: 15px;
+}
+#Card input:hover
+{
+    border: 2px solid rgb(0, 187, 40);
+}
+#Card button, #UB
+{
+    color: white;
+    font-weight: bold;
+    background-color:green;
+    border-radius: 10px;
+}
+#Card button:hover, #UB:hover
+{
+    color: rgb(0, 187, 40);
+    background-color: transparent;
+    border: 2px solid rgb(0, 187, 40);
+}
 #Uch1
 {
     color: rgb(187, 69, 40);

@@ -230,7 +230,10 @@ def ad_order(request):
 @login_required
 @admin_only
 def ad_reservation(request):
-    dictionary = {'key': Reservation.objects.all()}
+    reservation = Reservation.objects.all()
+    reservation_filter = ReservationFilter(request.GET, queryset=reservation)
+    reservation_final = reservation_filter.qs
+    dictionary = {'key': reservation_final, 'reservation_filter': reservation_filter}
     return render(request, 'Ad/AdReservation.html', dictionary)
 
 
@@ -256,8 +259,11 @@ def ad_reservation_delete(request, reservation_id):
 # =========================Catering=========================
 @login_required
 @admin_only
-def ad_catering(request):
-    dictionary = {'key':Catering.objects.all()}
+def ad_catering(request): 
+    catering = Catering.objects.all()
+    catering_filter = CateringFilter(request.GET, queryset=catering)
+    catering_final = catering_filter.qs
+    dictionary = {'key': catering_final, 'catering_filter': catering_filter}
     return render(request, 'Ad/AdCatering.html', dictionary)
 
 

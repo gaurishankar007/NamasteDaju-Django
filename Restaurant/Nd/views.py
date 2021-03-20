@@ -24,7 +24,18 @@ def menu(request):
     menu = Menu.objects.all()
     menu_filter = MenuFilter(request.GET, queryset=menu)
     menu_final = menu_filter.qs
-    dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'menu': 'selected'}
+
+    if request.method == "POST":
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'You have ordered successfully')
+            return redirect('/menu')
+        else:
+            messages.add_message(request, messages.ERROR, 'Failed to order')
+            dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'menu': 'selected', 'form': form}
+            return render(request, 'Nd/Reservation.html', dictionary)
+    dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'form':OrderForm, 'menu': 'selected'}
     return render(request, 'Nd/Menu.html', dictionary)
 
 
@@ -53,7 +64,7 @@ def reservation(request):
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, 'You have booked table successfully')
-            return redirect('/Nd/reservation')
+            return redirect('/reservation')
         else:
             messages.add_message(request, messages.ERROR, 'Failed to book table')
             return render(request, 'Nd/Reservation.html', {'form': form})
@@ -69,7 +80,7 @@ def catering(request):
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, 'You have ordered catering successfully')
-            return redirect('/Nd/catering')
+            return redirect('/catering')
         else:
             messages.add_message(request, messages.ERROR, 'Failed to order catering')
             return render(request, 'Nd/catering.html', {'form': form})

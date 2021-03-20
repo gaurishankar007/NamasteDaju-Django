@@ -28,6 +28,28 @@ class StoriesFilter(django_filters.FilterSet):
         model = Stories
         fields = ""
 
+
+class ReservationFilter(django_filters.FilterSet):
+    firstname = CharFilter(field_name="firstname", lookup_expr="icontains")
+    lastname = CharFilter(field_name="lastname", lookup_expr="icontains")
+    email = CharFilter(field_name="email", lookup_expr="icontains")
+
+    class Meta:
+        model = Reservation
+        fields = ""
+
+
+class CateringFilter(django_filters.FilterSet):
+    firstname = CharFilter(field_name="firstname", lookup_expr="icontains")
+    lastname = CharFilter(field_name="lastname", lookup_expr="icontains")
+    email = CharFilter(field_name="email", lookup_expr="icontains")
+
+
+    class Meta:
+        model = Catering
+        fields = ""
+
+
 class UserFilter(django_filters.FilterSet):
     username = CharFilter(field_name="username", lookup_expr="icontains")
     email= CharFilter(field_name="email", lookup_expr="icontains")

@@ -1,6 +1,7 @@
 {% extends 'Main.html' %}
 
 {% load static %}
+{% load bootstrap %}
 
 {% block title_link %}
     <title>NamasteDaju Restaurant Menu</title>
@@ -71,6 +72,28 @@
                     </div>
                 </form>
             </div>
+        </div>     
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <h4 class="success_message py-3 px-1 my-2 text-center">{{message}}</h4>
+            {% endif %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <h4 class="error_message py-3 px-1 my-2 text-center">{{message}}</h4>
+            {% endif %}
+        {% endfor %} 
+        <div class="container pb-5" id="Form">
+            <div class="card py-4" id="Card">
+                <h1 class="text-center">Order Form</h1>
+                <span class="fa fa-times" onclick="hide()" id="Cs"></span>
+                <form class="form" method="POST">
+                    {% csrf_token %}
+                    {{form | bootstrap_horizontal}}
+                    <div class="d-flex justify-content-center py-2">
+                        <button type="submit" class="btn px-4 py-1">Order Food</button>
+                    </div>
+                    <small id="Note" class="form-text font-weight-bold text-center">Note: This service is available in Kathmandu City Only</small>
+                </form>
+            </div>
         </div>
         <div class="container-fluid d-lg-flex flex-row justify-content-between mb-5">
             <div class="container mb-5" id="Breakfast">
@@ -89,7 +112,7 @@
                             <div class="container d-flex flex-column" id="Detail">
                                 <h3 class="Dh3">{{i.name}}</h3>
                                 <p  class="Dp">{{i.description}}</p>
-                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da" onclick='show("{{i.name}}")'>Order Now</a></h4>
                             </div>
                         </div>
                         {% endif %}
@@ -113,7 +136,7 @@
                             <div class="container d-flex flex-column" id="Detail">
                                 <h3 class="Dh3">{{i.name}}</h3>
                                 <p  class="Dp">{{i.description}}</p>
-                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da" onclick='show("{{i.name}}")'>Order Now</a></h4>
                             </div>
                         </div>
                         {% endif %}
@@ -137,7 +160,7 @@
                             <div class="container d-flex flex-column" id="Detail">
                                 <h3 class="Dh3">{{i.name}}</h3>
                                 <p  class="Dp">{{i.description}}</p>
-                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da" onclick='show("{{i.name}}")'>Order Now</a></h4>
                             </div>
                         </div>
                         {% endif %}
@@ -163,7 +186,7 @@
                             <div class="container d-flex flex-column" id="Detail">
                                 <h3 class="Dh3">{{i.name}}</h3>
                                 <p  class="Dp">{{i.description}}</p>
-                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da" onclick='show("{{i.name}}")'>Order Now</a></h4>
                             </div>
                         </div>
                         {% endif %}
@@ -187,7 +210,7 @@
                             <div class="container d-flex flex-column" id="Detail">
                                 <h3 class="Dh3">{{i.name}}</h3>
                                 <p  class="Dp">{{i.description}}</p>
-                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da" onclick='show("{{i.name}}")'>Order Now</a></h4>
                             </div>
                         </div>
                         {% endif %}
@@ -211,7 +234,7 @@
                             <div class="container d-flex flex-column" id="Detail">
                                 <h3 class="Dh3">{{i.name}}</h3>
                                 <p  class="Dp">{{i.description}}</p>
-                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da">Order Now</a></h4>
+                                <h4 class="Dh4">Rs.{{i.price}} <a class="btn font-weight-bold mt-2 Da" onclick='show("{{i.name}}")'>Order Now</a></h4>
                             </div>
                         </div>
                         {% endif %}

@@ -18,12 +18,23 @@
     <div class="container-fluid d-flex flex-column px-0" id="AdCatering">
         <div class="container-fluid d-flex justify-content-center mb-4" id="ACH">
           <h1>NamasteDaju Restaurant Catering</h1>
-        </div>      
+        </div>            
+        <div class="container d-flex justify-content-center pb-5" id="Search">
+            <div class="card p-4" id="Card">
+                <form class="form" method="GET">
+                    {{catering_filter.form}}
+                    <div class="d-flex justify-content-center py-2">
+                        <button type="submit" class="btn px-4 py-1 mr-2">Search</button>
+                        <a href="/Ad/ad_catering" type="button"  class="btn px-4 py-1" id="UB">Show All</a>
+                    </div>
+                </form>
+            </div>
+        </div>  
         <h1 class="text-center" id="Uch1">Uncompleted</h1>
         <div class="table-responsive" id="UcTable">
             <table class="table table-striped" id="Images">
                 <thead class="thead-dark">
-                    <tr>
+                    <tr>z
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
