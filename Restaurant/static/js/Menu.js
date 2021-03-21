@@ -27,9 +27,21 @@ Input[6].placeholder = 'Enter Quantity';
 Input[7].placeholder = 'Enter Address';
 
 Menu.style.backgroundColor="white";
+
+AUOC.style.backgroundColor="black";
+Copyright.style.backgroundColor="#111";
+
+var header_nav_link = document.getElementsByClassName('header_nav_link');
+document.getElementById("Sun").hidden=true;
+if(localStorage.getItem('theme')=='true'){
+    dark()
+}
+
 /*====================Theme Functions====================*/
 function dark()
 {
+    localStorage.setItem('theme', 'true')
+
     Header.style.backgroundColor="black";
     Menu.style.backgroundColor="black";
     AUOC.style.backgroundColor="#111";
@@ -72,6 +84,9 @@ function dark()
 
 function light()
 {
+    
+    localStorage.setItem('theme', 'false')
+
     Header.style.backgroundColor="white";
     Menu.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";

@@ -2,9 +2,20 @@ var PasswordChangeDone =  document.getElementById("PasswordChangeDone");
 var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
 
+AUOC.style.backgroundColor="black";
+Copyright.style.backgroundColor="#111";
+
+var header_nav_link = document.getElementsByClassName('header_nav_link');
+document.getElementById("Sun").hidden=true;
+if(localStorage.getItem('theme')=='true'){
+    dark()
+}
+
 /*====================Theme Functions====================*/
 function dark()
 {
+    localStorage.setItem('theme', 'true')
+
     Header.style.backgroundColor="black";
     PasswordChangeDone.style.backgroundColor="black";
     AUOC.style.backgroundColor="#111";
@@ -23,6 +34,8 @@ function dark()
 
 function light()
 {
+    localStorage.setItem('theme', 'false')
+
     Header.style.backgroundColor="white";
     PasswordChangeDone.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";

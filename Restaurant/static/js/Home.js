@@ -43,9 +43,21 @@ for(i=0; i<=5; i++)
 Services.style.backgroundColor="#F4F6F6";
 Customers.style.backgroundColor="#F4F6F6";
 
+AUOC.style.backgroundColor="black";
+Copyright.style.backgroundColor="#111";
+
+var Header = document.getElementById("Header");
+var header_nav_link = document.getElementsByClassName('header_nav_link');
+document.getElementById("Sun").hidden=true;
+if(localStorage.getItem('theme')=='true'){
+    dark()
+}
+
 /*====================Theme Functions====================*/
 function dark()
 {
+    localStorage.setItem('theme', 'true')
+
     Header.style.backgroundColor="black";
     About.style.backgroundColor="black";
     AUOC.style.backgroundColor="#111";
@@ -94,6 +106,8 @@ function dark()
 
 function light()
 {
+    localStorage.setItem('theme', 'false')
+
     Header.style.backgroundColor="white";
     About.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";

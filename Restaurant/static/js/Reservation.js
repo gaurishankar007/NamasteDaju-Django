@@ -23,6 +23,15 @@ Input[3].placeholder = 'Enter Last Name';
 Input[4].placeholder = 'Enter Email';
 Input[5].placeholder = 'Enter Phone Number';
 
+AUOC.style.backgroundColor="black";
+Copyright.style.backgroundColor="#111";
+
+var header_nav_link = document.getElementsByClassName('header_nav_link');
+document.getElementById("Sun").hidden=true;
+if(localStorage.getItem('theme')=='true'){
+    dark()
+}
+
 /*====================Phone Number Functions====================*/
 function validate(evt) {
     var theEvent = evt || window.event;
@@ -46,6 +55,8 @@ function validate(evt) {
 /*====================Theme Functions====================*/
 function dark()
 {
+    localStorage.setItem('theme', 'true')
+
     Header.style.backgroundColor="black";
     Reservation.style.backgroundColor="black";
     Card.style.backgroundColor="black";
@@ -71,6 +82,8 @@ function dark()
 
 function light()
 {
+    localStorage.setItem('theme', 'false')
+
     Header.style.backgroundColor="white";
     Reservation.style.backgroundColor="white";
     Card.style.backgroundColor="white";

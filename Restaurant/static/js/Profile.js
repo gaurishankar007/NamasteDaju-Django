@@ -17,7 +17,16 @@ var Input = document.getElementsByTagName('input')
 Input[1].placeholder = 'Enter First Name';
 Input[2].placeholder = 'Enter Last Name';
 Input[3].placeholder = 'Enter Email';
-Input[4].placeholder = 'Enter Phone Number';
+Input[4].placeholder = 'Enter Phone Number'
+
+AUOC.style.backgroundColor="black";
+Copyright.style.backgroundColor="#111";
+
+var header_nav_link = document.getElementsByClassName('header_nav_link');
+document.getElementById("Sun").hidden=true;
+if(localStorage.getItem('theme')=='true'){
+    dark()
+}
 
 /*====================Phone Number Functions====================*/
 function validate(evt) {
@@ -42,6 +51,8 @@ function validate(evt) {
 /*====================Theme Functions====================*/
 function dark()
 {
+    localStorage.setItem('theme', 'true')
+
     Header.style.backgroundColor="black";
     Profile.style.backgroundColor="black";
     CCard.style.backgroundColor="black";
@@ -72,6 +83,8 @@ function dark()
 
 function light()
 {
+    localStorage.setItem('theme', 'false')
+
     Header.style.backgroundColor="white";
     Profile.style.backgroundColor="white";
     CCard.style.backgroundColor="white";

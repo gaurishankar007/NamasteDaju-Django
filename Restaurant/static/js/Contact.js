@@ -18,9 +18,20 @@ Input[2].placeholder = 'Enter Subject';
 var Textarea = document.getElementsByTagName('textarea')
 Textarea[0].placeholder = "Enter Message Here...............";
 
+AUOC.style.backgroundColor="black";
+Copyright.style.backgroundColor="#111";
+
+var header_nav_link = document.getElementsByClassName('header_nav_link');
+document.getElementById("Sun").hidden=true;
+if(localStorage.getItem('theme')=='true'){
+    dark()
+}
+
 /*====================Theme Functions====================*/
 function dark()
 {
+    localStorage.setItem('theme', 'true')
+
     Header.style.backgroundColor="black";
     Message.style.backgroundColor="black";
     loc.style.backgroundColor="black";
@@ -47,6 +58,8 @@ function dark()
 
 function light()
 {
+    localStorage.setItem('theme', 'false')
+
     Header.style.backgroundColor="white";
     Message.style.backgroundColor="white";
     loc.style.backgroundColor="white";

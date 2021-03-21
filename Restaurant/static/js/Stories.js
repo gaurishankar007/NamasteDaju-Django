@@ -18,9 +18,20 @@ for(i=0; i<Sb2.length; i++)
     Sb2[i].style.display="none";
 }
 
+AUOC.style.backgroundColor="black";
+Copyright.style.backgroundColor="#111";
+
+var header_nav_link = document.getElementsByClassName('header_nav_link');
+document.getElementById("Sun").hidden=true;
+if(localStorage.getItem('theme')=='true'){
+    dark()
+}
+
 /*====================Theme Functions====================*/
 function dark()
 {
+    localStorage.setItem('theme', 'true')
+
     Header.style.backgroundColor="black";
     Stories.style.backgroundColor="black";
     AUOC.style.backgroundColor="#111";
@@ -59,6 +70,8 @@ function dark()
 
 function light()
 {
+    localStorage.setItem('theme', 'false')
+
     Header.style.backgroundColor="white";
     Stories.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";

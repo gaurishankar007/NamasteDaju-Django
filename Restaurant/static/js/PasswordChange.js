@@ -13,9 +13,21 @@ var Input = document.getElementsByTagName('input')
 Input[1].placeholder = 'Enter Old Password';
 Input[2].placeholder = 'Enter New Password';
 Input[3].placeholder = 'Enter New Password Again';
+
+AUOC.style.backgroundColor="black";
+Copyright.style.backgroundColor="#111";
+
+var header_nav_link = document.getElementsByClassName('header_nav_link');
+document.getElementById("Sun").hidden=true;
+if(localStorage.getItem('theme')=='true'){
+    dark()
+}
+
 /*====================Theme Functions====================*/
 function dark()
 {
+    localStorage.setItem('theme', 'true')
+
     Header.style.backgroundColor="black";
     PasswordChange.style.backgroundColor="black";
     Card.style.backgroundColor="black";
@@ -39,6 +51,8 @@ function dark()
 
 function light()
 {
+    localStorage.setItem('theme', 'false')
+
     Header.style.backgroundColor="white";
     PasswordChange.style.backgroundColor="white";
     Card.style.backgroundColor="white";

@@ -1,8 +1,6 @@
 var Header = document.getElementById("Header");
 var header_nav_link = document.getElementsByClassName('header_nav_link');
 
-document.getElementById("Sun").hidden=true;
-
 /*====================TopScroll Functions====================*/
 function ScrollUp() {
     window.scrollTo({top: 0, behavior: 'smooth'});
