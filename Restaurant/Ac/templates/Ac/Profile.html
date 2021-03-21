@@ -112,6 +112,121 @@
             </div>
         </div>
     </div>
+    <div class="table-responsive" id="Table">
+        <h1 class="text-center my-4">Your Activities</h1>
+        <h1 class="text-center">Order</h1>
+        <table class="table table-striped mb-5" id="Order">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Phone</th>
+                    <th>FoodName</th>
+                    <th>Quantity</th>
+                    <th>Address</th>
+                    <th>Ordered Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in order %}
+                {% if i.username == request.user.username %}
+                <tr class="table-success">
+                    <td>{{i.phone}}</td>
+                    <td>{{i.foodname}}</td>
+                    <td>{{i.quantity}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.ordered_date}}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+        <h1 class="text-center">Reservation</h1>
+        <table class="table table-striped mb-5" id="Reservation">
+            <thead class="thead-dark">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Person</th>
+                    <th>Reserved Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in reservation %}
+                {% if i.username == request.user.username %}
+                <tr  class="table-warning"> 
+                    <td>{{i.firstname}}</td>
+                    <td>{{i.lastname}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.time}}</td>
+                    <td>{{i.person}}</td>
+                    <td>{{i.reserved_date}}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+        <h1 class="text-center">Catering</h1>
+        <table class="table table-striped mb-5" id="Catering">
+            <thead class="thead-dark">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Event Type</th>
+                    <th>Catering Type</th>
+                    <th>Address</th>
+                    <th>Catering Order Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in catering %}
+                {% if i.username == request.user.username %}
+                <tr  class="table-warning">                  
+                    <td>{{i.firstname}}</td>
+                    <td>{{i.lastname}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.time}}</td>
+                    <td>{{i.event_type}}</td>
+                    <td>{{i.catering_type}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.catering_order_date}}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+        <h1 class="text-center">Message</h1>
+        <table class="table table-striped mb-5" id="Message">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Subject</th>
+                    <th class="text-center">messages</th>
+                    <th>Messaged Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in message %}
+                {% if i.username == request.user.username %}
+                <tr>                
+                    <td>{{i.subject}}</td>
+                    <td>{{i.messages}}</td>
+                    <td>{{i.messaged_date}}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
 
 {% block script_link %}

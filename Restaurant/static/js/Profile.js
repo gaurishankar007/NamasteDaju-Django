@@ -1,6 +1,7 @@
 var Profile =  document.getElementById("Profile");
 var CCard =  document.getElementById("CCard");
 var Card =  document.getElementById("Card");
+var Table =  document.getElementById("Table");
 var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
 
@@ -45,6 +46,7 @@ function dark()
     Profile.style.backgroundColor="black";
     CCard.style.backgroundColor="black";
     Card.style.backgroundColor="black";
+    Table.style.backgroundColor="black";
     AUOC.style.backgroundColor="#111";
     Copyright.style.backgroundColor="black";
 
@@ -74,6 +76,7 @@ function light()
     Profile.style.backgroundColor="white";
     CCard.style.backgroundColor="white";
     Card.style.backgroundColor="white";
+    Table.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";
     Copyright.style.backgroundColor="#111";
 

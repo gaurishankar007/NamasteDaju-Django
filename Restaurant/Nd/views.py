@@ -67,7 +67,7 @@ def reservation(request):
             return redirect('/reservation')
         else:
             messages.add_message(request, messages.ERROR, 'Failed to book table')
-            return render(request, 'Nd/Reservation.html', {'form': form})
+            return render(request, 'Nd/Reservation.html', {'form': form, 'reservation': 'selected'})
     dictionary = {'form':ReservationForm, 'reservation': 'selected'}
     return render(request, 'Nd/Reservation.html', dictionary)
 
@@ -83,13 +83,22 @@ def catering(request):
             return redirect('/catering')
         else:
             messages.add_message(request, messages.ERROR, 'Failed to order catering')
-            return render(request, 'Nd/catering.html', {'form': form})
-    dictionary = {'form':CateringForm ,'catering': 'selected'}
+            return render(request, 'Nd/Catering.html', {'form': form, 'catering': 'selected'})
+    dictionary = {'form':CateringForm, 'catering': 'selected'}
     return render(request, 'Nd/Catering.html', dictionary)
 
 
 @login_required
 @user_only
 def contact(request):
-    dictionary = {'contact': 'selected'}
+    if request.method == "POST":
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'You have send message successfully')
+            return redirect('/contact')
+        else:
+            messages.add_message(request, messages.ERROR, 'Failed to send message')
+            return render(request, 'Nd/Contact.html', {'form': form, 'contact': 'selected'})
+    dictionary = {'form':MessageForm, 'contact': 'selected'}
     return render(request, 'Nd/Contact.html', dictionary)

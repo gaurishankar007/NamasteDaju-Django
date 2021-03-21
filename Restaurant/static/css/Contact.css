@@ -92,3 +92,64 @@
     color: rgb(0, 0, 187);
 }
 /*====================Front====================*/
+
+/*====================Message====================*/
+#MH h1
+{
+    color: rgb(0, 0, 187);
+    font-family: 'Times New Roman', Times, serif;
+}
+#location
+{
+    padding:0;
+}
+#location img
+{
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px blue;
+}
+#Card
+{
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px blue;
+} 
+#Card label
+{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#Card input, #Card textarea
+{
+    background-image: linear-gradient( rgb(0, 0, 255, 0.1), rgb(0, 0, 255, 0.1) );
+    border-radius: 15px;
+}
+#Card input:hover, #Card textarea:hover
+{
+    border: 2px solid rgb(0, 0, 187);
+}
+#Card button
+{
+    color: white;
+    font-weight: bold;
+    background-color:blue;
+    border-radius: 10px;
+}
+#Card button:hover
+{
+    color: rgb(0, 0, 187);
+    background-color: transparent;
+    border: 2px solid rgb(0, 0, 187);
+}
+#Card h4, .help-block
+{
+    font-family: cursive;
+}
+.help-block, .success_message
+{
+    color: rgb(0, 187, 40);
+}
+.error_message, .help-block
+{
+    color: red;
+}
+/*====================Message====================*/

@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load bootstrap %}
+
 {% block title_link %}
     <title>NamasteDaju Restaurant Contact</title>
 {% endblock %}
@@ -54,6 +56,34 @@
             </div>
             <div class="container d-flex justify-content-center">
                 <h5><a href="/">Home <span class="fa fa-chevron-right"></span> </a> Contact <span class="fa fa-chevron-right"></span></h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid d-flex flex-column pb-5" id="Message">
+        <div class="container d-flex justify-content-center pt-5" id="MH">
+          <h1>Stay In Touch with Us</h1>
+        </div>        
+        <div class="container-fluid py-5" id="location">
+          <img class="img-fluid" src="{% static 'images/location/location.png' %}"/>
+        </div>
+        <div class="container" id="Form">
+            <div class="card p-4" id="Card">
+                {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <h4 class="success_message py-3 px-1 my-2 text-center">{{message}}</h4>
+                    {% endif %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <h4 class="error_message py-3 px-1 my-2 text-center">{{message}}</h4>
+                    {% endif %}
+                {% endfor %}
+                <form class="form" method="POST">
+                    {% csrf_token %}
+                    {{form | bootstrap_horizontal}}
+                    <div class="d-flex justify-content-center py-2">
+                        <button type="submit" class="btn px-4 py-1">Send Messages</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

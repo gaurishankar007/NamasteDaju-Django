@@ -8,6 +8,7 @@ from .forms import LoginForm
 from .auth import *
 from .models import Profile
 from .forms import ProfileForm
+from Nd.models import Order, Reservation, Catering, Message
 
 
 @unauthenticated_user
@@ -49,6 +50,11 @@ def login_user(request):
 
 @login_required
 def user_account(request):
+    order = Order.objects.all()
+    reservation = Reservation.objects.all()    
+    catering = Catering.objects.all()
+    message = Message.objects.all()
+
     profile = request.user.profile
     form = ProfileForm(instance=profile)
     if request.method == "POST":
@@ -59,8 +65,8 @@ def user_account(request):
             return redirect('/Ac/profile')
         else:
             messages.add_message(request, messages.ERROR, "Failed Updated Account for "+str(request.user.profile.username))
-            return render(request, 'Ac/Profile.html', {'form': form})
-    dictionary = {'form': form}
+            return render(request, 'Ac/Profile.html', {'form': form, 'order':order, 'reservation':reservation, 'catering':catering, 'message':message})
+    dictionary = {'form': form, 'order':order, 'reservation':reservation, 'catering':catering, 'message':message}
     return render(request, 'Ac/Profile.html', dictionary)
 
 

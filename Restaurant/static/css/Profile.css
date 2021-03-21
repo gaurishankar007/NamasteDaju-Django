@@ -157,4 +157,46 @@
 {
     color: red;
 }
+#Table h1
+{
+    color: rgb(0, 0, 187);
+    font-family: 'Times New Roman', Times, serif;
+}
+#Order
+{
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px brown;
+}
+#Reservation
+{
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px orange;
+}
+#Catering
+{
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px purple;
+}
+#Message
+{
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px red;
+}
+#Table th, td
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+#Table th
+{
+    font-size: 22px;
+}
+#Table td
+{
+    font-size: 18px;
+}
+#Table td a
+{
+    color: black;
+    font-size: 18px;
+}
 /*====================Profile====================*/

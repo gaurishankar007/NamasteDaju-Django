@@ -70,5 +70,5 @@ class Catering(models.Model):
 class Message(models.Model):
     username = models.CharField(max_length=150, null=True)
     subject = models.CharField(max_length=50, validators=[validators.MinLengthValidator(2)], null=True)
-    messages = models.TextField(max_length=2000, validators=[validators.MinLengthValidator(50)], null=True)
+    messages = models.TextField(max_length=2000, validators=[validators.MinLengthValidator(25)], null=True)
     messaged_date = models.DateTimeField(auto_now_add=True, null=True)
