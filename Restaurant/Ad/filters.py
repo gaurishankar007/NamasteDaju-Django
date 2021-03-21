@@ -13,6 +13,15 @@ class MenuFilter(django_filters.FilterSet):
         model = Menu
         fields = ""
 
+class OrderFilter(django_filters.FilterSet):
+    username = CharFilter(field_name="username", lookup_expr="icontains")
+    foodname = CharFilter(field_name="foodname", lookup_expr="icontains")
+
+    class Meta:
+        model = Order
+        fields = ""
+
+
 class GalleryFilter(django_filters.FilterSet):
     name = CharFilter(field_name="name", lookup_expr="icontains")
 
@@ -56,4 +65,12 @@ class UserFilter(django_filters.FilterSet):
 
     class Meta:
         model = Profile
+        fields = ""
+
+class MessageFilter(django_filters.FilterSet):
+    username = CharFilter(field_name="username", lookup_expr="icontains")
+    subject= CharFilter(field_name="subject", lookup_expr="icontains")
+
+    class Meta:
+        model = Message
         fields = ""

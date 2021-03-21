@@ -21,14 +21,11 @@ Label[3].innerHTML+=":";
 Label[4].innerHTML+=":";
 Label[5].innerHTML+=":";
 Label[6].innerHTML+=":";
-Label[7].innerHTML+=":";
 
 var Input = document.getElementsByTagName('input')
-Input[3].placeholder = 'Enter First Name';
-Input[4].placeholder = 'Enter Last Name';
-Input[5].placeholder = 'Enter Phone';
-Input[7].placeholder = 'Enter Quantity';
-Input[8].placeholder = 'Enter Address';
+Input[4].placeholder = 'Enter Phone';
+Input[6].placeholder = 'Enter Quantity';
+Input[7].placeholder = 'Enter Address';
 
 Menu.style.backgroundColor="white";
 /*====================Theme Functions====================*/
@@ -46,7 +43,7 @@ function dark()
     }
     document.getElementsByClassName("selected")[0].style.color="rgb(0, 0, 187)";
 
-    for(i=0; i<=6; i++){
+    for(i=0; i<=7; i++){
         Card[i].style.backgroundColor="black";
     }
 
@@ -88,7 +85,7 @@ function light()
     }
     document.getElementsByClassName("selected")[0].style.color="rgb(0, 0, 187)";
 
-    for(i=0; i<=6; i++){
+    for(i=0; i<=7; i++){
         Card[i].style.backgroundColor="white";
     }
 
@@ -122,8 +119,10 @@ Form.style.display="none";
 window.onscroll = function(){Form.style.display="none"}
 function show(foodName)
 {
-    Input[6].value=foodName;
-    Input[6].readOnly=true;
+    Input[3].value=document.getElementById("Username").innerHTML;
+    Input[3].readOnly=true;
+    Input[5].value=foodName;
+    Input[5].readOnly=true;
     Form.style.display="block";
 }
 

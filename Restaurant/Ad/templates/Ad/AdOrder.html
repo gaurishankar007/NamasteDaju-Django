@@ -1,0 +1,108 @@
+{% extends 'AdMain.html' %}
+
+{% load bootstrap %}
+
+{% load static %}
+
+{% block title_link %}
+    <title>NamasteDaju Restaurant Order</title>
+{% endblock %}
+
+{% block css_link %}
+    <link href="{% static 'css/AdNavbar.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/AdOrder.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    {% include 'AdNavbar.html' %}
+    <div class="container-fluid d-flex flex-column px-0" id="AdOrder">
+        <div class="container-fluid d-flex justify-content-center mb-4" id="AOH">
+          <h1>NamasteDaju Restaurant Order</h1>
+        </div>              
+        <div class="container d-flex justify-content-center pb-5" id="Search">
+            <div class="card p-4" id="Card">
+                <form class="form" method="GET">
+                    {{order_filter.form}}
+                    <div class="d-flex justify-content-center py-2">
+                        <button type="submit" class="btn px-4 py-1 mr-2">Search</button>
+                        <a href="/Ad/ad_order" type="button"  class="btn px-4 py-1" id="UB">Show All</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <h1 class="text-center" id="Uch1">Uncompleted</h1>
+        <div class="table-responsive" id="UcTable">
+            <table class="table table-striped" id="Images">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Username</th>
+                        <th>Phone</th>
+                        <th>FoodName</th>
+                        <th>Quantity</th>
+                        <th>Address</th>
+                        <th>Ordered Date</th>
+                        <th>Mark as Completed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in key %}
+                    {% if i.completion == False %}
+                    <tr  class="table-warning"> 
+                        <td>{{i.username}}</td>
+                        <td>{{i.phone}}</td>
+                        <td>{{i.foodname}}</td>
+                        <td>{{i.quantity}}</td>
+                        <td>{{i.address}}</td>
+                        <td>{{i.ordered_date}}</td>
+                        <td>
+                            <a href="/Ad/completeorder/{{i.id}}" class="btn btn-success mr-4">Completed</a>
+                        </td>                        
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <h1 class="text-center  mt-5" id="Ch1">Completed</h1>
+        <div class="table-responsive" id="CTable">
+            <table class="table table-striped" id="Images">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Username</th>
+                        <th>Phone</th>
+                        <th>FoodName</th>
+                        <th>Quantity</th>
+                        <th>Address</th>
+                        <th>Ordered Date</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in key %}
+                    {% if i.completion == True %}
+                    <tr class="table-success">
+                        <td>{{i.username}}</td>
+                        <td>{{i.phone}}</td>
+                        <td>{{i.foodname}}</td>
+                        <td>{{i.quantity}}</td>
+                        <td>{{i.address}}</td>
+                        <td>{{i.ordered_date}}</td>
+                        <td>
+                            <a href="/Ad/deleteorder/{{i.id}}" class="btn btn-danger mr-4">Delete</a>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center py-2 mt-3" id="Copyright">
+        <p>Copyright ©2021 All rights reserved. Design by <a href="#">Gauri Shankar Sharma</a></p>
+    </div>
+{% endblock %}
+
+{% block script_link %}
+        <script src="{% static 'js/AdOrder.js' %}"></script>
+{% endblock %}

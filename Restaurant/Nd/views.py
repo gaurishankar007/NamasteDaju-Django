@@ -29,12 +29,12 @@ def menu(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, 'You have ordered successfully')
+            messages.add_message(request, messages.SUCCESS, 'You have ordered food successfully')
             return redirect('/menu')
         else:
-            messages.add_message(request, messages.ERROR, 'Failed to order')
+            messages.add_message(request, messages.ERROR, 'Failed to order food')
             dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'menu': 'selected', 'form': form}
-            return render(request, 'Nd/Reservation.html', dictionary)
+            return render(request, 'Nd/menu.html', dictionary)
     dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'form':OrderForm, 'menu': 'selected'}
     return render(request, 'Nd/Menu.html', dictionary)
 

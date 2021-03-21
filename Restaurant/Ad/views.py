@@ -19,6 +19,9 @@ def admin(request):
     menu=Menu.objects.all()
     menu_count = menu.count()
 
+    order=Order.objects.all()
+    order_count = order.count()
+
     gallery=Gallery.objects.all()
     gallery_count = gallery.count()
 
@@ -31,16 +34,21 @@ def admin(request):
     catering=Catering.objects.all()
     catering_count = catering.count()
 
+    message=Message.objects.all()
+    message_count = message.count()
+
     users=User.objects.all()
     user_count = users.filter(is_staff=0).count()
     admin_count = users.filter(is_staff=1).count()
 
     dictionary={
         "menu":menu_count, 
+        "order":order_count,
         "gallery":gallery_count, 
         "stories":stories_count, 
         "reservation":reservation_count,
         "catering":catering_count,
+        "message":message_count,
         "user":user_count,
         "admin":admin_count
         }
@@ -218,12 +226,42 @@ def ad_stories_delete(request, story_id):
     return redirect("/Ad/ad_stories")
 # =========================Stories=========================
 
-
+# =========================Order=========================
 @login_required
 @admin_only
 def ad_order(request):
-    dictionary = {'order': 'selected'}
+    order = Order.objects.all()
+    order_filter = OrderFilter(request.GET, queryset=order)
+    order_final = order_filter.qs 
+    dictionary = {'key': order_final, 'order_filter':order_filter}
     return render(request, 'Ad/AdOrder.html', dictionary)
+
+@login_required
+@admin_only
+def ad_order_complete(request, order_id):
+    order = Order.objects.all()
+    order_filter = OrderFilter(request.GET, queryset=order)
+    order_final = order_filter.qs 
+
+    order1 = Order.objects.get(id=order_id)
+    order1.completion = True
+    order1.save()    
+    dictionary = {'key': order_final, 'order_filter':order_filter}
+    return render(request, 'Ad/AdOrder.html', dictionary)
+
+
+@login_required
+@admin_only
+def ad_order_delete(request, order_id):
+    order = Order.objects.all()
+    order_filter = OrderFilter(request.GET, queryset=order)
+    order_final = order_filter.qs 
+
+    order1 = Order.objects.get(id=order_id)
+    order1.delete()   
+    dictionary = {'key': order_final, 'order_filter':order_filter}
+    return render(request, 'Ad/AdOrder.html', dictionary)
+# =========================Order=========================
 
 # =========================Reservation=========================
 
@@ -240,19 +278,27 @@ def ad_reservation(request):
 @login_required
 @admin_only
 def ad_reservation_complete(request, reservation_id):
-    reservation = Reservation.objects.get(id=reservation_id)
-    reservation.completion = True
-    reservation.save()
-    dictionary = {'key': Reservation.objects.all()}
+    reservation = Reservation.objects.all()
+    reservation_filter = ReservationFilter(request.GET, queryset=reservation)
+    reservation_final = reservation_filter.qs
+
+    reservation1 = Reservation.objects.get(id=reservation_id)
+    reservation1.completion = True
+    reservation1.save()    
+    dictionary = {'key': reservation_final, 'reservation_filter': reservation_filter}
     return render(request, 'Ad/AdReservation.html', dictionary)
 
 
 @login_required
 @admin_only
 def ad_reservation_delete(request, reservation_id):
-    reservation = Reservation.objects.get(id=reservation_id)
-    reservation.delete()
-    dictionary = {'key': Reservation.objects.all()}
+    reservation = Reservation.objects.all()
+    reservation_filter = ReservationFilter(request.GET, queryset=reservation)
+    reservation_final = reservation_filter.qs
+
+    reservation1 = Reservation.objects.get(id=reservation_id)
+    reservation1.delete()
+    dictionary = {'key': reservation_final, 'reservation_filter': reservation_filter}
     return render(request, 'Ad/AdReservation.html', dictionary)
 # =========================Reservation=========================
 
@@ -270,28 +316,55 @@ def ad_catering(request):
 @login_required
 @admin_only
 def ad_catering_complete(request, catering_id):
-    catering = Catering.objects.get(id=catering_id)
-    catering.completion = True
-    catering.save()
-    dictionary = {'key':Catering.objects.all()}
+    catering = Catering.objects.all()
+    catering_filter = CateringFilter(request.GET, queryset=catering)
+    catering_final = catering_filter.qs
+
+    catering1 = Catering.objects.get(id=catering_id)
+    catering1.completion = True
+    catering1.save()
+    dictionary = {'key': catering_final, 'catering_filter': catering_filter}
     return render(request, 'Ad/AdCatering.html', dictionary)
 
 
 @login_required
 @admin_only
 def ad_catering_delete(request, catering_id):
+    catering = Catering.objects.all()
+    catering_filter = CateringFilter(request.GET, queryset=catering)
+    catering_final = catering_filter.qs
+
     catering = Catering.objects.get(id=catering_id)
     catering.delete()
-    dictionary = {'key':Catering.objects.all()}
+    dictionary = {'key': catering_final, 'catering_filter': catering_filter}
     return render(request, 'Ad/AdCatering.html', dictionary)
 # =========================Catering=========================
+
+# =========================Message=========================
+@login_required
+@admin_only
+def message(request):
+    message = Message.objects.all()
+    message_filter = MessageFilter(request.GET, queryset=message)
+    message_final = message_filter.qs
+
+    dictionary = {'key': message_final, 'message_filter': message_filter}
+    return render(request, 'Ad/Message.html', dictionary)
 
 
 @login_required
 @admin_only
-def message(request):
-    dictionary = {'message': 'selected'}
+def message_delete(request, message_id):
+    message = Message.objects.all()
+    message_filter = MessageFilter(request.GET, queryset=message)
+    message_final = message_filter.qs
+
+    message1 = Message.objects.get(id=message_id)
+    message1.delete()
+
+    dictionary = {'key': message_final, 'message_filter': message_filter}
     return render(request, 'Ad/Message.html', dictionary)
+# =========================Message=========================
 
 # =========================User=========================
 @login_required

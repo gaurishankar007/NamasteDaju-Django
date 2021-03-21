@@ -38,7 +38,7 @@
     <div class="d-flex flex-row py-3 mr-sm-3" id="Buttons">
       {% if user.is_authenticated %}
       <img class="img-fluid profile" src="{{request.user.profile.profile_pic.url}}"/>
-      <a class="font-weight-bold mx-3 user_name" href="/Ac/profile">{{request.user.profile.username}}</a>
+      <a class="font-weight-bold mx-3 user_name" href="/Ac/profile" id="Username">{{request.user.profile.username}}</a>
       <a class="btn font-weight-bold px-3 lgo" href="/Ac/logout">Logout</a>
       {% else %}
       <a href="/Ac" class="btn font-weight-bold px-3 lgi">Login</a>

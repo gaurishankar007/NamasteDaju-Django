@@ -5,7 +5,7 @@
 {% load static %}
 
 {% block title_link %}
-    <title>NamasteDaju Restaurant Gallery</title>
+    <title>NamasteDaju Restaurant Catering</title>
 {% endblock %}
 
 {% block css_link %}
@@ -34,7 +34,8 @@
         <div class="table-responsive" id="UcTable">
             <table class="table table-striped" id="Images">
                 <thead class="thead-dark">
-                    <tr>z
+                    <tr>
+                        <th>Username</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
@@ -51,7 +52,8 @@
                 <tbody>
                     {% for i in key %}
                     {% if i.completion == False %}
-                    <tr  class="table-warning">                        
+                    <tr  class="table-warning">     
+                        <td>{{i.username}}</td>                   
                         <td>{{i.firstname}}</td>
                         <td>{{i.lastname}}</td>
                         <td>{{i.email}}</td>
@@ -76,6 +78,7 @@
             <table class="table table-striped" id="Images">
                 <thead class="thead-dark">
                     <tr>
+                        <th>Username</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
@@ -93,6 +96,7 @@
                     {% for i in key %}
                     {% if i.completion == True %}
                     <tr class="table-success">
+                        <td>{{i.username}}</td>
                         <td>{{i.firstname}}</td>
                         <td>{{i.lastname}}</td>
                         <td>{{i.email}}</td>

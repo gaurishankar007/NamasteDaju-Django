@@ -17,13 +17,16 @@ Label[5].innerHTML+=":";
 Label[6].innerHTML+=":";
 Label[7].innerHTML+=":";
 Label[8].innerHTML+=":";
+Label[9].innerHTML+=":";
 
 var Input = document.getElementsByTagName('input')
-Input[1].placeholder = 'Enter First Name';
-Input[2].placeholder = 'Enter Last Name';
-Input[3].placeholder = 'Enter Email';
-Input[4].placeholder = 'Enter Phone Number';
-Input[7].placeholder = 'Enter Address only if Catering is Off-promise';
+Input[1].readOnly = true;
+Input[1].value = document.getElementById('Username').innerHTML;
+Input[2].placeholder = 'Enter First Name';
+Input[3].placeholder = 'Enter Last Name';
+Input[4].placeholder = 'Enter Email';
+Input[5].placeholder = 'Enter Phone Number';
+Input[6].placeholder = 'Enter Address only if Catering is Off-promise';
 
 /*====================Phone Number Functions====================*/
 function validate(evt) {
