@@ -15,7 +15,6 @@ for(i=0; i<Da.length; i++){
 }
 
 var Label = document.getElementsByTagName('label');
-console.log(Label.length)
 Label[2].innerHTML+=":";
 Label[3].innerHTML+=":";
 Label[4].innerHTML+=":";

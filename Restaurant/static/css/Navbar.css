@@ -84,7 +84,10 @@
 {
     font-size: 20px;
     color: rgb(0, 0, 187);
-    text-decoration: none;
+}
+.underlined
+{
+    text-decoration: underline;
 }
 .user_name:hover
 {
