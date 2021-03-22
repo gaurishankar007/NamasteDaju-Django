@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin', views.admin),
+    path('ad_register', views.ad_register_user),
 # =========================Menu=========================
     path('ad_menu', views.ad_menu),
     path('updatefood/<int:food_id>', views.ad_menu_update),

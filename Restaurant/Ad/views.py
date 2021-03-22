@@ -11,6 +11,7 @@ from Ac.models import *
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 # =========================Admin=========================
 @login_required
@@ -54,6 +55,26 @@ def admin(request):
         }
     return render(request, 'Ad/Admin.html', dictionary)
 # =========================Admin=========================
+
+
+# =========================Register=========================
+@login_required
+@admin_only
+def ad_register_user(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            Profile.objects.create(user=user, username=user.username)
+            messages.add_message(request, messages.SUCCESS, 'New User have been registered Successfully')
+            return redirect('/Ad/ad_register')
+        else:
+            messages.add_message(request, messages.ERROR, 'Unable to Register New User')
+            return render(request, 'Ad/AdRegister.html', {'form': form})
+    dictionary = {'form': UserCreationForm}
+    return render(request, 'Ad/AdRegister.html', dictionary)
+# =========================Register=========================
+
 
 # =========================Menu=========================
 @login_required

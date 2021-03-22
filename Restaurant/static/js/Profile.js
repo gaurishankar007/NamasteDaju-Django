@@ -2,6 +2,7 @@ var Profile =  document.getElementById("Profile");
 var CCard =  document.getElementById("CCard");
 var Card =  document.getElementById("Card");
 var Table =  document.getElementById("Table");
+var TD = document.getElementsByTagName("td");
 var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
 
@@ -76,6 +77,12 @@ function dark()
     {
         Label[i].style.color="white";
     }
+
+    for(i=0; i<TD.length; i++)
+    {
+        TD[i].style.color="white";
+    }
+
     document.getElementById("Moon").hidden=true;
     document.getElementById("Sun").hidden=false;
     document.getElementById("Sun").style.color="white";
@@ -107,6 +114,11 @@ function light()
     for(i=0; i<Label.length; i++)
     {
         Label[i].style.color="black";
+    }
+    
+    for(i=0; i<TD.length; i++)
+    {
+        TD[i].style.color="black";
     }
 
     document.getElementById("Moon").hidden=false;

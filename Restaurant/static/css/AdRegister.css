@@ -1,5 +1,5 @@
-/*====================AdReservation====================*/
-#AOH
+/*====================Register====================*/
+#RH
 {
     height: 400px;
     background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ) ,url("../images/admin/b.jpg");
@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-#AOH h1
+#RH h1
 {
     margin-top: 200px;
     font-size: 40px;
@@ -24,66 +24,42 @@
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
-#Card input
+#Card input, select
 {
-    background-image: linear-gradient( rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1) );
+    background-image: linear-gradient( rgb(0, 0, 255, 0.1), rgb(0, 0, 255, 0.1) );
     border-radius: 15px;
 }
-#Card input:hover
+#Card input:hover, select:hover
 {
     border: 2px solid rgb(0, 187, 40);
 }
-#Card button, #UB
+#Card button, #Card a
 {
     color: white;
     font-weight: bold;
     background-color:green;
     border-radius: 10px;
 }
-#Card button:hover, #UB:hover
+#Card button:hover, #Card a:hover
 {
     color: rgb(0, 187, 40);
     background-color: transparent;
     border: 2px solid rgb(0, 187, 40);
 }
-#Uch1
+#Card h4, .help-block
 {
-    color: rgb(187, 69, 40);
-    font-family: 'Times New Roman', Times, serif;
+    font-family: cursive;
 }
-#Ch1
+.help-block, .success_message
 {
     color: rgb(0, 187, 40);
-    font-family: 'Times New Roman', Times, serif;
 }
-#UcTable
+.error_message, .help-block
 {
-    border-radius: 10px;
-    box-shadow: 0px 5px 20px rgb(187, 69, 0);
+    color: red;
 }
-#CTable
-{
-    border-radius: 10px;
-    box-shadow: 0px 5px 20px rgb(0, 187, 40);
-}
-#UcTable h1, th, td, #CTable h1, th, td
-{
-    font-family: 'Times New Roman', Times, serif;
-}
-#UcTable th, #CTable th
-{
-    font-size: 22px;
-}
-#UcTable td, #CTable td
-{
-    font-size: 18px;
-}
-#UcTable td a, #CTable td a
-{
-    color: black;
-    font-size: 18px;
-}
-/*====================AdReservation====================*/
+/*====================Register====================*/
+
 
 /*====================Copyright====================*/
 #Copyright 

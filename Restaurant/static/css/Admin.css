@@ -7,6 +7,20 @@
     height: 937px;
     padding-top: 10px;
 }
+
+#Register
+{
+    color: white;
+    font-weight: bold;
+    background-color:green;
+    border-radius: 10px;
+}
+#Register:hover
+{
+    color: rgb(0, 187, 40);
+    background-color: transparent;
+    border: 3px solid rgb(0, 187, 40);
+}
 #Logout
 {
     color: white;

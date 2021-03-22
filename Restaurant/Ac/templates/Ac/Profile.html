@@ -128,7 +128,7 @@
             <tbody>
                 {% for i in order %}
                 {% if i.username == request.user.username %}
-                <tr class="table-success">
+                <tr>
                     <td>{{i.phone}}</td>
                     <td>{{i.foodname}}</td>
                     <td>{{i.quantity}}</td>
@@ -156,7 +156,7 @@
             <tbody>
                 {% for i in reservation %}
                 {% if i.username == request.user.username %}
-                <tr  class="table-warning"> 
+                <tr> 
                     <td>{{i.firstname}}</td>
                     <td>{{i.lastname}}</td>
                     <td>{{i.email}}</td>
@@ -189,7 +189,7 @@
             <tbody>
                 {% for i in catering %}
                 {% if i.username == request.user.username %}
-                <tr  class="table-warning">                  
+                <tr>                  
                     <td>{{i.firstname}}</td>
                     <td>{{i.lastname}}</td>
                     <td>{{i.email}}</td>
@@ -206,7 +206,7 @@
             </tbody>
         </table>
         <h1 class="text-center">Message</h1>
-        <table class="table table-striped mb-5" id="Message">
+        <table class="table table-striped mb-5" id="UserMessage">
             <thead class="thead-dark">
                 <tr>
                     <th>Subject</th>

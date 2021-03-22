@@ -1,0 +1,50 @@
+{% extends 'AdMain.html' %}
+
+{% load static %}
+
+{% load bootstrap %}
+
+{% block title_link %}
+    <title>NamasteDaju Restaurant Register</title>
+{% endblock %}
+
+{% block css_link %}
+    <link href="{% static 'css/AdNavbar.css' %}" rel="stylesheet" type="text/css"/> 
+    <link href="{% static 'css/AdRegister.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    {% include 'AdNavbar.html' %}
+    <div class="container-fluid d-flex flex-column px-0" id="Register">
+        <div class="container-fluid d-flex justify-content-center mb-5" id="RH">
+          <h1>Register into NamasteDaju Restaurant</h1>
+        </div>        
+        <div class="container" id="Form">
+            <div class="card p-4" id="Card">
+                {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <h4 class="success_message py-3 px-1 my-2 text-center">{{message}}</h4>
+                    {% endif %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <h4 class="error_message py-3 px-1 my-2 text-center">{{message}}</h4>
+                    {% endif %}
+                {% endfor %}
+                <form class="form" method="POST">
+                    {% csrf_token %}
+                    {{form | bootstrap_horizontal}}
+                    <div class="d-flex justify-content-center py-2 mb-3">
+                        <button type="submit" class="btn px-4 py-1">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center py-2 mt-3" id="Copyright">
+        <p>Copyright ©2021 All rights reserved. Design by <a href="#">Gauri Shankar Sharma</a></p>
+    </div>
+{% endblock %}
+
+{% block script_link %}
+        <script src="{% static 'js/AdRegister.js' %}"></script>
+{% endblock %}
