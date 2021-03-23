@@ -1,6 +1,5 @@
 var Menu = document.getElementById("Menu");
 var Card = document.getElementsByClassName('card');
-var Form = document.getElementById("Form");
 var Dh3 = document.getElementsByClassName('Dh3');
 var Dp = document.getElementsByClassName('Dp');
 var Dh4 = document.getElementsByClassName('Dh4');
@@ -15,17 +14,6 @@ for(i=0; i<Da.length; i++){
 }
 
 var Label = document.getElementsByTagName('label');
-Label[2].innerHTML+=":";
-Label[3].innerHTML+=":";
-Label[4].innerHTML+=":";
-Label[5].innerHTML+=":";
-Label[6].innerHTML+=":";
-
-var Input = document.getElementsByTagName('input')
-Input[4].placeholder = 'Enter Phone';
-Input[6].placeholder = 'Enter Quantity';
-Input[7].placeholder = 'Enter Address';
-
 Menu.style.backgroundColor="white";
 
 AUOC.style.backgroundColor="black";
@@ -54,7 +42,7 @@ function dark()
     }
     document.getElementsByClassName("selected")[0].style.color="rgb(0, 0, 187)";
 
-    for(i=0; i<=7; i++){
+    for(i=0; i<=6; i++){
         Card[i].style.backgroundColor="black";
     }
 
@@ -99,7 +87,7 @@ function light()
     }
     document.getElementsByClassName("selected")[0].style.color="rgb(0, 0, 187)";
 
-    for(i=0; i<=7; i++){
+    for(i=0; i<=6; i++){
         Card[i].style.backgroundColor="white";
     }
 
@@ -128,40 +116,7 @@ function light()
 }
 /*====================Theme Functions====================*/
 
-/*====================Order Form Functions====================*/
-Form.style.display="none";
-window.onscroll = function(){Form.style.display="none"}
-function show(foodName)
+function food(food)
 {
-    Input[3].value=document.getElementById("Username").innerHTML;
-    Input[3].readOnly=true;
-    Input[5].value=foodName;
-    Input[5].readOnly=true;
-    Form.style.display="block";
+    console.log(localStorage.getItem('foodName'))
 }
-
-function hide()
-{
-    Form.style.display="none";
-}
-/*====================Order Form Functions====================*/
-
-/*====================Phone Number Functions====================*/
-function validate(evt) {
-    var theEvent = evt || window.event;
-  
-    // Handle paste
-    if (theEvent.type === 'paste') {
-        key = event.clipboardData.getData('text/plain');
-    } else {
-    // Handle key press
-        var key = theEvent.keyCode || theEvent.which;
-        key = String.fromCharCode(key);
-    }
-    var regex = /[0-9]|\./;
-    if( !regex.test(key) ) {
-      theEvent.returnValue = false;
-      if(theEvent.preventDefault) theEvent.preventDefault();
-    }
-}
-/*====================Phone Number Functions====================*/

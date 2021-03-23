@@ -5,15 +5,22 @@ var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
 
 var Label = document.getElementsByTagName('label');
-console.log(Label.length)
-Label[0].innerHTML+=":";
-Label[1].innerHTML+=":";
-Label[2].innerHTML+=":";
+for(i=0; i<Label.length; i++)
+{
+    Label[i].innerHTML+=":";
+}
+Label[0].hidden=true;
+
+var users = document.getElementsByTagName('select')[0];
+for(i=1; i<5; i++){
+    if(users.options[i].text==document.getElementById("Username").innerHTML){
+        users.options[i].selected = 'selected';
+    }
+}
+users.hidden=true;
 
 var Input = document.getElementsByTagName('input')
-Input[1].readOnly = true;
-Input[1].value = document.getElementById('Username').innerHTML;
-Input[2].placeholder = 'Enter Subject'; 
+Input[1].placeholder = 'Enter Subject'; 
 
 var Textarea = document.getElementsByTagName('textarea')
 Textarea[0].placeholder = "Enter Message Here...............";

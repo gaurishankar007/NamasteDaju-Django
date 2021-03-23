@@ -126,17 +126,13 @@
                 </tr>
             </thead>
             <tbody>
-                {% for i in order %}
-                {% if i.username == request.user.username %}
                 <tr>
-                    <td>{{i.phone}}</td>
-                    <td>{{i.foodname}}</td>
-                    <td>{{i.quantity}}</td>
-                    <td>{{i.address}}</td>
-                    <td>{{i.ordered_date}}</td>
+                    <td>{{order.phone}}</td>
+                    <td>{{order.foodname}}</td>
+                    <td>{{order.quantity}}</td>
+                    <td>{{order.address}}</td>
+                    <td>{{order.ordered_date}}</td>
                 </tr>
-                {% endif %}
-                {% endfor %}
             </tbody>
         </table>
         <h1 class="text-center">Reservation</h1>
@@ -154,20 +150,16 @@
                 </tr>
             </thead>
             <tbody>
-                {% for i in reservation %}
-                {% if i.username == request.user.username %}
                 <tr> 
-                    <td>{{i.firstname}}</td>
-                    <td>{{i.lastname}}</td>
-                    <td>{{i.email}}</td>
-                    <td>{{i.phone}}</td>
-                    <td>{{i.date}}</td>
-                    <td>{{i.time}}</td>
-                    <td>{{i.person}}</td>
-                    <td>{{i.reserved_date}}</td>
+                    <td>{{reservation.firstname}}</td>
+                    <td>{{reservation.lastname}}</td>
+                    <td>{{reservation.email}}</td>
+                    <td>{{reservation.phone}}</td>
+                    <td>{{reservation.date}}</td>
+                    <td>{{reservation.time}}</td>
+                    <td>{{reservation.person}}</td>
+                    <td>{{reservation.reserved_date}}</td>
                 </tr>
-                {% endif %}
-                {% endfor %}
             </tbody>
         </table>
         <h1 class="text-center">Catering</h1>
@@ -187,22 +179,18 @@
                 </tr>
             </thead>
             <tbody>
-                {% for i in catering %}
-                {% if i.username == request.user.username %}
                 <tr>                  
-                    <td>{{i.firstname}}</td>
-                    <td>{{i.lastname}}</td>
-                    <td>{{i.email}}</td>
-                    <td>{{i.phone}}</td>
-                    <td>{{i.date}}</td>
-                    <td>{{i.time}}</td>
-                    <td>{{i.event_type}}</td>
-                    <td>{{i.catering_type}}</td>
-                    <td>{{i.address}}</td>
-                    <td>{{i.catering_order_date}}</td>
+                    <td>{{catering.firstname}}</td>
+                    <td>{{catering.lastname}}</td>
+                    <td>{{catering.email}}</td>
+                    <td>{{catering.phone}}</td>
+                    <td>{{catering.date}}</td>
+                    <td>{{catering.time}}</td>
+                    <td>{{catering.event_type}}</td>
+                    <td>{{catering.catering_type}}</td>
+                    <td>{{catering.address}}</td>
+                    <td>{{catering.catering_order_date}}</td>
                 </tr>
-                {% endif %}
-                {% endfor %}
             </tbody>
         </table>
         <h1 class="text-center">Message</h1>
@@ -215,15 +203,11 @@
                 </tr>
             </thead>
             <tbody>
-                {% for i in message %}
-                {% if i.username == request.user.username %}
                 <tr>                
-                    <td>{{i.subject}}</td>
-                    <td>{{i.messages}}</td>
-                    <td>{{i.messaged_date}}</td>
+                    <td>{{message.subject}}</td>
+                    <td>{{message.messages}}</td>
+                    <td>{{message.messaged_date}}</td>
                 </tr>
-                {% endif %}
-                {% endfor %}
             </tbody>
         </table>
     </div>

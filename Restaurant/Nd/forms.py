@@ -13,8 +13,8 @@ class MenuForm(ModelForm):
 class OrderForm(ModelForm):
    class Meta:
       model = Order
-      fields = ['username', 'phone', 'foodname', 'quantity', 'address']
-      widgets = {'phone':  forms.widgets.TextInput(attrs={'onkeypress': 'validate(event)'})}
+      fields = ['username','foodname', 'phone', 'quantity', 'address']
+      widgets = {'foodname': forms.HiddenInput(), 'phone':  forms.widgets.TextInput(attrs={'onkeypress': 'validate(event)'})}
 
 
 class GalleryForm(ModelForm):

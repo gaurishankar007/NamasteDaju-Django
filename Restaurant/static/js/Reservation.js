@@ -4,24 +4,25 @@ var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
 
 var Label = document.getElementsByTagName('label');
-console.log(Label.length)
-Label[0].innerHTML+=":";
-Label[1].innerHTML+=":";
-Label[2].innerHTML+=":";
-Label[3].innerHTML+=":";
-Label[4].innerHTML+=":";
-Label[5].innerHTML+=":";
-Label[6].innerHTML+=":";
-Label[7].innerHTML+=":";
+for(i=0; i<Label.length; i++)
+{
+    Label[i].innerHTML+=":";
+}
+Label[0].hidden=true;
 
+var users = document.getElementsByTagName('select')[0];
+for(i=1; i<5; i++){
+    if(users.options[i].text==document.getElementById("Username").innerHTML){
+        users.options[i].selected = 'selected';
+    }
+}
+users.hidden=true;
 
 var Input = document.getElementsByTagName('input')
-Input[1].readOnly = true;
-Input[1].value = document.getElementById('Username').innerHTML;
-Input[2].placeholder = 'Enter First Name';
-Input[3].placeholder = 'Enter Last Name';
-Input[4].placeholder = 'Enter Email';
-Input[5].placeholder = 'Enter Phone Number';
+Input[1].placeholder = 'Enter First Name';
+Input[2].placeholder = 'Enter Last Name';
+Input[3].placeholder = 'Enter Email';
+Input[4].placeholder = 'Enter Phone Number';
 
 AUOC.style.backgroundColor="black";
 Copyright.style.backgroundColor="#111";

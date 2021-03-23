@@ -99,29 +99,6 @@
     color: rgb(0, 0, 187);
     font-family: 'Times New Roman', Times, serif;
 }
-#Cs
-{
-    color: rgb(0, 0, 187);
-    font-size: 20px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
-}
-#Form
-{
-    position: fixed;
-    top:180px;
-    z-index: 2000;
-}
-#Form h1
-{
-    color: green;
-}
-#Note
-{
-    color: orange;
-}
 #Card
 {
     border-radius: 15px;
@@ -143,14 +120,14 @@
 {
     border: 2px solid rgb(0, 0, 187);
 }
-#Card button
+#Card button, #AMB
 {
     color: white;
     font-weight: bold;
     background-color:blue;
     border-radius: 10px;
 }
-#Card button:hover
+#Card button:hover, #AMB:hover
 {
     color: rgb(0, 0, 187);
     background-color: transparent;
@@ -275,6 +252,6 @@
 {
     display: block;
     width: 120px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 /*====================Menu====================*/

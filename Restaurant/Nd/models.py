@@ -1,5 +1,6 @@
 from django.db import models
 from django.core import validators
+from django.contrib.auth.models import User
 
 
 class Menu(models.Model):
@@ -12,7 +13,7 @@ class Menu(models.Model):
     uploaded_date = models.DateTimeField(auto_now_add=True, null=True)
 
 class Order(models.Model):
-    username = models.CharField(max_length=150, null=True)
+    username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     phone = models.CharField(max_length=10, validators=[validators.MinLengthValidator(10)], null=True)
     foodname = models.CharField(max_length=50, validators=[validators.MinLengthValidator(2)], null=True)
     quantity = models.IntegerField(null=True)
@@ -36,7 +37,7 @@ class Stories(models.Model):
 
 class Reservation(models.Model):
     options = (('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'))
-    username = models.CharField(max_length=150, null=True)
+    username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     firstname = models.CharField(max_length=100, validators=[validators.MinLengthValidator(2)], null=True)
     lastname = models.CharField(max_length=100, validators=[validators.MinLengthValidator(2)], null=True)
     email = models.EmailField(validators=[validators.EmailValidator], null=True)
@@ -52,7 +53,7 @@ class Catering(models.Model):
     options1 = (('Weddings', 'Weddings'), ('Birthday Parties', 'Birthday Parties'), ('Anniversary Parties', 'Anniversary Parties'), ('Business Meetings', 'Business Meetings'),
                 ('Conferences', 'Conferences'), ('Luncheons', 'Luncheons'), ('Holiday Gatherings', 'Holiday Gatherings'), ('Other', 'Other'))
     options2 = (('On-promise', 'On-promise'), ('Off-promise', 'Off-promise'))
-    username = models.CharField(max_length=150, null=True)
+    username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     firstname = models.CharField(max_length=100, validators=[validators.MinLengthValidator(2)], null=True)
     lastname = models.CharField(max_length=100, validators=[validators.MinLengthValidator(2)], null=True)
     email = models.EmailField(validators=[validators.EmailValidator], null=True)
@@ -68,7 +69,7 @@ class Catering(models.Model):
 
 
 class Message(models.Model):
-    username = models.CharField(max_length=150, null=True)
+    username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     subject = models.CharField(max_length=50, validators=[validators.MinLengthValidator(2)], null=True)
     messages = models.TextField(max_length=2000, validators=[validators.MinLengthValidator(25)], null=True)
     messaged_date = models.DateTimeField(auto_now_add=True, null=True)

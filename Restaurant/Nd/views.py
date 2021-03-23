@@ -25,18 +25,25 @@ def menu(request):
     menu_filter = MenuFilter(request.GET, queryset=menu)
     menu_final = menu_filter.qs
 
+    dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'menu': 'selected'}
+    return render(request, 'Nd/Menu.html', dictionary)
+
+
+@login_required
+@user_only
+def order(request):
     if request.method == "POST":
         form = OrderForm(request.POST)
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, 'You have ordered food successfully')
-            return redirect('/menu')
+            return redirect('/order')
         else:
             messages.add_message(request, messages.ERROR, 'Failed to order food')
-            dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'menu': 'selected', 'form': form}
-            return render(request, 'Nd/menu.html', dictionary)
-    dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'form':OrderForm, 'menu': 'selected'}
-    return render(request, 'Nd/Menu.html', dictionary)
+            dictionary = {'form': form}
+            return render(request, 'Nd/Order.html', dictionary)
+    dictionary = {'form':OrderForm}
+    return render(request, 'Nd/Order.html', dictionary)
 
 
 @login_required
