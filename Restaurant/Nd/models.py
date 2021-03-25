@@ -12,15 +12,24 @@ class Menu(models.Model):
     category = models.CharField(max_length=200, choices=options ,validators=[validators.MinLengthValidator(4)], null=True)
     uploaded_date = models.DateTimeField(auto_now_add=True, null=True)
 
+    def __str__(self):
+        return self.name
+
 class Order(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    foodname = models.ForeignKey(Menu, on_delete=models.CASCADE, null=True)
     phone = models.CharField(max_length=10, validators=[validators.MinLengthValidator(10)], null=True)
-    foodname = models.CharField(max_length=50, validators=[validators.MinLengthValidator(2)], null=True)
     quantity = models.IntegerField(null=True)
     address = models.CharField(max_length=50, validators=[validators.MinLengthValidator(10)], null=True)
     completion = models.BooleanField(default=False, null=True)
     ordered_date = models.DateTimeField(auto_now_add=True, null=True)
 
+
+class Cart(models.Model):
+    username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    foodname = models.ForeignKey(Menu, on_delete=models.CASCADE, null=True)
+    phone = models.CharField(max_length=10, validators=[validators.MinLengthValidator(10)], null=True)
+    address = models.CharField(max_length=50, validators=[validators.MinLengthValidator(10)], null=True)
 
 class Gallery(models.Model):
     name = models.CharField(max_length=50, validators=[validators.MinLengthValidator(2)], null=True)

@@ -93,12 +93,7 @@
 }
 /*====================Front====================*/
 
-/*====================Stories====================*/
-#SH h1
-{
-    color: rgb(0, 0, 187);
-    font-family: 'Times New Roman', Times, serif;
-}
+/*====================Cart====================*/
 #Card
 {
     border-radius: 15px;
@@ -106,71 +101,68 @@
 } 
 #Card label
 {
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
 #Card input
 {
     background-image: linear-gradient( rgb(0, 0, 255, 0.1), rgb(0, 0, 255, 0.1) );
     border-radius: 15px;
-    margin-left: 10px;
-    height: 35px;
 }
 #Card input:hover
 {
     border: 2px solid rgb(0, 0, 187);
 }
-#Card button
+#Card button, #Card a
 {
     color: white;
     font-weight: bold;
     background-color:blue;
     border-radius: 10px;
 }
-#Card button:hover
+#Card button:hover, #Card a:hover
 {
     color: rgb(0, 0, 187);
     background-color: transparent;
     border: 2px solid rgb(0, 0, 187);
 }
-#Sc h2, h4
+#Card h4, .help-block
+{
+    font-family: cursive;
+}
+.help-block, .success_message
+{
+    color: rgb(0, 187, 40);
+}
+.error_message, .help-block
+{
+    color: red;
+}
+#CDh1
+{
+    color: rgb(0, 0, 187);
+    font-family: 'Times New Roman', Times, serif;
+}
+#CDetails img
+{
+    height: 200px;
+    width: 200px;
+}
+.CD
 {
     font-family: 'Times New Roman', Times, serif;
 }
-#Sc button
+#CDetails a
 {
     color: white;
+    font-weight: bold;
+    background-color:blue;
     border-radius: 10px;
-    background-color: blue;
-    width: 110px;
-} 
-#Sc button:hover
+}
+#CDetails a:hover
 {
     color: rgb(0, 0, 187);
     background-color: transparent;
     border: 2px solid rgb(0, 0, 187);
 }
-#Sc .detail
-{
-    border-radius: 10px;
-    padding-inline-start: 8px;
-    background-image: linear-gradient( rgba(0, 17, 255, 0.2), rgba(0, 17, 255, 0.2) );
-}
-#Sc img
-{
-    height: 500px;
-    transition: 2s ease;
-}
-#Sc div div div
-{
-    overflow: hidden;
-}
-#Sc img:hover
-{
-    transform: scale(1.4);
-}
-
-/*====================Stories====================*/
-
-
-
+/*====================Cart====================*/

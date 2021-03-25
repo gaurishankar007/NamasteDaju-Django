@@ -8,21 +8,11 @@ for(i=0; i<Label.length; i++)
 {
     Label[i].innerHTML+=":";
 }
-Label[0].hidden=true;
-
-var users = document.getElementsByTagName('select')[0];
-for(i=1; i<5; i++){
-    if(users.options[i].text==document.getElementById("Username").innerHTML){
-        users.options[i].selected = 'selected';
-    }
-}
-users.hidden=true;
 
 var Input = document.getElementsByTagName('input')
-Input[1].value = localStorage.getItem('foodName');
-Input[2].placeholder = 'Enter Phone Number';
-Input[3].placeholder = 'Enter Quantity';
-Input[4].placeholder = 'Enter Address';
+Input[1].placeholder = 'Enter Phone Number';
+Input[2].placeholder = 'Enter Quantity';
+Input[3].placeholder = 'Enter Address';
 
 
 AUOC.style.backgroundColor="black";
@@ -88,7 +78,6 @@ function light()
     Header.style.backgroundColor="white";
     Form.style.backgroundColor="white";
     Card.style.backgroundColor="white";
-    Table.style.backgroundColor="white";
     AUOC.style.backgroundColor="black";
     Copyright.style.backgroundColor="#111";
 

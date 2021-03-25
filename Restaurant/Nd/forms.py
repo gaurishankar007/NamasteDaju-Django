@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Menu, Order ,Gallery, Stories, Reservation, Catering, Message
+from .models import *
 from datetime import date
 
 
@@ -13,8 +13,15 @@ class MenuForm(ModelForm):
 class OrderForm(ModelForm):
    class Meta:
       model = Order
-      fields = ['username','foodname', 'phone', 'quantity', 'address']
-      widgets = {'foodname': forms.HiddenInput(), 'phone':  forms.widgets.TextInput(attrs={'onkeypress': 'validate(event)'})}
+      fields = ['phone', 'quantity', 'address']
+      widgets = {'phone':  forms.widgets.TextInput(attrs={'onkeypress': 'validate(event)'})}
+
+
+class CartForm(ModelForm):
+   class Meta:
+      model = Cart
+      fields = ['phone', 'address']
+      widgets = {'phone':  forms.widgets.TextInput(attrs={'onkeypress': 'validate(event)'})}
 
 
 class GalleryForm(ModelForm):

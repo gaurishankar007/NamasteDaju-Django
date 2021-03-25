@@ -77,7 +77,7 @@ def user_account(request):
             return redirect('/Ac/profile')
         else:
             messages.add_message(request, messages.ERROR, "Failed Updated Account for "+str(request.user.profile.username))
-            return render(request, 'Ac/Profile.html', {'form': form, 'order':order, 'reservation':reservation, 'catering':catering, 'message':message})
+            return render(request, 'Ac/Profile.html', {'form': form, 'order':order, 'reservation':reservation, 'catering':catering, 'message':message, 'underlined':'underlined'})
     dictionary = {'form': form, 'order':order, 'reservation':reservation, 'catering':catering, 'message':message, 'underlined':'underlined'}
     return render(request, 'Ac/Profile.html', dictionary)
 

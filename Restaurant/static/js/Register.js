@@ -2,6 +2,7 @@ var Register =  document.getElementById("Register");
 var Card =  document.getElementById("Card");
 var AUOC = document.getElementById("AUOC");
 var Copyright = document.getElementById("Copyright");
+var LI = document.getElementsByTagName("li");
 
 var Label = document.getElementsByTagName('label');
 console.log(Label.length)
@@ -45,6 +46,11 @@ function dark()
         Label[i].style.color="white";
     }
 
+    for(i=0; i<LI.length; i++)
+    {
+        LI[i].style.color="white";
+    }
+
     document.getElementById("Moon").hidden=true;
     document.getElementById("Sun").hidden=false;
     document.getElementById("Sun").style.color="white";
@@ -69,6 +75,11 @@ function light()
     for(i=0; i<Label.length; i++)
     {
         Label[i].style.color="black";
+    }
+
+    for(i=0; i<LI.length; i++)
+    {
+        LI[i].style.color="black";
     }
 
     document.getElementById("Moon").hidden=false;

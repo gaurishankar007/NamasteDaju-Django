@@ -11,8 +11,7 @@ from django.contrib.auth.decorators import login_required
 from Ac.auth import user_only
 
 
-@login_required
-@user_only
+
 def home(request):
     dictionary = {'home': 'selected'}
     return render(request, 'Nd/Home.html', dictionary)
@@ -31,19 +30,78 @@ def menu(request):
 
 @login_required
 @user_only
-def order(request):
+def order(request, menu_id):
     if request.method == "POST":
         form = OrderForm(request.POST)
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+            instance.username = request.user
+            instance.foodname = Menu.objects.get(id=menu_id)
+            instance.save()
             messages.add_message(request, messages.SUCCESS, 'You have ordered food successfully')
-            return redirect('/order')
+            dictionary = {'form': OrderForm}
+            return render(request, 'Nd/Order.html', dictionary)
         else:
             messages.add_message(request, messages.ERROR, 'Failed to order food')
             dictionary = {'form': form}
             return render(request, 'Nd/Order.html', dictionary)
-    dictionary = {'form':OrderForm}
+    dictionary = {'form': OrderForm}
     return render(request, 'Nd/Order.html', dictionary)
+
+
+@login_required
+@user_only
+def add_to_cart(request, menu_id):
+    menu = Menu.objects.all()
+    menu_filter = MenuFilter(request.GET, queryset=menu)
+    menu_final = menu_filter.qs
+
+    cart = Cart.objects.create(username=request.user, foodname = Menu.objects.get(id=menu_id))
+
+    dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'menu': 'selected'}
+    return render(request, 'Nd/Menu.html', dictionary)
+
+
+@login_required
+@user_only
+def cart(request):
+    if request.method == "POST":
+        form = CartForm(request.POST)
+        if form.is_valid():
+            formData = form.cleaned_data
+            carts = Cart.objects.all()
+            num1 = 0
+            num2 = carts.count()
+            for i in carts:
+                if i.username == request.user:
+                    num2 -=1
+                    num1 +=1
+                    order = Order.objects.create(username=request.user, foodname=i.foodname, phone=formData['phone'], quantity=1, address=formData['address'])
+                    order.save()
+                    i.delete()
+                    if num1 == 1:
+                        messages.add_message(request, messages.SUCCESS, 'You have ordered all food successfully')
+                if i.username != request.user: 
+                    num2 -=1    
+                    if num2 == 0:               
+                        messages.add_message(request, messages.ERROR, 'You have No Cart')
+            return redirect('/cart')
+        else:
+            messages.add_message(request, messages.ERROR, 'Failed to order food')
+            dictionary = {'form': form, 'CircleCart':'CircleCart'}
+            return render(request, 'Nd/Cart.html', dictionary)
+    dictionary = {'key':Cart.objects.all() ,'form':CartForm, 'CircleCart':'CircleCart'}
+    return render(request, 'Nd/Cart.html', dictionary)
+
+
+@login_required
+@user_only
+def delete_cart(request, cart_id):
+    cart = Cart.objects.get(id=cart_id)
+    cart.delete()
+
+    dictionary = {'key':Cart.objects.all() ,'form':CartForm, 'CircleCart':'CircleCart'}
+    return render(request, 'Nd/Cart.html', dictionary)
 
 
 @login_required

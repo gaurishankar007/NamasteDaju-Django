@@ -118,11 +118,27 @@
     background-color: transparent;
     border: 2px solid rgb(0, 0, 187);
 }
+.ct
+{
+    font-size: 25px;
+    color: green;
+}
+.ct:hover
+{
+    color: green;    
+    text-decoration: none;
+}
+.CircleCart
+{
+    border-radius: 100%;
+    padding: 8px;
+    border: 2px solid green;
+}
 /*====================Header====================*/
 
 @media screen and (max-width: 1250px)
 {
-.user_name
+.user_name, .ct
 {
     display: none;
 }
