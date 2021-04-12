@@ -15,7 +15,7 @@ for(i=0; i<Label.length; i++)
 Label[0].hidden=true;
 
 var users = document.getElementsByTagName('select')[0];
-for(i=1; i<5; i++){
+for(i=1; i<users.length; i++){
     if(users.options[i].text==document.getElementById("Username").innerHTML){
         users.options[i].selected = 'selected';
     }

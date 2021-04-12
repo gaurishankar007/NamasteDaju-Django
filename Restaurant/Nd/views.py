@@ -97,9 +97,7 @@ def cart(request):
 def delete_cart(request, cart_id):
     cart = Cart.objects.get(id=cart_id)
     cart.delete()
-
-    dictionary = {'key':Cart.objects.all() ,'form':CartForm, 'CircleCart':'CircleCart'}
-    return render(request, 'Nd/Cart.html', dictionary)
+    return redirect("/cart")
 
 
 @login_required

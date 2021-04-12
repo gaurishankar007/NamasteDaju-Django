@@ -14,8 +14,8 @@ class MenuFilter(django_filters.FilterSet):
         fields = ""
 
 class OrderFilter(django_filters.FilterSet):
-    username = CharFilter(field_name="username", lookup_expr="icontains")
-    foodname = CharFilter(field_name="foodname", lookup_expr="icontains")
+    username = django_filters.ModelChoiceFilter(field_name='username', lookup_expr='exact', queryset=User.objects.all())
+    foodname = django_filters.ModelChoiceFilter(field_name='foodname', lookup_expr='exact', queryset=Menu.objects.all())
 
     class Meta:
         model = Order
@@ -68,7 +68,7 @@ class UserFilter(django_filters.FilterSet):
         fields = ""
 
 class MessageFilter(django_filters.FilterSet):
-    username = CharFilter(field_name="username", lookup_expr="icontains")
+    username = django_filters.ModelChoiceFilter(field_name='username', lookup_expr='exact', queryset=User.objects.all())
     subject= CharFilter(field_name="subject", lookup_expr="icontains")
 
     class Meta:

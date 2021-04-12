@@ -24,12 +24,14 @@
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
-#Card input
+#id_username, #id_foodname
 {
     background-image: linear-gradient( rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1) );
-    border-radius: 15px;
+    height: 35px;
+    width: 150px;
+    border-radius: 25px;
 }
-#Card input:hover
+#id_username:hover, #id_foodname:hover
 {
     border: 2px solid rgb(0, 187, 40);
 }

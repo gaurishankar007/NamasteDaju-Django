@@ -253,7 +253,7 @@ def ad_stories_delete(request, story_id):
 def ad_order(request):
     order = Order.objects.all()
     order_filter = OrderFilter(request.GET, queryset=order)
-    order_final = order_filter.qs 
+    order_final = order_filter.qs
     dictionary = {'key': order_final, 'order_filter':order_filter}
     return render(request, 'Ad/AdOrder.html', dictionary)
 
