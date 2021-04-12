@@ -71,20 +71,18 @@ def cart(request):
             formData = form.cleaned_data
             carts = Cart.objects.all()
             num1 = 0
-            num2 = carts.count()
+            check = False
             for i in carts:
                 if i.username == request.user:
-                    num2 -=1
                     num1 +=1
+                    check = True
                     order = Order.objects.create(username=request.user, foodname=i.foodname, phone=formData['phone'], quantity=1, address=formData['address'])
                     order.save()
                     i.delete()
                     if num1 == 1:
                         messages.add_message(request, messages.SUCCESS, 'You have ordered all food successfully')
-                if i.username != request.user: 
-                    num2 -=1    
-                    if num2 == 0:               
-                        messages.add_message(request, messages.ERROR, 'You have No Cart')
+            if check==False:             
+                messages.add_message(request, messages.ERROR, 'You have No Cart')
             return redirect('/cart')
         else:
             messages.add_message(request, messages.ERROR, 'Failed to order food')

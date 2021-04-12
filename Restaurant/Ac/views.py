@@ -50,22 +50,22 @@ def login_user(request):
 
 @login_required
 def user_account(request):
-    order = None
-    reservation = None
-    catering = None
-    message = None
+    order = []
+    reservation = []
+    catering = []
+    message = []
     for i in Order.objects.all():
         if str(i.username) == str(request.user.username):
-           order = i
+           order.append(i)
     for j in Reservation.objects.all():
-        if str(i.username) == str(request.user.username):
-            reservation = j   
+        if str(j.username) == str(request.user.username):
+            reservation.append(j)   
     for k in Catering.objects.all():
-        if str(i.username) == str(request.user.username):
-           catering = k   
+        if str(k.username) == str(request.user.username):
+           catering.append(k)   
     for l in Message.objects.all():
-        if str(i.username) == str(request.user.username):
-           message = l
+        if str(l.username) == str(request.user.username):
+           message.append(l)
 
     profile = request.user.profile
     form = ProfileForm(instance=profile)

@@ -126,13 +126,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{{order.phone}}</td>
-                    <td>{{order.foodname}}</td>
-                    <td>{{order.quantity}}</td>
-                    <td>{{order.address}}</td>
-                    <td>{{order.ordered_date}}</td>
-                </tr>
+                {% for order in order %}                
+                    <tr>
+                        <td>{{order.phone}}</td>
+                        <td>{{order.foodname}}</td>
+                        <td>{{order.quantity}}</td>
+                        <td>{{order.address}}</td>
+                        <td>{{order.ordered_date}}</td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
         <h1 class="text-center">Reservation</h1>
@@ -150,16 +152,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr> 
-                    <td>{{reservation.firstname}}</td>
-                    <td>{{reservation.lastname}}</td>
-                    <td>{{reservation.email}}</td>
-                    <td>{{reservation.phone}}</td>
-                    <td>{{reservation.date}}</td>
-                    <td>{{reservation.time}}</td>
-                    <td>{{reservation.person}}</td>
-                    <td>{{reservation.reserved_date}}</td>
-                </tr>
+                {% for reservation in reservation %}                
+                    <tr> 
+                        <td>{{reservation.firstname}}</td>
+                        <td>{{reservation.lastname}}</td>
+                        <td>{{reservation.email}}</td>
+                        <td>{{reservation.phone}}</td>
+                        <td>{{reservation.date}}</td>
+                        <td>{{reservation.time}}</td>
+                        <td>{{reservation.person}}</td>
+                        <td>{{reservation.reserved_date}}</td>
+                    </tr>                
+                {% endfor %}
             </tbody>
         </table>
         <h1 class="text-center">Catering</h1>
@@ -179,18 +183,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>                  
-                    <td>{{catering.firstname}}</td>
-                    <td>{{catering.lastname}}</td>
-                    <td>{{catering.email}}</td>
-                    <td>{{catering.phone}}</td>
-                    <td>{{catering.date}}</td>
-                    <td>{{catering.time}}</td>
-                    <td>{{catering.event_type}}</td>
-                    <td>{{catering.catering_type}}</td>
-                    <td>{{catering.address}}</td>
-                    <td>{{catering.catering_order_date}}</td>
-                </tr>
+                {% for catering in catering %}                
+                    <tr>                  
+                        <td>{{catering.firstname}}</td>
+                        <td>{{catering.lastname}}</td>
+                        <td>{{catering.email}}</td>
+                        <td>{{catering.phone}}</td>
+                        <td>{{catering.date}}</td>
+                        <td>{{catering.time}}</td>
+                        <td>{{catering.event_type}}</td>
+                        <td>{{catering.catering_type}}</td>
+                        <td>{{catering.address}}</td>
+                        <td>{{catering.catering_order_date}}</td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
         <h1 class="text-center">Message</h1>
@@ -203,11 +209,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>                
-                    <td>{{message.subject}}</td>
-                    <td>{{message.messages}}</td>
-                    <td>{{message.messaged_date}}</td>
-                </tr>
+                {% for message in message %}                
+                    <tr>                
+                        <td>{{message.subject}}</td>
+                        <td>{{message.messages}}</td>
+                        <td>{{message.messaged_date}}</td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
