@@ -52,14 +52,8 @@ def order(request, menu_id):
 @login_required
 @user_only
 def add_to_cart(request, menu_id):
-    menu = Menu.objects.all()
-    menu_filter = MenuFilter(request.GET, queryset=menu)
-    menu_final = menu_filter.qs
-
     cart = Cart.objects.create(username=request.user, foodname = Menu.objects.get(id=menu_id))
-
-    dictionary = {'key': menu_final, 'menu_filter':menu_filter, 'menu': 'selected'}
-    return render(request, 'Nd/Menu.html', dictionary)
+    return redirect("/menu")
 
 
 @login_required

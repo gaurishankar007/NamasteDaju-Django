@@ -260,28 +260,18 @@ def ad_order(request):
 @login_required
 @admin_only
 def ad_order_complete(request, order_id):
-    order = Order.objects.all()
-    order_filter = OrderFilter(request.GET, queryset=order)
-    order_final = order_filter.qs 
-
-    order1 = Order.objects.get(id=order_id)
-    order1.completion = True
-    order1.save()    
-    dictionary = {'key': order_final, 'order_filter':order_filter}
-    return render(request, 'Ad/AdOrder.html', dictionary)
+    order = Order.objects.get(id=order_id)
+    order.completion = True
+    order.save() 
+    return redirect("/Ad/ad_order")
 
 
 @login_required
 @admin_only
 def ad_order_delete(request, order_id):
-    order = Order.objects.all()
-    order_filter = OrderFilter(request.GET, queryset=order)
-    order_final = order_filter.qs 
-
-    order1 = Order.objects.get(id=order_id)
-    order1.delete()   
-    dictionary = {'key': order_final, 'order_filter':order_filter}
-    return render(request, 'Ad/AdOrder.html', dictionary)
+    order = Order.objects.get(id=order_id)
+    order.delete()   
+    return redirect("/Ad/ad_order")
 # =========================Order=========================
 
 # =========================Reservation=========================
@@ -299,28 +289,18 @@ def ad_reservation(request):
 @login_required
 @admin_only
 def ad_reservation_complete(request, reservation_id):
-    reservation = Reservation.objects.all()
-    reservation_filter = ReservationFilter(request.GET, queryset=reservation)
-    reservation_final = reservation_filter.qs
-
-    reservation1 = Reservation.objects.get(id=reservation_id)
-    reservation1.completion = True
-    reservation1.save()    
-    dictionary = {'key': reservation_final, 'reservation_filter': reservation_filter}
-    return render(request, 'Ad/AdReservation.html', dictionary)
+    reservation = Reservation.objects.get(id=reservation_id)
+    reservation.completion = True
+    reservation.save()    
+    return redirect("/Ad/ad_reservation")
 
 
 @login_required
 @admin_only
 def ad_reservation_delete(request, reservation_id):
-    reservation = Reservation.objects.all()
-    reservation_filter = ReservationFilter(request.GET, queryset=reservation)
-    reservation_final = reservation_filter.qs
-
-    reservation1 = Reservation.objects.get(id=reservation_id)
-    reservation1.delete()
-    dictionary = {'key': reservation_final, 'reservation_filter': reservation_filter}
-    return render(request, 'Ad/AdReservation.html', dictionary)
+    reservation = Reservation.objects.get(id=reservation_id)
+    reservation.delete()
+    return redirect("/Ad/ad_reservation")
 # =========================Reservation=========================
 
 # =========================Catering=========================
@@ -337,28 +317,18 @@ def ad_catering(request):
 @login_required
 @admin_only
 def ad_catering_complete(request, catering_id):
-    catering = Catering.objects.all()
-    catering_filter = CateringFilter(request.GET, queryset=catering)
-    catering_final = catering_filter.qs
-
-    catering1 = Catering.objects.get(id=catering_id)
-    catering1.completion = True
-    catering1.save()
-    dictionary = {'key': catering_final, 'catering_filter': catering_filter}
-    return render(request, 'Ad/AdCatering.html', dictionary)
+    catering = Catering.objects.get(id=catering_id)
+    catering.completion = True
+    catering.save()
+    return redirect("/Ad/ad_catering")
 
 
 @login_required
 @admin_only
 def ad_catering_delete(request, catering_id):
-    catering = Catering.objects.all()
-    catering_filter = CateringFilter(request.GET, queryset=catering)
-    catering_final = catering_filter.qs
-
     catering = Catering.objects.get(id=catering_id)
     catering.delete()
-    dictionary = {'key': catering_final, 'catering_filter': catering_filter}
-    return render(request, 'Ad/AdCatering.html', dictionary)
+    return redirect("/Ad/ad_catering")
 # =========================Catering=========================
 
 # =========================Message=========================
@@ -376,15 +346,9 @@ def message(request):
 @login_required
 @admin_only
 def message_delete(request, message_id):
-    message = Message.objects.all()
-    message_filter = MessageFilter(request.GET, queryset=message)
-    message_final = message_filter.qs
-
-    message1 = Message.objects.get(id=message_id)
-    message1.delete()
-
-    dictionary = {'key': message_final, 'message_filter': message_filter}
-    return render(request, 'Ad/Message.html', dictionary)
+    message = Message.objects.get(id=message_id)
+    message.delete()
+    return redirect("/Ad/message")
 # =========================Message=========================
 
 # =========================User=========================
