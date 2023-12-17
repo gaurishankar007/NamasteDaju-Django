@@ -1,25 +1,37 @@
-<<================Users Detail================>>
-    <========Admin========>
-        Username: gaurishankar007
-        password: admin123456
-    <========Admin========>
+A web app for restaurants in django with MySql.
 
-    <========Normal User========>
-        Username: gauri007
-        password: admin123456
-    <========Normal User========>
-<<================Users Detail================>>
+# Features
+1. View restaurant home page and know about the restaurant
+2. View restaurant menus
+3. Order food 
+4. Add food to cart
+5. Update profile information
+6. View restaurant galleries
+7. View restaurant stories
+8. Book table
+9. Order Catering
+10. View restaurant contact information
 
-<<================Database Detail================>>
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'restaurant',
-        'USER': 'root',
-        'PASSWORD': 'Mysql@358',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
-    }
-<<================Database Detail================>>
+# Screenshots
+![My Image](screenshots/Home1.png)
+![My Image](screenshots/Home2.png)
+![My Image](screenshots/Home3.png)
+![My Image](screenshots/Home4.png)
+![My Image](screenshots/Home5.png)
+![My Image](screenshots/Login.png)
+![My Image](screenshots/LoginDark.png)
+![My Image](screenshots/RegisterDark.png)
+![My Image](screenshots/HomeDark.png)
+![My Image](screenshots/Profile.png)
+![My Image](screenshots/Menu.png)
+![My Image](screenshots/MenuDark.png)
+![My Image](screenshots/Cart.png)
+![My Image](screenshots/Gallery.png)
+![My Image](screenshots/GalleryDark.png)
+![My Image](screenshots/Stories.png)
+![My Image](screenshots/Stories1.png)
+![My Image](screenshots/Reservation.png)
+![My Image](screenshots/Catering.png)
+![My Image](screenshots/Catering1.png)
+![My Image](screenshots/Contact.png)
+![My Image](screenshots/Contact1.png)
